@@ -2,40 +2,46 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="./css/slideshow.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/slideshow.css" />
+
 </head>
 <body>
+<div class="container">
+    <div class="col-md-10 slider-wrap">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/1.jpg">
+                <div class="text">Caption Text</div>
+            </div>
 
-<div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/2.jpg">
+                <div class="text">Caption Two</div>
+            </div>
 
-<div class="mySlides fade">
-  <img src="images/1.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
+            <div class="mySlides fade">
+                <img src="images/3.jpg">
+                <div class="text">Caption Three</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
 </div>
 
-<div class="mySlides fade">
-  <img src="images/2.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
-</div>
-
-<div class="mySlides fade">
-  <img src="images/3.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
 
 <script>
+
     var slideIndex = 1;
     var timer;
     showSlides();
@@ -48,6 +54,7 @@
             slides[i].style.display = "none";
         }
         if (slideIndex > slides.length) {slideIndex = 1}
+        if (slideIndex <= 0) (slideIndex=slides.length)
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
@@ -69,6 +76,7 @@
         slideIndex = n;
         showSlides();
     }
+
 </script>
 
 </body>
