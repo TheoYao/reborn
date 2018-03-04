@@ -16,22 +16,22 @@ ul,li{ padding:0;margin:0;list-style:none}
     background-size: 100% 100%;
 }
 
-nav  .logo-area a {
+.navbar  .logo-area a {
     text-decoration: none;
     color: #596666;
 }
 
-nav .top-line {
+.navbar .top-line {
     border-top:7px solid #009200;
 }
-nav .logo-area {
+.navbar .logo-area {
     padding-top: 10px;
 }
-nav .logo-icon img {
+.navbar .logo-icon img {
     width: 100%;
 }
 
-nav .logo-area .log-text {
+.navbar .logo-area .log-text {
     padding: 10px;
     height: 100%;
     overflow:hidden;
@@ -40,22 +40,22 @@ nav .logo-area .log-text {
     text-align-last:justify;
 }
 
-nav .logo-area .chinese-title {
+.navbar .logo-area .chinese-title {
     font-size: 2rem;
     text-align-last:justify;
     letter-spacing: 3px;
 }
 
-nav .logo-area .english-title {
+.navbar .logo-area .english-title {
     text-align-last:justify;
 }
 
-nav  .version-control {
+.navbar  .version-control {
     padding-top: 5px;
     text-align: right;
 }
 
-nav  .sign-area {
+.navbar  .sign-area {
     text-align: right;
     padding-top: 1rem;
 }
@@ -69,11 +69,11 @@ nav  .sign-area {
     margin:0 10px 0 10px;
 }
 
-nav  .top-func-area {
+.navbar .top-func-area {
     padding-top: 10px;
 }
 
-nav  .top-func-area .version-control .split_vertical {
+.navbar  .top-func-area .version-control .split_vertical {
     text-align: center
 }
 
