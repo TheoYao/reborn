@@ -1,0 +1,62 @@
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
+    font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+
+nav  .logo-area a {
+    text-decoration: none;
+    color: #596666;
+}
+
+nav .top-line {
+    border-top:7px solid #009200;
+}
+nav .logo-area {
+    padding-top: 10px;
+}
+nav .logo-icon img {
+    width: 100%;
+}
+
+nav .logo-area .log-text {
+    padding: 5px;
+    height: 100%;
+    overflow:hidden;
+    white-space:nowrap;
+    font-weight: bold;
+    text-align-last:justify;
+}
+
+nav .logo-area .chinese-title {
+    font-size: 2rem;
+    text-align-last:justify;
+    letter-spacing: 3px;
+}
+
+nav .logo-area .english-title {
+    text-align-last:justify;
+}
+
+nav  .version-control {
+    padding-top: 5px;
+    text-align: right;
+}
+
+nav  .sign-area {
+    text-align: right;
+    padding-top: 1rem;
+}
+
+.chinese-version:before, .sign-up:before {
+    content: '';
+    height: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 2px solid green;
+    margin:0 10px 0 10px;
+}
+nav  .top-func-area .version-control .split_vertical {
+    text-align: center
+}
+@media (min-width: 992px) {
+
+}

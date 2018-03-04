@@ -1,0 +1,6 @@
+.navbar-inverse{
+    background:url(../images/top_line.png) top repeat-x;
+    border:0;
+    padding-top:15px;
+    border-radius:0
+}
