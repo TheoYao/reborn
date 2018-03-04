@@ -149,6 +149,9 @@ nav  .top-func-area .version-control .split_vertical {
     padding:0 0 0 0;
 }
 
+.slider-info {
+    height: 60vh;
+}
 
 
 @media (min-width: 992px) {
