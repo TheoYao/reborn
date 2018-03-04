@@ -12,8 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="./css/slider.css" />
-
+    <link rel="stylesheet" type="text/css" href="./css/slideshow.css" />
 
 </head>
 <body>
@@ -123,48 +122,59 @@
     <section class="slider-picture container">
 
         <div class="col-md-12 slider-info">
-            <div class="container-slider">
-                <div data-am-fadeshow="next-prev-navigation">
-                    <!-- Radio -->
-                    <input type="radio" name="css-fadeshow" id="slide-1" />
-                    <input type="radio" name="css-fadeshow" id="slide-2" />
-                    <input type="radio" name="css-fadeshow" id="slide-3" />
+            <div class="slideshow-container">
 
-                    <!-- Slides -->
-                    <div class="fs-slides">
-                        <div class="fs-slide" style="background-image: url(images/1.jpg);"></div>
-                        <div class="fs-slide" style="background-image: url(images/2.jpg);"></div>
-                        <div class="fs-slide" style="background-image: url(images/3.jpg);"></div>
-                    </div>
-
-                    <!-- Quick Navigation -->
-                    <div class="fs-quick-nav">
-                        <label class="fs-quick-btn" for="slide-1"></label>
-                        <label class="fs-quick-btn" for="slide-2"></label>
-                        <label class="fs-quick-btn" for="slide-3"></label>
-                    </div>
-
-                    <!-- Prev Navigation -->
-                    <div class="fs-prev-nav">
-                        <label class="fs-prev-btn" for="slide-1"></label>
-                        <label class="fs-prev-btn" for="slide-2"></label>
-                        <label class="fs-prev-btn" for="slide-3"></label>
-                    </div>
-
-                    <!-- Next Navigation -->
-                    <div class="fs-next-nav">
-                        <label class="fs-next-btn" for="slide-1"></label>
-                        <label class="fs-next-btn" for="slide-2"></label>
-                        <label class="fs-next-btn" for="slide-3"></label>
-                    </div>
-
+                <div class="mySlides fade">
+                    <img src="images/1.jpg" style="width:100%">
+                    <div class="text">Caption Text</div>
                 </div>
 
+                <div class="mySlides fade">
+                    <img src="images/2.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/3.jpg" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
             </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
         </div>
 
-
-        </div>
     </section>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 5000); // Change image every 2 seconds
+        }
+    </script>
 
 </body>
