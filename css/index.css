@@ -184,6 +184,41 @@ ul,li{ padding:0;margin:0;list-style:none}
     text-align: center;
     font-weight: bold;
 }
+
+.conference-topic {
+    height:400px;
+}
+.conference-topic .content_title{
+    font-size: 24px;
+    color: #595757;
+    padding-top: 24px;
+    font-weight: bold;
+}
+
+.conference-topic .title-line
+{
+    margin-top: 10px;
+    border-top: 1px solid #6699CC;
+    width: 100px;
+}
+
+.place-hold-img-area {
+    padding: 0 0 0 0;
+}
+
+.place-hold-img {
+    boder: none;
+    width: 100%;
+    height: 100%;
+    visibility:hidden;
+    z-index: -9999;
+}
+
+.topic-img-area {
+    width: 50%;
+    margin: 0 auto;
+
+}
 @media (min-width: 992px) {
 
 }

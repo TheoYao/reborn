@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" type="text/css" href="./css/slideshow.css" />
     <link rel="stylesheet" type="text/css" href="./css/time_line.css" />
+    <link rel="stylesheet" href="css/kort.css">
+
+
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -343,5 +346,39 @@
             </div>
         </div>
     </section>
+
+    <section class="conference-topic">
+        <div class="container">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="col-md-12">
+                    <div class="content_title">
+                        会议主题
+                    </div>
+                    <div class="title-line"></div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8 thumb kort concave">
+                        <img class= "pad-img" src="images/cfr-topic/0.png">
+                        <img src="images/cfr-topic/1.jpg">
+                        <img src="images/cfr-topic/2.jpg">
+                        <img src="images/cfr-topic/3.jpg">
+                        <img src="images/cfr-topic/4.jpg">
+                        <img src="images/cfr-topic/5.jpg">
+                        <img src="images/cfr-topic/6.jpg">
+                        <img src="images/cfr-topic/7.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/kort.js"></script>
+    <script>
+        // FF OS X animates this at 3-4 FPS when there are box-shadows
+        // on the images, hence the hack... Ugh :/
+        if( navigator.userAgent.match( /firefox/gi ) ) {
+            [].slice.call( document.querySelectorAll( '.thumb img' ) ).forEach(function( el ) { el.style.boxShadow = 'none'; });
+        }
+    </script>
+
 
 </body>
