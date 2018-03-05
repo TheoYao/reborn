@@ -1,7 +1,15 @@
 .Timeline {
+    margin-top: 50px;
     display: flex;
     align-items: center;
     height: 300px;
+}
+.TimelineBg {
+    padding: 0 0 0 0;
+    height: 100%;
+    width: 100%;
+    background: url(../images/time-line-bg.png) no-repeat;
+    background-size: 100% 100%;
 }
 
 .event1,
