@@ -1,296 +1,51 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="pragma" content="no-cache">
-        <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
-        <meta http-equiv="expires" content="0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第十一届全国博士生学术会议</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>全国环境博士生学术会议</title>
-        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
 
-        <link href="./css/base.css" rel="stylesheet" type="text/css">
-        <link href="./css/slider.css" rel="stylesheet" type="text/css">
-        <link href='./css/Lato.css' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="css/info_card.css">
-
-        <script src="./js/jquery.js" type="text/javascript"></script>
-        <script src="./js/comm.js" type="text/javascript"></script>
-
-    </head>
-
-    <header class="header">
-        <section class="mainWrap">
-            <div class="topLine"></div>
-            <section class="topWrap">
-                <a class="logo" href="index.html" target="_blank"><img src="./images/logo.png"></a>
-                <section class="sign">
-                    <div class="ext">
-                        <a href="#">English</a>
-                    </div>
-                    <div class="sign-in">
-                        <a href="#">登录</a>
-                    </div>
-                    <div class="sign-sep">
-                        <p>|</p>
-                    </div>
-                    <div class="sign-up">
-                        <a href="#">注册</a>
-                    </div>
-                </section>
-            </section>
-            <section class="nav yahei clearfix">
-                <section class="menu" id="smenu"><a class="thuicon-menu menuicon"></a>导航</section>
-                <ul id="nav">
-                    <li><a href="#" target="_blank">首页</a></li>
-                    <li><a href="#">会议介绍<div class="triangle-down"></div></a>
-                        <ul>
-                            <li><a href="#">关于介绍</a></li>
-                            <li><a href="#">会议相关</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">会议安排<div class="triangle-down"></div></a>
-                        <ul>
-                            <li><a href="#">关于介绍</a></li>
-                            <li><a href="#">会议相关</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" target="_blank">参会注册</a></li>
-                    <li><a href="#">文件下载<div class="triangle-down"></div></a>
-                        <ul>
-                            <li><a href="#">关于介绍</a></li>
-                            <li><a href="#">会议相关</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" target="_blank">投稿要求</a></li>
-                    <li><a href="#" target="_blank">举办地点</a></li>
-                    <li><a href="#" target="_blank">联系我们</a></li>
-                </ul>
-            </section>
-        </section>
-    </header>
-
-    <section id="rt-showcase-surround">
-        <div id="rt-showcase" class="slider-container rt-overlay-dark">
-            <div class="rt-container slider-container">
-
-                    <div class="csslider1 autoplay">
-                        <input name="cs_anchor1" autocomplete="off" id="cs_slide1_0" type="radio" class="cs_anchor slide" >
-                        <input name="cs_anchor1" autocomplete="off" id="cs_slide1_1" type="radio" class="cs_anchor slide" >
-                        <input name="cs_anchor1" autocomplete="off" id="cs_slide1_2" type="radio" class="cs_anchor slide" >
-                        <input name="cs_anchor1" autocomplete="off" id="cs_play1" type="radio" class="cs_anchor" checked>
-                        <input name="cs_anchor1" autocomplete="off" id="cs_pause1" type="radio" class="cs_anchor" >
-                        <ul>
-                            <div style="width: 100%; visibility: hidden; font-size: 0px; line-height: 0;">
-                                <img src="images/1.jpg" style="width: 100%;">
-                            </div>
-                            <li class="num0 img">
-                                <img src="images/1.jpg" alt="Clouds" title="Clouds" />
-                            </li>
-                            <li class="num1 img">
-                                <img src="images/2.jpg" alt="Typewriter" title="Typewriter" />
-                            </li>
-                            <li class="num2 img">
-                                <img src="images/3.jpg" alt="Bicycle" title="Bicycle" />
-                            </li>
-
-                        </ul>
-                        <div class="cs_description">
-                            <label class="num0">
-                                <span class="cs_title"><span class="cs_wrapper">Clouds</span></span>
-
-                            </label>
-                            <label class="num1">
-                                <span class="cs_title"><span class="cs_wrapper">Typewriter</span></span>
-
-                            </label>
-                            <label class="num2">
-                                <span class="cs_title"><span class="cs_wrapper">Bicycle</span></span>
-
-                            </label>
-                        </div>
-
-                        <div class="cs_arrowprev">
-                            <label class="num0" for="cs_slide1_0"></label>
-                            <label class="num1" for="cs_slide1_1"></label>
-                            <label class="num2" for="cs_slide1_2"></label>
-                        </div>
-                        <div class="cs_arrownext">
-                            <label class="num0" for="cs_slide1_0"></label>
-                            <label class="num1" for="cs_slide1_1"></label>
-                            <label class="num2" for="cs_slide1_2"></label>
-                        </div>
-
-                        <div class="cs_bullets">
-                            <label class="num0" for="cs_slide1_0">
-                                <span class="cs_point"></span>
-                                <span class="cs_thumb"><img src="images/small/1.jpg" alt="Clouds" title="Clouds" /></span>
-                            </label>
-                            <label class="num1" for="cs_slide1_1">
-                                <span class="cs_point"></span>
-                                <span class="cs_thumb"><img src="images/small/2.jpg" alt="Typewriter" title="Typewriter" /></span>
-                            </label>
-                            <label class="num2" for="cs_slide1_2">
-                                <span class="cs_point"></span>
-                                <span class="cs_thumb"><img src="images/small/3.jpg" alt="Bicycle" title="Bicycle" /></span>
-                            </label>
-                        </div>
-
-                    </div>
-
-                <div class="clear"></div>
+</head>
+<body>
+<div class="loginBg">
+    <div class="resLogin">
+        <div class="loginLogo"><img src="./images/pure_logo.png" alt=""></div>
+        <div class="loginMeetingTitle">第十一届全国博士生学术会议</div>
+        <div class="loginContent">
+            <p class="loginContentTitle">
+                <a href="#register" class="titleBtn contentSignin" data-tab="0">注册</a>
+                <a href="#login" class="titleBtn doc-content-title-login active" data-tab="1">登录</a>
+            </p>
+            <div class="doc-content-res doc-content-res-info">
+				<span class="input input--juro">
+					<input class="input__field input__field--juro" type="text" id="input-1" />
+					<label class="input__label input__label--juro" for="input-1">
+						<span class="input__label-content input__label-content--juro">登录账号：</span>
+					</label>
+				</span>
+                <span class="input input--juro">
+					<input class="input__field input__field--juro" type="text" id="input-2" />
+					<label class="input__label input__label--juro" for="input-2">
+						<span class="input__label-content input__label-content--juro">登录密码：</span>
+					</label>
+				</span>
+                <p class="loginContentBtn doc-content-restext"><a href="javascript:void(0);">登录</a></p>
             </div>
         </div>
-    </section>
-
-    <section id="process">
-        <div class="processWrap"><img src="./images/tmp_process.png"></div>
-    </section>
-
-    <article class="operate">
-        <section class="mainWrap">
-            <div class="contentTitle">操作中心</div>
-            <div class="titleLine"></div>
-            <ul class="operateList">
-                <li class="operateItem">
-                    <img src="./images/user_center.png">
-                    <div class="operateItemText">用户中心</div>
-                </li>
-                <li class="operateItem">
-                    <img src="./images/abstract_submit.png">
-                    <div class="operateItemText">摘要提交</div>
-                </li>
-                <li class="operateItem">
-                    <img src="./images/fulltext_submit.png">
-                    <div class="operateItemText">全文提交</div>
-                </li>
-                <li class="operateItem">
-                    <img src="./images/board_sign.png">
-                    <div class="operateItemText">住宿登记</div>
-                </li>
-            </ul>
-        </section>
-    </article>
-
-
-    <article class="meetingTopic">
-        <section class="mainWrap">
-            <div class="contentTitle">会议主题</div>
-            <div class="titleLine"></div>
-
-        </section>
-        <ul class="meetingList">
-            <li class="meetingItem">
-                <img src="./images/meeting1.png">
-            </li>
-            <li class="meetingItem">
-                <img src="./images/meeting2.png">
-            </li>
-            <li class="meetingItem">
-                <img src="./images/meeting1.png">
-            </li>
-            <li class="meetingItem">
-                <img src="./images/meeting2.png">
-            </li>
-            <li class="meetingItem">
-                <img src="./images/meeting1.png">
-            </li>
-            <li class="meetingItem">
-                <img src="./images/meeting2.png">
-            </li>
-            <li class="meetingItem">
-                <img src="./images/meeting1.png">
-            </li>
-        </ul>
-    </article>
-
-    <article class="infoCenter">
-        <section class="mainWrap">
-            <div class="contentTitle">最新消息</div>
-            <div class="titleLine"></div>
-            <div class="container">
-                <!-- Team members structure start -->
-                <div class="team-members row">
-                    <!-- effect-4 html -->
-                    <div class="single-member effect-4">
-                        <div class="member-info">
-                            <h3>武大靖夺冠</h3>
-                        </div>
-                        <div class="member-image">
-                            <img src="images/info_mask.png" alt="Member">
-                        </div>
-                        <div class="more-info">
-                            <p>在昨晚的平昌冬奥会男子短道速滑500米决赛中，中国滑冰运动员武大靖夺金，并以39.584秒的成绩创造新的世界纪录。打败韩国运动员黄大宪，获得中国在2018年平昌冬奥会上的首枚金牌。</p>
-                        </div>
-                    </div>
-
-                    <div class="single-member effect-4">
-                        <div class="member-info">
-                            <h3>武大靖夺冠</h3>
-                        </div>
-                        <div class="member-image">
-                            <img src="images/info_mask.png" alt="Member">
-                        </div>
-                        <div class="more-info">
-                            <p>在昨晚的平昌冬奥会男子短道速滑500米决赛中，中国滑冰运动员武大靖夺金，并以39.584秒的成绩创造新的世界纪录。打败韩国运动员黄大宪，获得中国在2018年平昌冬奥会上的首枚金牌。</p>
-                        </div>
-                    </div>
-                    <div class="single-member effect-4">
-                        <div class="member-info">
-                            <h3>武大靖夺冠</h3>
-                        </div>
-                        <div class="member-image">
-                            <img src="images/info_mask.png" alt="Member">
-                        </div>
-                        <div class="more-info">
-                            <p>在昨晚的平昌冬奥会男子短道速滑500米决赛中，中国滑冰运动员武大靖夺金，并以39.584秒的成绩创造新的世界纪录。打败韩国运动员黄大宪，获得中国在2018年平昌冬奥会上的首枚金牌。</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </article>
-
-
-    <footer class="footer">
-        <section class="footWrap">
-            <section class="mainWrap">
-                <nav class="footerNav">
-                    <ul class="clearfix">
-                        <li class="li1">
-                            <h4><a href="#">主办单位</a></h4>
-                            <a href="http://www.tsinghua.edu.cn">清华大学</a>
-                            <a href="#">中国环境科学学会</a>
-                            <a href="#">区域环境质量协同创新中心</a>
-                            <a href="#">环境模拟与污染控制国家重点联合实验室</a>
-                        </li>
-                        <li>
-                            <h4><a href="#">协同单位/赞助单位</a></h4>
-                            <a href="#">西安建筑科学大学</a>
-                            <a href="#">Frontiers of Environmental Science & Engineering</a>
-                        </li>
-                        <li>
-                            <h4><a href="#">联系我们</a></h4>
-                            <a href="#">邮箱:ndac@tsinghua.edu.cn</a>
-                            <a href="#">电话:010-62781331</a>
-                            <a href="#">地址:清华大学环境学院全国博士生学术会议组委会(收)</a>
-                            <a href="#">邮编:100084</a>
-                        </li>
-                        <li class="li4">
-                            <div class="qrcode">
-                                <img src="./images/qrcode.png">
-                            </div>
-                        </li>
-                    </ul>
-
-
-                </nav>
-
-            </section>
-        </section>
+    </div>
+    <footer id="footer">
+        <div  class="login-footer">
+            <p>联系我们&nbsp;|&nbsp;邮箱：ndac@tsinghua.edu.cn &nbsp;&nbsp;电话：010-62781331 &nbsp;地址：清华大学环境学院&nbsp;&nbsp;邮编：100084 <br><span class="login-footer-min">Copyright © 2006-2011 Tsinghua Inc. All rights reserved. 清华大学环境学院 版权所有  京ICP 09100705号</span></p>
+        </div>
     </footer>
+</div>
+<div class="q-popup"></div>
 
-
+</body>
 </html>

@@ -1,5 +1,10 @@
+.info-center {
+    background: rgba(238, 240, 236, 1.0);
+}
+
 .info-item {
     position: relative;
+    padding-top: 20px;
 }
 
 .info-item .image {

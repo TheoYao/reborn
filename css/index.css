@@ -166,8 +166,14 @@ ul,li{ padding:0;margin:0;list-style:none}
 }
 
 .operate-pic {
+    cursor: pointer;
     padding: 20% 0 10% 0;
 }
+
+.operate-text{
+    cursor: pointer;
+}
+
 
 .title-line
 {
@@ -185,6 +191,8 @@ ul,li{ padding:0;margin:0;list-style:none}
 
 .conference-topic {
     height:400px;
+    background: rgba(238, 240, 236, 1.0);
+    /*background-size: auto 100%;*/
 }
 .content_title{
     font-size: 24px;
@@ -209,6 +217,35 @@ ul,li{ padding:0;margin:0;list-style:none}
 .topic-img-area {
     width: 50%;
     margin: 0 auto;
+}
+.footer {
+    background:#93a3b0;
+    padding-bottom: 80px;
+}
+.footer-main-area {
+    padding-top:50px;
+}
+
+.footer .footer-col-item {
+    padding: 0 0 0 0;
+}
+.footer .footer-col-name {
+    font-size: 1.6em;
+    color:#585858;
+    padding-bottom: 1rem;
+}
+.footer a {
+    font-size: 1.2rem;
+    /*color:#383838;*/
+    color: rgba(56,56,56,0.5);
+    text-decoration: none;
+    display: block;
+    white-space:nowrap;
+    padding-bottom: 0.5rem;
+}
+
+.footer .qrcode img{
+    width:100%;
 }
 
 

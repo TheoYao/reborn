@@ -1,0 +1,107 @@
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
+    font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+.doc-content-res {
+    font-size: 1.2rem;
+}
+.loginBg {
+    position: relative;
+    width: 100%;
+    height: 900px;
+    background: url("../images/login_bg.png") no-repeat center center;
+    background-size: cover;
+
+}
+
+
+.resLogin {
+    margin: 0 auto;
+    width: 410px;
+    height: auto;
+    padding-top: 100px;
+}
+
+.loginLogo {
+    width: 240px;
+    height: 171px;
+    margin: auto;
+}
+
+.loginLogo img{
+    height:100%;
+    width: auto;
+}
+
+.loginMeetingTitle {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+}
+
+.loginContent {
+
+}
+.loginContentTitle {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+.loginContentTitle .titleBtn{
+    display: inline-block;
+    margin: 0 5px;
+    padding: 3px 0;
+    cursor: pointer;
+    color: #666;
+}
+
+.loginContentTitle .active{
+    color: #009900;
+    font-weight: 600;
+    border-bottom: 2px solid #009900;
+}
+
+.loginContentRes {
+    margin-top: 20px;
+}
+.loginContentRes p {
+    height: 38px;
+}
+
+.loginContentBtn {
+    margin: 20px auto;
+    width: 120px;
+    background: #7ABC06;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.loginContentBtn a{
+    color: #ffffff;
+}
+
+#footer{
+    /*margin: 150px;*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.login-footer {
+    width: 1000px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+.login-footer p {
+    font-size: 14px;
+    line-height: 26px;
+}
+.login-footer .login-footer-min {
+    font-size: 12px;
+}
