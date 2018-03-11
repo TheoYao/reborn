@@ -63,15 +63,15 @@
             <div class="col-md-3 user-nav-area">
                 <div class="article-related">
                     <div class="nav-left-orange">
-                        <div class="user-nav-item active" id="user-nav-item-1">摘要投稿</div>
-                        <div class="user-nav-item" id="user-nav-item-2">全文投稿</div>
-                        <div class="user-nav-item" id="user-nav-item-3">参会信息登记</div>
-                        <div class="user-nav-item no-bottom-border" id="user-nav-item-4">报销信息登记</div>
+                        <div class="user-nav-item" id="user-nav-item-1">摘要投稿</div>
+                        <div class="user-nav-item forbid" id="user-nav-item-2">全文投稿</div>
+                        <div class="user-nav-item forbid" id="user-nav-item-3">参会信息登记</div>
+                        <div class="user-nav-item no-bottom-border forbid" id="user-nav-item-4">报销信息登记</div>
                     </div>
                 </div>
                 <div class="user-nav-bottom">
-                    <div class="user-nav-bottom-item ">个人信息</div>
-                    <div class="user-nav-bottom-item del-bottom-border">修改密码</div>
+                    <div class="user-nav-bottom-item" id="user-nav-bottom-item-5">个人信息</div>
+                    <div class="user-nav-bottom-item del-bottom-border" id="user-nav-bottom-item-6">修改密码</div>
                 </div>
             </div>
 
@@ -83,7 +83,7 @@
             </div>
 
 
-            <div id="user_center_index" class="col-md-9 no-padding" style="display: none">
+            <div id="user-center-show-body-0" class="col-md-9 no-padding user_center_index" style="display: block;">
                 <div class="col-md-12 welcome-tips-area">
                     <span class="label label-info welcome-tips-item">欢迎，来自<span id="school_name">清华大学</span>的<span id="person_name">xuebin</span>。</span>
                 </div>
@@ -119,10 +119,6 @@
                             <div class="col-md-10 manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
                             <div class="col-md-2 manu-item-date">2018-03-02</div>
                         </a>
-                        <a class="col-md-12 manu-item manu-item-even">
-                            <div class="col-md-10 manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
-                            <div class="col-md-2 manu-item-date">2018-03-02</div>
-                        </a>
                         <a class="col-md-12 manu-item manu-item-odd">
                             <div class="col-md-10 manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
                             <div class="col-md-2 manu-item-date">2018-03-02</div>
@@ -135,8 +131,7 @@
                 </div>
             </div>
 
-
-            <div id="summary_submit" class="col-md-9 no-padding" style="display: block">
+            <div id="user-center-show-body-1" class="col-md-9 no-padding summary_submit"  style="display: none;">
                 <div class="input-group input-group-self">
                     <span class="input-group-addon summary_submit_field" id="summary_submit_input0">&nbsp;&nbsp;&nbsp;摘要上传：</span>
                     <input type="file" class="form-control" placeholder="请选择文件">
@@ -165,9 +160,13 @@
                 <div class="input-group input-group-self">
                     <span class="input-group-addon summary_submit_field" id="summary_submit_input5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题：</span>
                     <select class="selectpicker form-control" data-live-search="true"  title="请选择主题">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Relish</option>
+                        <option>水污染控制与资源化</option>
+                        <option>大气污染与控制</option>
+                        <option>固体废物污染控制与资源化</option>
+                        <option>环境化学</option>
+                        <option>环境经济、管理与政策</option>
+                        <option>环境生态健康</option>
+                        <option>能源与气候变化</option>
                     </select>
                 </div>
                 <div class="input-group input-group-self">
@@ -238,6 +237,86 @@
                 </div>
 
             </div>
+
+            <div id="user-center-show-body-2" class="col-md-9 no-padding summary_fulltext" style="display: none;"></div>
+            <div id="user-center-show-body-3" class="col-md-9 no-padding sign_cfr" style="display: none;"></div>
+            <div id="user-center-show-body-4" class="col-md-9 no-padding sign_board" style="display: none;"></div>
+
+            <div id="user-center-show-body-5" class="col-md-9 no-padding personal_info" style="display: none;">
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名：</span>
+                    <input type="text" class="form-control" value="xuebin" aria-describedby="personal_info_input1">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input2">&nbsp;账号(邮箱)：</span>
+                    <input type="text" class="form-control" value="364455209@qq.com" aria-describedby="basic-personal_info_input2" disabled="disabled">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：</span>
+                    <input type="text" class="form-control" value="sunxuebin" aria-describedby="personal_info_input3">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：</span>
+                    <select class="selectpicker form-control" title="请选择主题">
+                        <option selected="selected">男</option>
+                        <option>女</option>
+                    </select>
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input5">&nbsp;&nbsp;&nbsp;出生年月：</span>
+                    <input type="text" class="form-control" value="2017-06-14" aria-describedby="personal_info_input5">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input6">&nbsp;&nbsp;&nbsp;所在院校：</span>
+                    <input type="text" class="form-control" value="清华大学" aria-describedby="personal_info_input6">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学号：</span>
+                    <input type="text" class="form-control" value="学号" aria-describedby="personal_info_input7">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input8">&nbsp;&nbsp;&nbsp;导师姓名：</span>
+                    <input type="text" class="form-control" value="sunxuebin" aria-describedby="personal_info_input8">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input9">&nbsp;&nbsp;&nbsp;手机号码：</span>
+                    <input type="text" class="form-control" value="19098789876" aria-describedby="personal_info_input9">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="personal_info_input10">&nbsp;&nbsp;&nbsp;详细地址：</span>
+                    <input type="text" class="form-control" value="山东省泰安市泰山区test" aria-describedby="personal_info_input10">
+                </div>
+                <div class="summary_submit_button_area">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2">
+                        <button class="btn btn-info btn-summary" id="btn-submit-personal-info">保存</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+
+            <div id="user-center-show-body-6" class="col-md-9 no-padding modify_password" style="display: none;">
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="pmodify_password_input1">&nbsp;&nbsp;&nbsp;原密码：</span>
+                    <input type="text" class="form-control" aria-describedby="personal_info_input1">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="modify_password_input2">&nbsp;&nbsp;&nbsp;新密码：</span>
+                    <input type="text" class="form-control" aria-describedby="basic-personal_info_input2">
+                </div>
+                <div class="input-group input-group-self">
+                    <span class="input-group-addon summary_submit_field" id="modify_password_input3">确认密码：</span>
+                    <input type="text" class="form-control" aria-describedby="personal_info_input3">
+                </div>
+                <div class="summary_submit_button_area">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2">
+                        <button class="btn btn-info btn-summary" id="btn-submit-modify-pwd">保存</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -296,5 +375,38 @@
         </div>
     </div>
 </section>
+
+<script>
+    $('.user-nav-bottom-item,.user-nav-item')
+        .click(
+            function(){
+                var id_array = ($(this).attr("id")).split("-");
+                var index = parseInt(id_array[id_array.length - 1]);
+                if (index > 1 && index < 5) {
+                    return
+                }
+
+                for (i = 0; i < 7; i++) {
+                    var x = $("#user-center-show-body-"+i);
+                    if (i == index) {
+                        x.show()
+                    }
+                    else {
+                       x.hide()
+                    }
+                    if (i >= 1 && i <= 4) {
+                        var y = $("#user-nav-item-"+i);
+                        if (i==index) {
+                            y.addClass("active")
+                        }
+                        else {
+                            y.removeClass("active")
+                        }
+                    }
+                }
+
+            }
+        )
+</script>
 
 </body>
