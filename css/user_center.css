@@ -107,6 +107,7 @@ ul,li{ padding:0;margin:0;list-style:none}
     background-color: rgba(230, 230, 230, 1.0);
     border-bottom: 1px solid rgba(50, 50, 50, 0.8);
     border-right: 1px solid rgba(239, 239, 239, 0.5);
+    cursor: pointer;
 }
 
 .user-main-area .no-bottom-border {
@@ -137,6 +138,11 @@ ul,li{ padding:0;margin:0;list-style:none}
     padding: 0 0 0 0;
 }
 
+.user-main-area .user-wrap-tab a{
+    text-decoration: none;
+    color: #000000;
+}
+
 .user-main-area .user-wrap-area .user-wrap-tab {
     padding:0.5rem 0 0.5rem 0;
     font-size: 1.8rem;
@@ -147,6 +153,10 @@ ul,li{ padding:0;margin:0;list-style:none}
     background: #7ABC06;
     color: #FFFFFF;
     cursor: pointer;
+}
+
+.user-main-area .user-wrap-area .user-wrap-tab:hover a{
+    color: #FFFFFF;
 }
 
 .user-main-area .user-wrap-area .tab-active {
@@ -275,3 +285,15 @@ ul,li{ padding:0;margin:0;list-style:none}
     width:100%;
 }
 
+
+
+/******* audit.html******/
+
+.user-main-area .table th, .user-main-area .table td {
+    text-align: center;
+    vertical-align: middle!important;
+}
+
+.user-main-area .table-area {
+    margin-top: 50px;
+}

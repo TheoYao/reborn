@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!- scale control -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <link rel="icon" href="/favicon.png">
+    <title>十一届全国博士生学术会议</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-table.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/user_center.css" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+
+
+
+</head>
+
+<body>
+<div class="navbar">
+    <div class="container">
+        <div class="col-md-1 col-sm-1"></div>
+        <div class="col-md-10 col-sm-10">
+            <span class="col-md-12 navbar-bg">
+                <div class="top-line"></div>
+                <div class="logo-area col-md-8 col-sm-12>">
+                    <a href="index.html" target="_blank">
+                        <div class="logo-icon col-md-3 col-sm-3">
+                            <img src="./images/pure_logo.png">
+                        </div>
+                        <div class="log-text col-md-9 col-sm-9">
+                            <div class="chinese-title">全国环境博士生学术会议</div>
+                            <div class="english-title">Nation Ph.d Candidates Academic Conference</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="top-func-area col-md-4 col-sm-12">
+                    <div class="version-control col-md-12">
+                        <a class="english-version" href="#">English Version</a>
+                    </div>
+                    <div class="sign-area col-md-12">
+                        <a class="sign-in" href="#">登录</a>
+                        <a class="sign-up" href="#">注册</a>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="user-main-area">
+    <div class="container">
+        <div class="col-md-1 col-sm-1"></div>
+        <div class="col-md-10 col-sm-10">
+            <div class="top-line"></div>
+            <div class="col-md-3 user-nav-area">
+                <div class="article-related">
+                    <div class="nav-left-orange">
+                        <div class="user-nav-item active" id="user-nav-item-0">未审稿件</div>
+                        <div class="user-nav-item" id="user-nav-item-1">已审投稿</div>
+                    </div>
+                </div>
+                <!--
+                <div class="user-nav-bottom">
+                    <div class="user-nav-bottom-item ">个人信息</div>
+                    <div class="user-nav-bottom-item del-bottom-border">修改密码</div>
+                </div>
+                -->
+            </div>
+
+            <div class="col-md-9 user-wrap-area">
+                <div class="col-md-6"></div>
+                <div class="col-md-2 user-wrap-tab"><a href="user_center.html">作者中心</a></div>
+                <div class="col-md-2 user-wrap-tab tab-active">审稿中心</div>
+                <div class="col-md-2 user-wrap-tab">编辑中心</div>
+
+                <div class="table-area">
+                    <div class="audit-table" id="audit-table-0"  style="display: block;">
+                        <table id="to-audit-table" ></table>
+                    </div>
+                    <div class="audit-table" id="audit-table-1" style="display: none;">
+                        <table id="audited-table" ></table>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <script>
+                $('#to-audit-table').bootstrapTable({
+                    url: 'json/to_audit.json',
+                    cache: false,
+                    pagination: true,
+                    sidePagination: "client",
+                    pageNumber:1,
+                    pageSize: 10,
+                    columns: [{
+                        field: 'id',
+                        title: '稿件编号'
+                    }, {
+                        field: 'title',
+                        title: '标题'
+                    }, {
+                        field: 'status',
+                        title: '状态'
+                    }, {
+                        field: 'send_time',
+                        title: '送审时间'
+                    }, {
+                        field: 'operate',
+                        title: '操作'
+                    }],
+                });
+                $('#audited-table').bootstrapTable({
+                    url: 'json/audited.json',
+                    cache: false,
+                    pagination: true,
+                    sidePagination: "client",
+                    pageNumber:1,
+                    pageSize: 10,
+                    columns: [{
+                        field: 'id',
+                        title: '稿件编号'
+                    }, {
+                        field: 'title',
+                        title: '标题'
+                    }, {
+                        field: 'status',
+                        title: '状态'
+                    }, {
+                        field: 'resp_time',
+                        title: '审回时间'
+                    }, {
+                        field: 'opinion',
+                        title: '意见'
+                    }],
+                })
+
+            </script>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<section class="footer">
+    <div class="container">
+        <div class="col-md-12 footer-main-area">
+            <div class="col-md-3 footer-col-item">
+                <h4 class="footer-col-name">主办单位</h4>
+                <div>
+                    <a href="http://www.tsinghua.edu.cn">清华大学</a>
+                </div>
+                <div>
+                    <a href="#">中国环境科学学会</a>
+                </div>
+                <div>
+                    <a href="#">区域环境质量协同创新中心</a>
+                </div>
+                <div>
+                    <a href="#">环境模拟与污染控制国家重点联合实验室</a>
+                </div>
+            </div>
+            <div class="col-md-3 footer-col-item">
+                <h4 class="footer-col-name">协同单位/赞助单位</h4>
+                <div>
+                    <a href="#">西安建筑科学大学</a>
+                </div>
+                <div>
+                    <a href="#">Frontiers of Environmental Science & Engineering</a>
+                </div>
+            </div>
+            <div class="col-md-3 footer-col-item">
+                <h4 class="footer-col-name">联系我们</h4>
+                <div>
+                    <a href="#">邮箱:ndac@tsinghua.edu.cn</a>
+                </div>
+                <div>
+                    <a href="#">电话:010-62781331</a>
+                </div>
+                <div>
+                    <a href="#">地址:清华大学环境学院全国博士生学术会议组委会(收)</a>
+                </div>
+                <div>
+                    <a href="#">邮编:100084</a>
+                </div>
+            </div>
+
+            <div class="col-md-3 footer-col-item">
+                <div class="col-md-6 col-md-offset-3 qrcode">
+                    <img src="./images/qrcode.png">
+                </div>
+                </li>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $('.user-nav-item')
+        .click(
+            function(){
+                var id_array = ($(this).attr("id")).split("-")
+                var index = id_array[id_array.length - 1]
+                var i
+                var x = document.getElementsByClassName("audit-table");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+
+                x[index].style.display = "block";
+
+                var y = document.getElementsByClassName("user-nav-item");
+                for (i = 0; i < y.length; i++) {
+                    ($(y[i])).removeClass("active")
+                }
+
+                ($(y[index])).addClass("active")
+
+            }
+        )
+</script>
+</body>
