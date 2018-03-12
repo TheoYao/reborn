@@ -11,6 +11,19 @@
     <link rel="stylesheet" type="text/css" href="css/component.css" />
 
     <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css" />
+    <link rel="stylesheet" type="text/css" href="css/datetimepicker.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/user_center.css" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/i18n/defaults-zh_CN.js"></script>
+    <script src="js/datetimepicker.min.js"></script>
+    <script src="js/area.js"></script>
+    <script src="js/login.js"></script>
 
 </head>
 <body>
@@ -26,78 +39,66 @@
             <div class="doc-content-res">
 
                 <div id="sign-in-tab" class="option-tab" style="display:none">
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="text" id="input-2-1" />
-                        <label class="input__label input__label--juro" for="input-2-1">
-                            <span class="input__label-content input__label-content--juro">*用户名：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="text" id="input-2-2" />
-                        <label class="input__label input__label--juro" for="input-2-2">
-                            <span class="input__label-content input__label-content--juro">*邮箱地址：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-3"/>
-                        <label class="input__label input__label--juro" for="input-2-3">
-                            <span class="input__label-content input__label-content--juro">*密码：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-4"/>
-                        <label class="input__label input__label--juro" for="input-2-4">
-                            <span class="input__label-content input__label-content--juro">*确认密码：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-5"/>
-                        <label class="input__label input__label--juro" for="input-2-5">
-                            <span class="input__label-content input__label-content--juro">*姓名：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-6"/>
-                        <label class="input__label input__label--juro" for="input-2-6">
-                            <span class="input__label-content input__label-content--juro">*性别：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-7"/>
-                        <label class="input__label input__label--juro" for="input-2-7">
-                            <span class="input__label-content input__label-content--juro">*出生年月：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-8"/>
-                        <label class="input__label input__label--juro" for="input-2-8">
-                            <span class="input__label-content input__label-content--juro">*院校：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-9"/>
-                        <label class="input__label input__label--juro" for="input-2-9">
-                            <span class="input__label-content input__label-content--juro">学号：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-10"/>
-                        <label class="input__label input__label--juro" for="input-2-10">
-                            <span class="input__label-content input__label-content--juro">*导师姓名：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-11"/>
-                        <label class="input__label input__label--juro" for="input-2-11">
-                            <span class="input__label-content input__label-content--juro">*手机号：</span>
-                        </label>
-                    </span>
-                    <span class="input input--juro">
-                        <input class="input__field input__field--juro" type="password" id="input-2-12"/>
-                        <label class="input__label input__label--juro" for="input-2-12">
-                            <span class="input__label-content input__label-content--juro">*地址：</span>
-                        </label>
-                    </span>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input1">&nbsp;&nbsp;&nbsp;*用户名：</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input2">*邮箱地址：</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*密码：</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input4">*确认密码：</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*姓名：</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*性别：</span>
+                        <select class="selectpicker form-control" title="性别">
+                            <option>男</option>
+                            <option>女</option>
+                        </select>
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input7">*出生年月：</span>
+                        <input type="text" class="form_datetime form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*院校：</span>
+                        <select class="selectpicker form-control input-res-school" data-live-search="true"  title="请选择院校"></select>
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学号：</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input10">*导师姓名：</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input11">&nbsp;&nbsp;&nbsp;*手机号：</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*地址：</span>
+                        <div class="addr-res-link">
+                            <div>
+                                <select id="s_province" class="res-province" name="s_province"></select>
+                                <select id="s_city" class="res-city" name="s_city" ></select>
+                                <select id="s_county" class="res-county" name="s_county"></select>
+                            </div>
+                            <div id="show"></div>
+                            <input type="text" class="form-control" aria-describedby="basic-addon1">
+                        </div>
+
+                    </div>
 
 
                     <p class="loginContentBtn"><a href="javascript:void(0);">注册</a></p>
@@ -195,5 +196,6 @@
     })
 
 </script>
+
 </body>
 </html>

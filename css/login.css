@@ -87,6 +87,10 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
     color: #ffffff;
 }
 
+.addr-res-link {
+    font-size: 0.8rem;
+}
+
 #footer{
     /*margin: 150px;*/
     /*position: absolute;*/
