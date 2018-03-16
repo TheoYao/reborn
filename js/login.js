@@ -291,10 +291,10 @@ $(function() {
 
 
         //登录
-        $('.doc-content-logintext').on('click',function () {
+        $('#sign-in-btn').on('click',function () {
             //登录
-            var uname = $.trim($('.doc-content-login-username').val());
-            var upwd =$.trim($('.doc-content-login-pwd').val());
+            var uname = $.trim($('#sign-in-username').val());
+            var upwd =$.trim($('#sign-in-pwd').val());
             if(uname && upwd){
                 $.ajax({
                     type: "POST",
@@ -304,8 +304,8 @@ $(function() {
                         password: upwd,
                     },
                     beforeSend: function () {
-                        $('.doc-content-logintext a').attr('disabled', 'disabled');
-                        $('.doc-content-logintext').css({"background": "#ccc"});
+                        $('#sign-in-username a').attr('disabled', 'disabled');
+                        $('#sign-in-pwd').css({"background": "#ccc"});
                     },
                     dataType: 'json',
                     success: function (data) {
@@ -324,8 +324,8 @@ $(function() {
                         }
                     },
                     complete: function () {
-                        $('.doc-content-logintext a').removeAttr('disabled');
-                        $('.doc-content-logintext').css({"background": "#388e3c"});
+                        $('#sign-in-username a').removeAttr('disabled');
+                        $('#sign-in-pwd').css({"background": "#7ABC06"});
                     },
 
                 })
