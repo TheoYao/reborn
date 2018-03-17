@@ -3,47 +3,7 @@ $(function() {
     //tab切换
     // var url = "http://yf-rdqa-dev064-sunxuebin.epc.baidu.com:8099/app/index.php/";
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
-    function loginTab() {
-        var hash;
-        //没有锚点默认为-->登录项
-        hash=(!window.location.hash) ? "#login" : window.location.hash;
-        // window.location.hash=hash;
-        var loginTitle =  $('.doc-content-title-login');
-        var resTitle =   $('.doc-content-title-res');
-        var loginInfo =   $('.doc-content-login-info');
-        var resInfo =   $('.doc-content-res-info');
-        switch(hash){
-            case "#login":
-                loginTitle.addClass('active');
-                resTitle.removeClass('active');
-                resInfo.addClass('hide');
-                loginInfo.removeClass('hide');
-                break;
-            case "#register":
-                resTitle.addClass('active');
-                loginTitle.removeClass('active');
-                resInfo.removeClass('hide');
-                loginInfo.addClass('hide');
-                break;
-            default:
-                loginTitle.addClass('active');
-                resTitle.removeClass('active');
-                resInfo.removeClass('hide');
-                loginInfo.addClass('hide');
-        }
-        var oBtns = $('.title-btn');
-        oBtns.on('click', function () {
-            var tabNum =$(this).attr('data-tab');
-            $(this).addClass('active').siblings().removeClass('active');
-            if(tabNum==1){
-                $('.doc-content-res-info').addClass('hide');
-                $('.doc-content-login-info').removeClass('hide');
-            }else {
-                $('.doc-content-res-info').removeClass('hide');
-                $('.doc-content-login-info').addClass('hide');
-            }
-        })
-    }
+
     var ok1=false;
     var ok2=false;
     var ok3=false;

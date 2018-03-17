@@ -17,9 +17,12 @@
     <link rel="stylesheet" type="text/css" href="css/user_center.css" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
     <script src="js/i18n/defaults-zh_CN.js"></script>
+    <script src="js/datetimepicker.min.js"></script>
+    <script src="js/user_center.js"></script>
 
 </head>
 
@@ -132,106 +135,109 @@
             </div>
 
             <div id="user-center-show-body-1" class="col-md-9 no-padding summary_submit"  style="display: none;">
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input0">&nbsp;&nbsp;&nbsp;摘要上传：</span>
-                    <input type="file" class="form-control" placeholder="请选择文件">
-                    <!--
-                    <span class="input-group-btn">
-                        <button class="btn btn-default btn-select-file" type="button">点击进行选择</button>
-                    </span>
-                    -->
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input1">&nbsp;&nbsp;&nbsp;中文标题：</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input2">&nbsp;&nbsp;&nbsp;英文标题：</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input3">中文关键字：</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input4">英文关键字：</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题：</span>
-                    <select class="selectpicker form-control" data-live-search="true"  title="请选择主题">
-                        <option>水污染控制与资源化</option>
-                        <option>大气污染与控制</option>
-                        <option>固体废物污染控制与资源化</option>
-                        <option>环境化学</option>
-                        <option>环境经济、管理与政策</option>
-                        <option>环境生态健康</option>
-                        <option>能源与气候变化</option>
-                    </select>
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input6">&nbsp;&nbsp;&nbsp;作者姓名：</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input7">&nbsp;&nbsp;&nbsp;作者拼音：</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input8">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input9">&nbsp;&nbsp;&nbsp;作者单位：</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input10">&nbsp;&nbsp;&nbsp;更多作者：</span>
-                    <input type="text" class="form-control" placeholder="添加作者">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default btn-select-file" type="button" data-toggle="modal" data-target="#myModal">点击进行添加</button>
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">添加作者</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="input-group input-group-self">
-                                            <span class="input-group-addon summary_submit_field" id="summary_submit_input_more6">&nbsp;&nbsp;&nbsp;作者姓名：</span>
-                                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                <form class="user-contribute-deliver" enctype="multipart/form-data">
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field" id="summary_submit_input0">&nbsp;&nbsp;&nbsp;摘要上传：</span>
+                        <input type="file" id="summary-file-input" name="fileString" class="form-control" placeholder="请选择文件" accept=".doc, .doc">
+                        <!--
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-select-file" type="button">点击进行选择</button>
+                        </span>
+                        -->
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;中文标题：</span>
+                        <input type="text" class="form-control" placeholder="Username" id="summary_input_cn_title">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;英文标题：</span>
+                        <input type="text" class="form-control" placeholder="Username" id="summary_input_egls_title">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">中文关键字：</span>
+                        <input type="text" class="form-control" placeholder="Username" id="summary_input_cn_kwd">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">英文关键字：</span>
+                        <input type="text" class="form-control" placeholder="Username" id="summary_input_egls_kwd">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题：</span>
+                        <select class="selectpicker form-control" data-live-search="true"  title="请选择主题" id="summary_input_topic">
+                            <option>水污染控制与资源化</option>
+                            <option>大气污染与控制</option>
+                            <option>固体废物污染控制与资源化</option>
+                            <option>环境化学</option>
+                            <option>环境经济、管理与政策</option>
+                            <option>环境生态健康</option>
+                            <option>能源与气候变化</option>
+                        </select>
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者姓名：</span>
+                        <input type="text" class="form-control" placeholder="Username" id="summary_input_author_name">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者拼音：</span>
+                        <input type="text" class="form-control" placeholder="Username" id="summary_input_author_spell">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
+                        <input type="text" class="form-control" placeholder="Username" id="summary_input_email">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者单位：</span>
+                        <input type="text" class="form-control" placeholder="Username" id="summary_input_unit">
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;更多作者：</span>
+                        <input type="text" id="more-author-show" class="form-control" placeholder="添加作者" disabled="disabled">
+                        <p class="more-author-list" style="display: none;"></p>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-select-file" type="button" data-toggle="modal" data-target="#myModal">点击进行添加</button>
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">添加作者</h4>
                                         </div>
-                                        <div class="input-group input-group-self">
-                                            <span class="input-group-addon summary_submit_field" id="summary_submit_input_more7">&nbsp;&nbsp;&nbsp;作者拼音：</span>
-                                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                        <div class="modal-body">
+                                            <div class="input-group input-group-self">
+                                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者姓名：</span>
+                                                <input type="text" class="form-control" placeholder="Username" id="summary_input_more_author_name">
+                                            </div>
+                                            <div class="input-group input-group-self">
+                                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者拼音：</span>
+                                                <input type="text" class="form-control" placeholder="Username" id="summary_input_more_spell">
+                                            </div>
+                                            <div class="input-group input-group-self">
+                                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
+                                                <input type="text" class="form-control" placeholder="Username" id="summary_input_more_email">
+                                            </div>
+                                            <div class="input-group input-group-self">
+                                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者单位：</span>
+                                                <input type="text" class="form-control" placeholder="Username" id="summary_input_more_unit">
+                                            </div>
                                         </div>
-                                        <div class="input-group input-group-self">
-                                            <span class="input-group-addon summary_submit_field" id="summary_submit_input_more8">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
-                                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                            <button type="button" id="modal-add-author" class="btn btn-primary">添加</button>
                                         </div>
-                                        <div class="input-group input-group-self">
-                                            <span class="input-group-addon summary_submit_field" id="summary_submit_input_more9">&nbsp;&nbsp;&nbsp;作者单位：</span>
-                                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                        <button type="button" class="btn btn-primary">添加</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </span>
-                </div>
-                <div class="input-group input-group-self">
-                    <span class="input-group-addon summary_submit_field" id="summary_submit_input11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
+                        </span>
+                    </div>
+                    <div class="input-group input-group-self">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>
+                        <input type="text" class="form-control" placeholder="Username"  id="summary_submit_remark">
+                    </div>
+                </form>
                 <div class="summary_submit_button_area">
                     <div class="col-md-6"></div>
                     <div class="col-md-3 submit-button-area-here">
-                        <button class="btn btn-info btn-summary" id="btn-submit-summary">提&nbsp;&nbsp;交</button>
+                        <button class="btn btn-success btn-summary" id="btn-submit-summary">提&nbsp;&nbsp;交</button>
                     </div>
                     <div class="col-md-3"></div>
                 </div>
@@ -264,7 +270,7 @@
                 </div>
                 <div class="input-group input-group-self">
                     <span class="input-group-addon summary_submit_field" id="personal_info_input5">&nbsp;&nbsp;&nbsp;出生年月：</span>
-                    <input type="text" class="form-control" value="2017-06-14" aria-describedby="personal_info_input5">
+                    <input type="text" class="form_datetime form-control" value="2017-06-14" aria-describedby="personal_info_input5">
                 </div>
                 <div class="input-group input-group-self">
                     <span class="input-group-addon summary_submit_field" id="personal_info_input6">&nbsp;&nbsp;&nbsp;所在院校：</span>
@@ -289,7 +295,7 @@
                 <div class="summary_submit_button_area">
                     <div class="col-md-6"></div>
                     <div class="col-md-2">
-                        <button class="btn btn-info btn-summary" id="btn-submit-personal-info">保存</button>
+                        <button class="btn btn-success btn-summary" id="btn-submit-personal-info">保存</button>
                     </div>
                     <div class="col-md-4"></div>
                 </div>

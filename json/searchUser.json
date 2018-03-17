@@ -1,0 +1,30 @@
+{
+  "data": [{
+    "id": "321",
+    "username": "xuebin",
+    "password": "73b9758597cf2a1cc3995119aab0286a",
+    "email": "364455209@qq.com",
+    "identity": "contribute,audit",
+    "sex": "0",
+    "birthDate": "2017-06-14",
+    "school": "清华大学",
+    "userID": "",
+    "stuName": "sunxuebin",
+    "docName": "sunxuebin",
+    "address": "山东省泰安市泰山区test",
+    "status": "1",
+    "phone": "19098789876",
+    "info": null,
+    "major": null,
+    "education": null,
+    "positio": null,
+    "field": null,
+    "gain": null,
+    "direction": null,
+    "name": null,
+    "bank": null,
+    "account": null
+  }],
+  "info": "查询成功",
+  "status": 1
+}
