@@ -11,21 +11,23 @@
     <title>十一届全国博士生学术会议</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/flipclock.css">
+
 
     <link rel="stylesheet" type="text/css" href="./css/slideshow.css" />
     <link rel="stylesheet" type="text/css" href="./css/time_line.css" />
-    <link rel="stylesheet" type="text/css" href="css/kort.css">
 
     <link rel="stylesheet" type="text/css" href="css/info_card.css">
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/flipclock.min.js"></script>
 
 </head>
 
 <body>
-    <div class="navbar">
+    <div class="navbar navbar-bg">
         <div class="main-wrap">
             <span class="navbar-bg">
                 <div class="top-line"></div>
@@ -116,15 +118,15 @@
         <div class="slider-wrap">
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <img src="images/1.jpg">
+                    <img src="images/slider-1.jpg">
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="images/2.jpg">
+                    <img src="images/slider-2.jpg">
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="images/3.jpg">
+                    <img src="images/slider-3.jpg">
                 </div>
 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -180,6 +182,11 @@
 
     <section class="time-line TimelineBg">
         <div class="main-wrap">
+            <div class="top-line"></div>
+            <div class="content_title">
+                时间安排
+            </div>
+            <div class="title-line"></div>
             <div>
                 <object data="images/timeline-0402.svg" type="image/svg+xml"></object>
             </div>
@@ -187,146 +194,73 @@
     </section>
 
     <section class="operate-center operate-bg">
-        <div class="container">
-            <div class="col-md-1"></div>
-            <div class="col-md-10 ">
-                <div class="col-md-12">
-                    <div class="content_title">
-                        操作中心
-                    </div>
-                    <div class="title-line"></div>
-                    <div class="col-md-3">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6 operate-pic">
-                            <img src="./images/user_center.png">
-                        </div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-12 operate-text">用户中心</div></div>
-                    <div class="col-md-3">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6 operate-pic">
-                            <img src="./images/abstract_submit.png">
-                        </div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-12 operate-text">摘要提交</div></div>
-                    <div class="col-md-3">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6 operate-pic">
-                            <img src="./images/fulltext_submit.png">
-                        </div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-12 operate-text">全文提交</div></div>
-                    <div class="col-md-3">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6 operate-pic">
-                            <img src="./images/board_sign.png">
-                        </div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-12 operate-text">住宿登记</div></div>
+        <div class="main-wrap">
+            <div>
+                <div class="content_title">操作中心</div>
+                <div class="title-line"></div>
+                <div class="operate-item">
+                    <img src="images/user_center.png">
+                    <div class="operate-text">用户中心</div>
                 </div>
+                <div class="operate-item">
+                    <img src="images/abstract_submit.png">
+                    <div class="operate-text">摘要提交</div>
+                </div>
+                <div class="operate-item">
+                    <img src="images/fulltext_submit.png">
+                    <div class="operate-text">全文提交</div>
+                </div>
+                <div class="operate-item">
+                    <img src="images/board_sign.png">
+                    <div class="operate-text">住宿登记</div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <section class="conference-topic">
-        <div class="container">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="col-md-12">
-                    <div class="content_title">
-                        会议主题
-                    </div>
-                    <div class="title-line"></div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-8 thumb kort concave">
-                        <img class= "pad-img" src="images/cfr-topic/0.png">
-                        <img src="images/cfr-topic/1.jpg">
-                        <img src="images/cfr-topic/2.jpg">
-                        <img src="images/cfr-topic/3.jpg">
-                        <img src="images/cfr-topic/4.jpg">
-                        <img src="images/cfr-topic/5.jpg">
-                        <img src="images/cfr-topic/6.jpg">
-                        <img src="images/cfr-topic/7.jpg">
-                    </div>
-                </div>
+        <div class="main-wrap">
+            <div>
+                <div class="content_title">会议主题</div>
+                <div class="title-line"></div>
             </div>
         </div>
     </section>
-    <script src="js/kort.js"></script>
-    <script>
-        // FF OS X animates this at 3-4 FPS when there are box-shadows
-        // on the images, hence the hack... Ugh :/
-        if( navigator.userAgent.match( /firefox/gi ) ) {
-            [].slice.call( document.querySelectorAll( '.thumb img' ) ).forEach(function( el ) { el.style.boxShadow = 'none'; });
-        }
-    </script>
 
     <section class="info-center">
-        <div class="container">
-            <div class="col-md-1"></div>
-            <div class="col-md-10 ">
-                <div class="col-md-12">
-                    <div class="content_title">
-                        消息中心
-                    </div>
-                    <div class="title-line"></div>
-                </div>
-                <div class="info-area">
-                    <div class="col-md-4">
-                        <div class="info-item">
-                            <img src="images/1.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">Hello World</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info-item">
-                            <img src="images/1.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">Hello World</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info-item">
-                            <img src="images/1.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">Hello World</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info-item">
-                            <img src="images/1.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">Hello World</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info-item">
-                            <img src="images/1.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">Hello World</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info-item">
-                            <img src="images/1.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">Hello World</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="main-wrap">
+            <div class="content_title">消息中心</div>
+            <div class="title-line"></div>
         </div>
     </section>
+
+    <section class="count-down">
+        <div class="main-wrap">
+            <div class="clock self-clock"></div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        var clock;
+
+        $(document).ready(function() {
+
+            // Grab the current date
+            var currentDate = new Date();
+
+            // Set some date in the future. In this case, it's always Jan 1
+            var futureDate  = new Date(2018, 10, 18);
+
+            // Calculate the difference in seconds between the future and current date
+            var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+            // Instantiate a coutdown FlipClock
+            clock = $('.clock').FlipClock(diff, {
+                clockFace: 'DailyCounter',
+                countdown: true
+            });
+        });
+    </script>
 
     <section class="footer">
         <div class="container">

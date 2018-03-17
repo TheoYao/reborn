@@ -1,3 +1,10 @@
+.slider-picturer {
+    padding: 0 0 0 0;
+    height: 100%;
+    width: 100%;
+    /*background: rgba(238, 240, 236, 1.0);*/
+}
+
 .slider-wrap * {box-sizing: border-box}
 .slider-wrap  {font-family: Verdana, sans-serif; margin:0}
 .slider-wrap .mySlides {display: block;}
@@ -9,7 +16,7 @@
 .slider-wrap {
     margin:auto;
     width: 1200px;
-    height: 450px;
+    height: 500px;
     position: relative;
 }
 
