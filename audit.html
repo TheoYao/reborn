@@ -25,62 +25,48 @@
 </head>
 
 <body>
-<div class="navbar">
-    <div class="container">
-        <div class="col-md-1 col-sm-1"></div>
-        <div class="col-md-10 col-sm-10">
-            <span class="col-md-12 navbar-bg">
+<div class="navbar navbar-bg for-audit-footer">
+    <div class="main-wrap">
+            <span class="navbar-bg">
                 <div class="top-line"></div>
-                <div class="logo-area col-md-8 col-sm-12>">
-                    <a href="index.html" target="_blank">
-                        <div class="logo-icon col-md-3 col-sm-3">
-                            <img src="./images/pure_logo.png">
-                        </div>
-                        <div class="log-text col-md-9 col-sm-9">
-                            <div class="chinese-title">全国环境博士生学术会议</div>
-                            <div class="english-title">Nation Ph.d Candidates Academic Conference</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="top-func-area col-md-4 col-sm-12">
-                    <div class="version-control col-md-12">
-                        <a class="english-version" href="#">English Version</a>
+                <div class="logo-area">
+                    <div class="logo-icon">
+                        <object data="images/index-logo.svg" type="image/svg+xml"></object>
                     </div>
-                    <div class="sign-area col-md-12">
-                        <a class="sign-in" href="#">登录</a>
-                        <a class="sign-up" href="#">注册</a>
+
+                    <div class="top-func-area">
+                        <div class="version-control">
+                            <a class="english-version" href="#">English Version</a>
+                        </div>
+                        <div class="sign-area">
+                            <a class="sign-in" href="login.html#signin">登录</a>
+                            <a class="sign-up" href="login.html#signup">注册</a>
+                        </div>
                     </div>
                 </div>
             </span>
-        </div>
     </div>
 </div>
 
 <div class="user-main-area">
-    <div class="container">
-        <div class="col-md-1 col-sm-1"></div>
-        <div class="col-md-10 col-sm-10">
+    <div>
+        <div class="main-wrap">
             <div class="top-line"></div>
-            <div class="col-md-3 user-nav-area">
+            <div class="user-nav-area">
                 <div class="article-related">
                     <div class="nav-left-orange">
-                        <div class="user-nav-item active" id="user-nav-item-0">未审稿件</div>
-                        <div class="user-nav-item" id="user-nav-item-1">已审投稿</div>
+                        <div class="user-nav-item active" id="user-nav-item-0">待审稿件</div>
+                        <div class="user-nav-item" id="user-nav-item-1">已审稿件</div>
+
                     </div>
                 </div>
-                <!--
-                <div class="user-nav-bottom">
-                    <div class="user-nav-bottom-item ">个人信息</div>
-                    <div class="user-nav-bottom-item del-bottom-border">修改密码</div>
-                </div>
-                -->
             </div>
 
-            <div class="col-md-9 user-wrap-area">
-                <div class="col-md-6"></div>
-                <div class="col-md-2 user-wrap-tab"><a href="user_center.html">作者中心</a></div>
-                <div class="col-md-2 user-wrap-tab tab-active">审稿中心</div>
-                <div class="col-md-2 user-wrap-tab">编辑中心</div>
+            <div class="user-body-area">
+                <div class="user-wrap-area">
+                    <div class="user-wrap-tab"><a href="user_center.html">作者中心</a></div>
+                    <div class="user-wrap-tab tab-active">审稿中心</div>
+                </div>
 
                 <div class="table-area">
                     <div class="audit-table" id="audit-table-0"  style="display: block;">
@@ -155,9 +141,9 @@
 
 
 <section class="footer">
-    <div class="container">
-        <div class="col-md-12 footer-main-area">
-            <div class="col-md-3 footer-col-item">
+    <div class="footer-wrap">
+        <div class="footer-main-area">
+            <div class="footer-col-item">
                 <h4 class="footer-col-name">主办单位</h4>
                 <div>
                     <a href="http://www.tsinghua.edu.cn">清华大学</a>
@@ -172,7 +158,7 @@
                     <a href="#">环境模拟与污染控制国家重点联合实验室</a>
                 </div>
             </div>
-            <div class="col-md-3 footer-col-item">
+            <div class="footer-col-item">
                 <h4 class="footer-col-name">协同单位/赞助单位</h4>
                 <div>
                     <a href="#">西安建筑科学大学</a>
@@ -181,7 +167,7 @@
                     <a href="#">Frontiers of Environmental Science & Engineering</a>
                 </div>
             </div>
-            <div class="col-md-3 footer-col-item">
+            <div class="footer-col-item">
                 <h4 class="footer-col-name">联系我们</h4>
                 <div>
                     <a href="#">邮箱:ndac@tsinghua.edu.cn</a>
@@ -197,16 +183,14 @@
                 </div>
             </div>
 
-            <div class="col-md-3 footer-col-item">
-                <div class="col-md-6 col-md-offset-3 qrcode">
+            <div class="footer-col-item footer-qr-item">
+                <div class="qrcode">
                     <img src="./images/qrcode.png">
                 </div>
-                </li>
             </div>
         </div>
     </div>
 </section>
-
 <script>
     $('.user-nav-item')
         .click(
