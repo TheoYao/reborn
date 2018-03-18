@@ -57,12 +57,12 @@ padding-top: 1rem;
 }
 
 .chinese-version:before, .sign-up:before {
-content: '';
-height: 1rem;
-display: inline-block;
-vertical-align: middle;
-border-right: 2px solid green;
-margin:0 10px 0 10px;
+    content: '';
+    height: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 2px solid green;
+    margin:0 10px 0 10px;
 }
 
 .navbar .top-func-area {
@@ -85,9 +85,9 @@ text-align: center
 }
 
 .nav-menu .top-line {
-border-top:1px solid #cccccc;
-margin: 0 0 3px 0;
-opacity:0.5;
+    border-top:1px solid #cccccc;
+    margin: 0 0 3px 0;
+    opacity:0.5;
 }
 
 .nav-menu .nav-ul-bg {background-color: rgba(238, 240, 236, 1.0);}
@@ -285,6 +285,9 @@ border-top:7px solid #009200;
 
 
 
+.count-down {
+    margin-top: 30px;
+}
 
 .self-clock {
     margin-left: 150px;
