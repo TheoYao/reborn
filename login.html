@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css" />
     <link rel="stylesheet" type="text/css" href="css/datetimepicker.css" />
-
     <link rel="stylesheet" type="text/css" href="css/user_center.css" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -22,6 +21,7 @@
     <script src="js/bootstrap-select.min.js"></script>
     <script src="js/i18n/defaults-zh_CN.js"></script>
     <script src="js/datetimepicker.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
     <script src="js/area.js"></script>
     <script src="js/login.js"></script>
 
@@ -40,38 +40,38 @@
 
                 <div id="sign-up-tab" class="option-tab" style="display:none">
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;*用户名：</span>
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>用户名：</span>
                         <input type="text" class="form-control" id="sign-up-nickname">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">*邮箱地址：</span>
+                        <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>邮箱地址：</span>
                         <input type="text" class="form-control" id="sign-up-email">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*密码：</span>
-                        <input type="text" class="form-control" id="sign-up-pwd">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>密码：</span>
+                        <input type="password" class="form-control" id="sign-up-pwd">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">*确认密码：</span>
-                        <input type="text" class="form-control" id="sign-up-pwd-again">
+                        <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>确认密码：</span>
+                        <input type="password" class="form-control" id="sign-up-pwd-again">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*姓名：</span>
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>姓名：</span>
                         <input type="text" class="form-control" id="sign-up-name">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*性别：</span>
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>性别：</span>
                         <select class="selectpicker form-control" id="sign-up-sex" title="性别">
                             <option>男</option>
                             <option>女</option>
                         </select>
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">*出生年月：</span>
+                        <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>出生年月：</span>
                         <input type="text" class="form_datetime form-control" id="sign-up-birthday">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*院校：</span>
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>院校：</span>
                         <select class="selectpicker form-control input-res-school" data-live-search="true" id="sign-up-school" title="请选择院校"></select>
                     </div>
                     <div class="input-group input-group-self">
@@ -79,15 +79,15 @@
                         <input type="text" class="form-control" id="sign-up-sno">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">*导师姓名：</span>
+                        <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>导师姓名：</span>
                         <input type="text" class="form-control" id="sign-up-tutor">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;*手机号：</span>
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>手机号：</span>
                         <input type="text" class="form-control" id="sign-up-mobile">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*地址：</span>
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>地址：</span>
                         <div class="addr-res-link">
                             <div>
                                 <select id="s_province" class="res-province" name="s_province"></select>
@@ -99,10 +99,11 @@
                         </div>
 
                     </div>
-
-
                     <p class="loginContentBtn" id="sign-up-btn"><a href="javascript:void(0);">注册</a></p>
                 </div>
+
+
+
                 <div id="sign-in-tab" class="option-tab" style="display:block">
                     <span class="input input--juro">
                         <input class="input__field input__field--juro" type="text" id="sign-in-username" />

@@ -33,6 +33,10 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
     width: auto;
 }
 
+.necessary-tips {
+    color: #ee1111;
+}
+
 .loginMeetingTitle {
     margin-top: 20px;
     font-size: 18px;

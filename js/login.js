@@ -63,17 +63,13 @@ $(function() {
 
     }
     function bindEvent() {
-
+/*
         //注册
-        $('.doc-content-res-username').focus(function(){
-            $('.res-username-error').html('');
-        }).blur(function(){
-            var userName = $.trim($('.doc-content-res-username').val());
+        $('#sign-up-nickname').focus().blur(function(){
+            var userName = $.trim($('sign-up-nickname').val());
             if(userName==''){
-                $('.res-username-error').html('请填写用户名');
-
+                swal('请填写用户名');
             }else{
-                $('.res-username-error').html('输入成功').addClass('res-success');
                 ok1=true
             }
         });
@@ -173,80 +169,141 @@ $(function() {
             }
 
         });
+*/
+        $('#sign-up-btn').on('click', function () {
+            // 验证用户名
 
-        $('.doc-content-restext').on('click', function () {
-            if(ok1 && ok2 && ok3 && ok4 &&ok5 && ok6 && ok7 && ok8){
-                // 验证用户名
-                var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
-                var userName = $.trim($('.doc-content-res-username').val());
-                var email = $.trim($('.doc-content-res-email').val());
-                var password = $('.doc-content-res-pwd').val();
-                var sex = $('.doc-content-res-sex option:selected').val();//选中的值;
-                // var birthDate = ($('.doc-content-res-date').val()).replace(/-/g,"");
-                var birthDate = $('.doc-content-res-date').val();
-                var school = $('.doc-content-res-school  option:selected').val();
-                var userId = $.trim($('.doc-content-res-stuid').val());
-                var stuName = $.trim($('.doc-content-res-name').val());
-                var docName = $.trim($('.doc-content-res-docname').val());
-                var phone = $.trim($('.doc-content-res-phone').val());
-                //地址拼接
-                var resProvince=$('.res-province option:selected').val();
-                var resCity=$('.res-city option:selected').val();
-                var resCounty=$('.res-county option:selected').val();
-                var addressText = $.trim($('.doc-content-res-text').val());
-                var address = resProvince +resCity+resCounty + String(addressText);
+            var userName = $.trim($('#sign-up-nickname').val());
+            if(userName=='') {
+                swal('请填写用户名');
+                return false
+            }
+            var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+            var email = $.trim($('#sign-up-email').val());
+            if(!(emailReg.test(email)) || email == ''){
+                swal('请填写正确格式的邮箱');
+                return false
+            }
 
-                var dpwd = $('.doc-content-res-dpwd').val();
-                if(birthDate==''){
-                    $('.res-date-error').html('请选择你的出身日期');
-                    return false;
-                }else{
-                    $('.res-date-error').html('输入成功').addClass('res-success');
+            var password = $('#sign-up-pwd').val();
+            if(password.length<6 || password == ''){
+                swal('请设置6位以上的密码');
+                return false
+            }
 
-                }
-                $.ajax({
-                    type: "POST",
-                    url: url+"Form/sign",
-                    data: {
-                        username: userName,
-                        password: password,
-                        email: email,
-                        sex: sex,
-                        birthDate: birthDate,
-                        school: school,
-                        userID: userId,
-                        stuName: stuName,
-                        docName: docName,
-                        phone: phone,
-                        address: address
-                    },
-                    dataType: 'json',
-                    beforeSend: function () {
-                        $('.doc-content-restext a').attr('disabled', 'disabled');
-                        $('.doc-content-restext').css({"background": "#388e3c"});
-                    },
-                    success: function (data) {
-                        if (data.status == 1) {
-                            alert('注册成功，请进入到邮箱进行激活');
-                            window.location.href = "../Form/login.html#login";
+            var dpwd = $('#sign-up-pwd-again').val();
+            if(dpwd==''){
+                swal('请再次确认你的密码');
+            }
+            if(dpwd!=password){
+                swal('两次输入密码不一致');
+            }
 
-                        } else {
-                            alert(data.info);
-                            return false;
+            var stuName = $.trim($('#sign-up-name').val());
+            if(stuName=='') {
+                swal('请填写姓名');
+                return false
+            }
 
-                        }
+            var sex = $('#sign-up-sex option:selected').val();//选中的值;
+            if(sex=='') {
+                swal('请选择性别');
+                return false
+            }
 
-                    },
-                    complete: function () {
-                        $('.doc-content-restext a').removeAttr('disabled');
-                        $('.doc-content-restext').css({"background": "#388e3c"});
-                    },
-                    error: function () {
-                        alert('对不起，当前服务器开小差，请稍候再试')
+            var birthDate = $('#sign-up-birthday').val();
+            if(birthDate=='') {
+                swal('请选择出生年月');
+                return false
+            }
+
+            var school = $('#sign-up-school option:selected').val();
+            if(school=='') {
+                swal('请选择学校');
+                return false
+            }
+
+            var userId = $.trim($('#sign-up-sno').val());
+
+            var docName = $.trim($('#sign-up-tutor').val());
+            if(docName=='') {
+                swal('请输入学号');
+                return false
+            }
+
+            var docName = $.trim($('#sign-up-tutor').val());
+            if(docName=='') {
+                swal('请输入学号');
+                return false
+            }
+
+            var phone = $.trim($('#sign-up-mobile').val());
+            if(phone=='') {
+                swal('请输入学号');
+                return false
+            }
+
+            //地址拼接
+            var resProvince=$('.res-province option:selected').val();
+            if(resProvince=='') {
+                swal('请选择省份');
+                return false
+            }
+            var resCity=$('.res-city option:selected').val();
+            if(resCity=='') {
+                swal('请选择城市');
+                return false
+            }
+            var resCounty=$('.res-county option:selected').val();
+            if(resCity=='') {
+                swal('请选择县区');
+                return false
+            }
+            var addressText = $.trim($('#sign-up-more-address').val());
+            var address = resProvince +resCity+resCounty + String(addressText);
+
+            $.ajax({
+                type: "POST",
+                url: url+"Form/sign",
+                data: {
+                    username: userName,
+                    password: password,
+                    email: email,
+                    sex: sex,
+                    birthDate: birthDate,
+                    school: school,
+                    userID: userId,
+                    stuName: stuName,
+                    docName: docName,
+                    phone: phone,
+                    address: address
+                },
+                dataType: 'json',
+                beforeSend: function () {
+                    $('#sign-up-btn a').attr('disabled', 'disabled');
+                    $('#sign-up-btn').css({"background": "#388e3c"});
+                },
+                success: function (data) {
+                    if (data.status == 1) {
+                        swal('注册成功', "","success");
+                        window.location.href = "../Form/login.html#login";
+
+                    } else {
+                        swal(data.info);
+                        return false;
+
                     }
 
-                });
-            }
+                },
+                complete: function () {
+                    $('#sign-up-btn a').removeAttr('disabled');
+                    $('#sign-up-btn').css({"background": "#388e3c"});
+                },
+                error: function () {
+                    swal('对不起，当前服务器开小差，请稍候再试', '', "error")
+                }
+
+            });
         });
 
 
@@ -291,14 +348,10 @@ $(function() {
                 })
 
             }else{
-                $('.login-error-text').html('请输入用户名和密码');
+                swal("请输入用户名和密码");
                 return false;
             }
 
-        });
-
-        $('input').on('keydown', function () {
-            $('.login-error-text').html('')
         });
 
     }
