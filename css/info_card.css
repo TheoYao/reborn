@@ -9,7 +9,7 @@
 .info-item {
     width: 300px;
     height: 330px;
-    margin: 0 30px 0 30px;
+    margin: 0 15px 0 15px;
     display: inline-block;
     background-color: #FFFFFF;
 
@@ -32,9 +32,12 @@
     position: absolute;
     height: 300px;
     width: 300px;
+    margin-bottom: 0;
+    /*vertical-align: bottom;*/
+}
 
-
-    vertical-align: bottom;
+.image-locate{
+    position: relative;
 }
 
 .info-content {
@@ -49,8 +52,6 @@
     width: 300px;
     height: 300px;
     font-size: 16px;
-    overflow: scroll;
-    bottom:0;
     /*display: table-cell;*/
     padding: 10px 10px 0 10px;
     text-indent: 40px;
@@ -58,9 +59,24 @@
     text-align: justify;
     text-justify: inter-ideograph;/*IE*/
 }
-
 .image-cover:hover img{
-    -webkit-transform: translate(50px,100px);
-    -moz-transform:translate(50px,100px);
-    transform: translate(50px,100px);
+    bottom: -300px;
+    height: 0;
+
+    vertical-align: bottom;
+    transition: height 0.5s;
+    -moz-transition: height 0.5s;	/* Firefox 4 */
+    -webkit-transition: height 0.5s;	/* Safari 和 Chrome */
+    -o-transition: height 0.5s;
+/*
+    transform: rotatex(180deg) translateY(-300px);
+    -moz-transform: rotatex(180deg) translateY(-300px);
+    -webkit-transform: rotatex(180deg) translateY(-300px);
+    -o-transform: rotatex(180deg) translateY(-300px);
+
+    transform-origin: top;
+    -moz-transform-origin: top;
+    -webkit-transform-origin: top;
+    -o-transform-origin: top;
+    */
 }

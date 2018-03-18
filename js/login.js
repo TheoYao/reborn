@@ -476,8 +476,6 @@ $(function() {
     });
 
 
-
-    loginTab();
     bindEvent();
     _init_area()
 });
