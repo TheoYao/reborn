@@ -3,7 +3,7 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
 }
 
 body {
-    /* background: rgba(238, 240, 236, 1.0); */
+    background: rgba(238, 240, 236, 1.0);
 }
 
 ul,li{padding:0;margin:0;list-style:none;}
@@ -66,11 +66,11 @@ margin:0 10px 0 10px;
 }
 
 .navbar .top-func-area {
-padding-top: 30px;
-width: 360px;
-display: inline-block;
-vertical-align: top;
-text-align:right;
+    padding-top: 30px;
+    width: 360px;
+    display: inline-block;
+    vertical-align: top;
+    text-align:right;
 }
 
 .navbar  .top-func-area .version-control .split_vertical {
@@ -205,7 +205,7 @@ border-top:7px solid #009200;
 }
 
 .conference-topic {
-    height:400px;
+    height:550px;
     /*background: rgba(238, 240, 236, 1.0);*/
     /*background-size: auto 100%;*/
 }
@@ -217,23 +217,74 @@ border-top:7px solid #009200;
     font-weight: bold;
 }
 
-
-.place-hold-img-area {
-    padding: 0 0 0 0;
+.conference-topic .cfr-topic-area {
+    padding-top: 20px;
 }
 
-.place-hold-img {
-    boder: none;
-    width: 100%;
-    height: 100%;
-    visibility:hidden;
-    z-index: -9999;
+.conference-topic .cft-topic-list {
+    position: relative;
 }
 
-.topic-img-area {
-    width: 50%;
-    margin: 0 auto;
+.conference-topic .cfr-topic-item{
+    position: absolute;
+    width:312px;
+    height:420px;
+    opacity: 0.8;
+    vertical-align: bottom;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    overflow:hidden;
+    /*margin-top:30px;*/
+    z-index:1;
+    margin-bottom:0;
+
+    transition: height 1s;
+    -moz-transition: height 1s;	/* Firefox 4 */
+    -webkit-transition: height 1s;	/* Safari 和 Chrome */
+    -o-transition: height 1s;
 }
+
+.conference-topic .cfr-topic-item:hover{
+    margin-top:0;
+    height:450px;
+    z-index:7;
+    opacity: 1.0;
+}
+.conference-topic .cfr-topic-item img{
+    width:100%;
+    height:100%;
+    vertical-align: bottom;
+}
+
+
+#tab-0 {
+}
+
+#tab-1 {
+    margin-left:120px;
+}
+
+#tab-2 {
+    margin-left:240px;
+}
+
+#tab-3 {
+    margin-left:360px;
+}
+
+#tab-4 {
+    margin-left:480px;
+}
+
+#tab-5 {
+    margin-left:600px;
+}
+
+#tab-6 {
+    margin-left:720px;
+}
+
+
+
 
 .self-clock {
     margin-left: 150px;
@@ -241,14 +292,22 @@ border-top:7px solid #009200;
 
 .footer {
     background:#93a3b0;
-    padding-bottom: 80px;
 }
-.footer-main-area {
-    padding-top:50px;
+.footer .footer-wrap {
+    margin:auto;
+    width: 1200px;
+    height: 270px;
+    position: relative;
+}
+
+.footer .footer-main-area {
+    padding-top: 60px;
 }
 
 .footer .footer-col-item {
-    padding: 0 0 0 0;
+    display: inline-block;
+    vertical-align:top;
+    width:350px;
 }
 .footer .footer-col-name {
     font-size: 1.6em;
@@ -265,11 +324,12 @@ border-top:7px solid #009200;
     padding-bottom: 0.5rem;
 }
 
+.footer .footer-qr-item {
+    width:120px;
+    height:120px;
+}
 .footer .qrcode img{
     width:100%;
 }
 
 
-@media (min-width: 992px) {
-
-}
