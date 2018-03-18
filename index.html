@@ -22,7 +22,24 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/flipclock.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            var url = $("#cartoonVideo").attr('src');
+
+            $("#myModal").on('hide.bs.modal', function(){
+                $("#cartoonVideo").attr('src', '');
+            });
+
+
+            $("#myModal").on('show.bs.modal', function(){
+                $("#cartoonVideo").attr('src', url);
+            });
+        });
+    </script>
 
 </head>
 
@@ -118,7 +135,7 @@
         <div class="slider-wrap">
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <img src="images/slider-1.jpg">
+                    <a href="#myModal" data-toggle="modal"><img src="images/slider-1.jpg"></a>
                 </div>
 
                 <div class="mySlides fade">
@@ -139,8 +156,23 @@
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-        </div>
 
+
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">YouTube Video</h4>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="cartoonVideo" width="560" height="315" src="videos/marvel.mp4" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <script>
