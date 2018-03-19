@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
+    if($.cookie('cookie_info')){
+        var username =JSON.parse($.cookie('cookie_info')).username;
+        var identity =JSON.parse($.cookie('cookie_info')).identity;
+    }else {
+        var username = '';
+        var identity = ''
+    }
 //添加更多作者
     $('#modal-add-author').on('click', function () {
         var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
@@ -43,8 +51,6 @@ $(document).ready(function() {
 
     $('#btn-submit-summary').on('click', function () {
         var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
-        // var file = $('[type="file"]').get(0).files[0];
-        // var fileSrc = $("input[name=fileString]").val();
         var fileSrc = $("input[name=fileString]")[0].files[0];
         var chineseTitle = $.trim($('#summary_input_cn_title').val());
         var englishTitle = $.trim($('#summary_input_egls_title').val());
@@ -76,35 +82,35 @@ $(document).ready(function() {
             item.authorCompany =addCompany;
             author.push(item);
         });
-        var fileAccept = fileSrc.name.split(".")[1];//获取上传文件的后缀
+        var fileArray = fileSrc.name.split(".");//获取上传文件的后缀
+        var fileAccept = fileArray[fileArray.length - 1]
         if( fileAccept!="doc" && fileAccept!="docx" ){
-            $('.val-apply-file').html("只能上传.doc和.docx的文件！");
+            swal("只能上传.doc和.docx的文件！");
         }
 
 
         if(!/[\u4E00-\u9FA5\uF900-\uFA2D]/.test(chineseTitle)){
-            $('.chinese-tit-error').html('请填写中文标题');
+            swal('请填写中文标题');
             return false
         }
         if(!(/[\u4E00-\u9FA5\uF900-\uFA2D]||\，*||\,*/.test(keyChinese))){
-            $('.chinese-tit-error').html('请填写不错过5个关键字，以逗号隔开');
+            swal('请填写不错过5个关键字，以逗号隔开');
             return false
         }
         if(authorName==''){
-            $('.apply-name-error').html('请填写作者姓名');
+            swal('请填写作者姓名');
             return false
         }
         if(authorPing==''||/[\u4E00-\u9FA5\uF900-\uFA2D]/.test(authorPing)){
-
-            $('.apply-ping-error').html('请填写作者拼音');
+            swal('请填写作者拼音');
             return false
         }
         if(authorEmail==''||!(emailReg.test(authorEmail))){
-            $('.apply-email-error').html('请填写作者邮箱');
+            swal('请填写作者邮箱');
             return false
         }
         if(authorCompany==''){
-            $('.apply-name-error').html('请填写作者地址');
+            swal('请填写作者地址');
             return false
         }
         var data = new FormData();
@@ -126,17 +132,15 @@ $(document).ready(function() {
             contentType: false,
             success: function (data) {
                 if (data.status == 1) {
-                    alert('提交成功，请等待审核');
-                    // window.location.reload();
-                    window.location.href='/app/Tpl/Form/user.html'
+                    swal("提交成功！", "请等待审核。", "success");
+                    //window.location.href='/app/Tpl/Form/user.html'
                 } else {
-                    // $('.user-person-apply').append('<div class="pwd-error">'+data.info+'</div>');
-                    alert(data.info);
+                    swal("出现问题", data.info, "error");
                     return false;
                 }
             },
             error: function () {
-                alert('网路不给力，请稍候再试');
+                swal('网路不给力，请稍候再试');
             }
         })
     });

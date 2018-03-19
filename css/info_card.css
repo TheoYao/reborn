@@ -59,6 +59,10 @@
     text-align: justify;
     text-justify: inter-ideograph;/*IE*/
 }
+
+.content-cover {
+    color: rgba(22, 22, 22, 0.5);
+}
 .image-cover:hover img{
     bottom: -300px;
     height: 0;

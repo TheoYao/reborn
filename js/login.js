@@ -63,116 +63,8 @@ $(function() {
 
     }
     function bindEvent() {
-/*
-        //注册
-        $('#sign-up-nickname').focus().blur(function(){
-            var userName = $.trim($('sign-up-nickname').val());
-            if(userName==''){
-                swal('请填写用户名');
-            }else{
-                ok1=true
-            }
-        });
-        $('.doc-content-res-email').focus(function(){
-            $('.res-email-error').html('');
-        }).blur(function(){
-            // 验证用户名
-            var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
-            var email = $.trim($('.doc-content-res-email').val());
-            if(!(emailReg.test(email)) || email == ''){
-                $('.res-email-error').html('请填写正确格式的邮箱');
-
-            }else{
-                $('.res-email-error').html('输入成功').addClass('res-success');
-                ok2=true
-            }
-        });
-        $('.doc-content-res-pwd').focus(function(){
-            $('.res-pwd-error').html('');
-        }).blur(function(){
-            var password = $('.doc-content-res-pwd').val();
-            var email = $.trim($('.doc-content-res-email').val());
-            if(password.length<6 || password == ''){
-                $('.res-pwd-error').html('请设置6位以上的密码');
-
-            }else{
-                $('.res-pwd-error').html('输入成功').addClass('res-success');
-                ok3=true
-            }
-        });
-        $('.doc-content-res-dpwd').focus(function(){
-            $('.res-dpwd-error').html('');
-        }).blur(function(){
-            var password = $('.doc-content-res-pwd').val();
-            var dpwd = $('.doc-content-res-dpwd').val();
-            if(dpwd!=password || dpwd==''){
-                $('.res-dpwd-error').html('请再次确认你的密码');
-
-            }else{
-                $('.res-dpwd-error').html('输入成功').addClass('res-success');
-                ok4=true
-            }
-
-        });
-        $('.doc-content-res-name').focus(function(){
-            $('.res-name-error').html('');
-        }).blur(function(){
-            var stuName = $.trim($('.doc-content-res-name').val());
-            if(stuName==''){
-                $('.res-name-error').html('请填写你的名字');
-
-            }else{
-                $('.res-name-error').html('输入成功').addClass('res-success');
-                ok5=true
-            }
-
-        });
-        $('.doc-content-res-docname').focus(function(){
-            $('.res-docname-error').html('');
-        }).blur(function(){
-            var docName = $.trim($('.doc-content-res-docname').val());
-
-            if(docName==''){
-                $('.res-docname-error').addClass('请填写你导师的姓名');
-
-            }else{
-                $('.res-docname-error').html('输入成功').addClass('res-success');
-                ok6=true
-            }
-
-        });
-        $('.doc-content-res-phone').focus(function(){
-            $('.res-phone-error').html('');
-        }).blur(function(){
-            var phone = $.trim($('.doc-content-res-phone').val());
-            if(!(/^1[3456789]\d{9}$/.test(phone))){
-                $('.res-phone-error').html('请填写11位数字的电话号码');
-
-            }else{
-                $('.res-phone-error').html('输入成功').addClass('res-success');
-                ok7=true
-            }
-
-
-        });
-
-        $('.doc-content-res-text').focus(function(){
-            $('.res-addressText-error').html('');
-        }).blur(function(){
-            var addressText = $.trim($('.doc-content-res-text').val());
-            if(addressText==''){
-                $('.res-addressText-error').html('请填写你的详细地址');
-
-            }else{
-                $('.res-addressText-error').html('输入成功').addClass('res-success');
-                ok8=true
-            }
-
-        });
-*/
         $('#sign-up-btn').on('click', function () {
             // 验证用户名
-
             var userName = $.trim($('#sign-up-nickname').val());
             if(userName=='') {
                 swal('请填写用户名');
@@ -291,7 +183,6 @@ $(function() {
                     } else {
                         swal(data.info);
                         return false;
-
                     }
 
                 },
@@ -310,6 +201,8 @@ $(function() {
         //登录
         $('#sign-in-btn').on('click',function () {
             //登录
+            swal('奇怪了');
+            return false
             var uname = $.trim($('#sign-in-username').val());
             var upwd =$.trim($('#sign-in-pwd').val());
             if(uname && upwd){
@@ -332,10 +225,10 @@ $(function() {
                                 identity: data.data.identity
                             };
                             $.cookie('cookie_info', JSON.stringify(cookie_info));
-                            window.location.href = "../Form/home.html";
+                            window.location.href = "../Mainpage/index.html";
 
                         } else {
-                            $('.login-error-text').html(data.info).addClass('res-old');
+                            swal("error", data.info, "error");
                             return false;
 
                         }
@@ -355,6 +248,12 @@ $(function() {
         });
 
     }
+
+    $('.input__label').on('click',function () {
+        $("#sign-in-pwd").attr("style", "display:block");
+        $("#sign-in-username").attr("style", "display:block");
+    });
+
 
 
     //出生日期
