@@ -118,9 +118,9 @@ white-space:nowrap;
 }
 
 .nav-menu .drop-down {
-width: 100%;
-position: relative;
-display: inline-block;
+    width: 100%;
+    position: relative;
+    display: inline-block;
 }
 
 .nav-menu .drop-down-content {
@@ -130,6 +130,7 @@ display: inline-block;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    text-align: left;
 }
 
 
@@ -141,11 +142,11 @@ display: inline-block;
 }
 
 .nav-menu .drop-down-content a:hover {
-background-color: #3FA304;
+    background-color: #3FA304;
 }
 
 .nav-menu .drop-down:hover .drop-down-content {
-display: block;
+    display: block;
 }
 
 .nav-menu .drop-down:hover .drop-btn {
