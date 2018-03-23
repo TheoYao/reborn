@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#myScrollSpy">
 <div class="navbar navbar-bg">
     <div class="main-wrap">
         <span class="navbar-bg">
@@ -51,13 +51,86 @@
                 </div>
             </div>
         </span>
-        <div class="split-line"></div>
     </div>
 </div>
 
+<section class="nav-menu">
+    <div class="main-wrap">
+        <div class="split-line"></div>
+        <ul class="nav-ul-bg">
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_blank">首页</a></button>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">会议介绍<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="#">关于博论</a>
+                        <a href="#">会议主题</a>
+                        <a href="#">时间节点</a>
+                        <a href="#">评选办法</a>
+                        <a href="#">专家委员会</a>
+                        <a href="#">组织架构</a>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">会议安排<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="#">欢迎词</a>
+                        <a href="#">会议日程</a>
+                        <a href="#">主旨演讲人</a>
+                        <a href="#">住宿交通</a>
+                        <a href="#">观光信息</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_blank">参会注册</a></button>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">文件下载<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="#">参会文件</a>
+                        <a href="#">往期回顾</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">投稿要求</a></button>
+
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_blank">举办地点</a></button>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_blank">联系我们<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="#">组委会介绍</a>
+                        <a href="#">往届组委会</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="split-line"></div>
+    </div>
+</section>
+
 <div class="main-area">
     <div class="main-wrap">
-        <div class="side-affix">
+        <div class="side-affix" id="myScrollSpy">
             <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
                 <li class="nav-item active"><a href="#about-cfr">关于博论</a></li>
                 <li class="nav-item"><a href="#cfr-aim">会议目的</a></li>
