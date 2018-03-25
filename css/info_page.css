@@ -72,17 +72,17 @@ ul.nav-tabs.affix{
     font-size: 20px;
 }
 
-#cfr-topic, #select-std, #host-unit {
+#cfr-topic, #select-std, #organization-arch {
     text-indent: 0;
 }
 
-#host-unit .host-logo-item{
+#organization-arch .host-logo-item{
     display: inline-block;
     width:411px;
     height:100px;
 }
 
-#host-unit img{
+#organization-arch img{
     width: 100%;
     height: 100%;
 

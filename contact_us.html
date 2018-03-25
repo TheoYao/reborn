@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!- scale control -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="SHORTCUT ICON" type="image/x-icon" href="images/favicon.ico">
+    <title>十一届全国博士生学术会议</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/info_page.css" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/self_common.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".nav-item").on('click',function () {
+                var nav_items = $('.nav-item');
+                for (var i=0; i<nav_items.length; i++){
+                    $(nav_items[i]).removeClass("active");
+                }
+                $(this).addClass("active");
+            });
+        });
+    </script>
+
+</head>
+
+<body data-spy="scroll" data-target="#myScrollSpy">
+<div class="navbar navbar-bg">
+    <div class="main-wrap">
+        <span class="navbar-bg">
+            <div class="top-line"></div>
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <img src="./images/index-logo.png">
+                </div>
+                <div class="top-func-area">
+                    <div class="version-control">
+                        <a class="english-version" href="#">English Version</a>
+                    </div>
+                    <div class="sign-area">
+                        <a class="sign-in" href="login.html#signin">登录</a>
+                        <a class="sign-up" href="login.html#signup">注册</a>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </div>
+</div>
+
+<section class="nav-menu">
+    <div class="main-wrap">
+        <div class="split-line"></div>
+        <ul class="nav-ul-bg">
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="index.html" target="_blank">首页</a></button>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">会议介绍<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="cfr_intro.html#about-cfr">关于博论</a>
+                        <a href="cfr_intro.html#cfr-topic">会议主题</a>
+                        <a href="cfr_intro.html#time-process">时间节点</a>
+                        <a href="cfr_intro.html#select-std">评选办法</a>
+                        <a href="cfr_intro.html#committee-expert">专家委员会</a>
+                        <a href="cfr_intro.html#organization-arch">组织架构</a>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">会议安排<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="cfr_arrange.html#salutatory-oration">欢迎词</a>
+                        <a href="cfr_arrange.html#cfr-schedule">会议日程</a>
+                        <a href="cfr_arrange.html#core-reporter">主旨演讲人</a>
+                        <a href="cfr_arrange.html#traffic-board">住宿交通</a>
+                        <a href="cfr_arrange.html#about-sightseeing">观光信息</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="cfr_register.html" target="_blank">参会注册</a></button>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">文件下载<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="download_page.html#cfr-related">参会文件</a>
+                        <a href="download_page.html#look-back">往期回顾</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="paper_command.html" target="_self">投稿要求</a></button>
+
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="host_addr.html" target="_blank">举办地点</a></button>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_blank">联系我们<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="contact_us.html">组委会介绍</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="split-line"></div>
+    </div>
+</section>
+
+<div class="main-area">
+    <div class="main-wrap">
+        <div class="side-affix" id="myScrollSpy">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+                <li class="nav-item active"><a href="#committee-intro">组委会介绍</a></li>
+
+            </ul>
+        </div>
+        <div class="content-body">
+            <div id="about-cfr">
+                <p><br /> <strong class="cfr-intro-title">组委会介绍</strong></p>
+                <p><strong>负责人</strong></p>
+                <p>张硕：18201063906，zhangs15@mails.tsinghua.edu.cn</p>
+                <p>房阔：13131488864，kina_fangkuo@163.com</p>
+                <div class="split-line"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

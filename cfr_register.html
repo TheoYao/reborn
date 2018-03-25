@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!- scale control -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="SHORTCUT ICON" type="image/x-icon" href="images/favicon.ico">
+    <title>十一届全国博士生学术会议</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/info_page.css" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/self_common.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".nav-item").on('click',function () {
+                var nav_items = $('.nav-item');
+                for (var i=0; i<nav_items.length; i++){
+                    $(nav_items[i]).removeClass("active");
+                }
+                $(this).addClass("active");
+            });
+        });
+    </script>
+
+</head>
+
+<body data-spy="scroll" data-target="#myScrollSpy">
+<div class="navbar navbar-bg">
+    <div class="main-wrap">
+        <span class="navbar-bg">
+            <div class="top-line"></div>
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <img src="./images/index-logo.png">
+                </div>
+                <div class="top-func-area">
+                    <div class="version-control">
+                        <a class="english-version" href="#">English Version</a>
+                    </div>
+                    <div class="sign-area">
+                        <a class="sign-in" href="login.html#signin">登录</a>
+                        <a class="sign-up" href="login.html#signup">注册</a>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </div>
+</div>
+
+<section class="nav-menu">
+    <div class="main-wrap">
+        <div class="split-line"></div>
+        <ul class="nav-ul-bg">
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="index.html" target="_blank">首页</a></button>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">会议介绍<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="cfr_intro.html#about-cfr">关于博论</a>
+                        <a href="cfr_intro.html#cfr-topic">会议主题</a>
+                        <a href="cfr_intro.html#time-process">时间节点</a>
+                        <a href="cfr_intro.html#select-std">评选办法</a>
+                        <a href="cfr_intro.html#committee-expert">专家委员会</a>
+                        <a href="cfr_intro.html#organization-arch">组织架构</a>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">会议安排<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="cfr_arrange.html#salutatory-oration">欢迎词</a>
+                        <a href="cfr_arrange.html#cfr-schedule">会议日程</a>
+                        <a href="cfr_arrange.html#core-reporter">主旨演讲人</a>
+                        <a href="cfr_arrange.html#traffic-board">住宿交通</a>
+                        <a href="cfr_arrange.html#about-sightseeing">观光信息</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="cfr_register.html" target="_blank">参会注册</a></button>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_self">文件下载<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="download_page.html#cfr-related">参会文件</a>
+                        <a href="download_page.html#look-back">往期回顾</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="paper_command.html" target="_self">投稿要求</a></button>
+
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="host_addr.html" target="_blank">举办地点</a></button>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <button class="drop-btn"><a href="#" target="_blank">联系我们<div class="triangle-down"></div></a></button>
+                    <div class="drop-down-content">
+                        <a href="contact_us.html">组委会介绍</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="split-line"></div>
+    </div>
+</section>
+
+<div class="main-area">
+    <div class="main-wrap">
+        <div class="side-affix" id="myScrollSpy">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+                <li class="nav-item active"><a href="#cfr-regis">参会注册</a></li>
+
+
+            </ul>
+        </div>
+        <div class="content-body">
+            <div id="cfr-regis">
+                <p><br /> <strong class="cfr-intro-title">参会注册</strong></p>
+                <p>&nbsp;</p>
+                <p><strong>1 </strong><strong>注册说明</strong></p>
+                <p>网上注册时间：2018年4月2日-10月15日</p>
+                <p>现场注册时间：10月18日 13:00-17:00</p>
+                <p>注册费用说明：本会议不收取任何注册费用</p>
+                <p>&nbsp;</p>
+                <p><strong>2 </strong><strong>会议须知</strong></p>
+                <p>1、会议注册方式：登入全国环境博士生学术会议官网（进行在线注册。10月18日 13:00-17:00在清华大学环境学院一楼大厅进行现场注册和材料领取。</p>
+                <p>2、所有参会人员均需自带海报，按照发放的编号在对应位置自行张贴。</p>
+                <p>3、分会场报告时间约为10-15 min，提问时间约为5 min。为便于相互交流，建议所有参会人员做口头报告时对自己所在课题组和个人情况进行简单介绍。</p>
+                <p>4、会议期间，请参会人员严格遵守会议日程安排并完成口头报告，届时分会场协调人员将对此进行记录。原则上组委会只对已完成口头报告的参会人员颁发会议认证证书。</p>
+                <p>5、闭幕式结束后请参会人员凭会议认证证书进行报销。如有特殊情况，请提前与组委会联系。</p>
+                <p>6、做口头报告的博士生应于相应分会场会议开始前15 min将演示文件（注意格式兼容）拷贝到该分会场计算机内，并进行调试。请各分会场主席、会场协调人员以及其他工作人员提前就位，做好准备工作。</p>
+                <p>7、口头报告按预定顺序进行。若有报告人因故未到直接跳过，下一位参会人员继续汇报。</p>
+                <p>8、评分要公平、公开、公正，对报告者负责；参与评分的人员须在报告结束后，将评分表及时交与各分会场协调人员，以便后续工作开展。</p>
+                <p>9、请与会人员在会场工作人员的指导下按时、有秩序进入会场就坐；请勿携带零食、有色饮料之类物品进入会场，保持会场清洁，楼内任何位置严禁抽烟。</p>
+                <p>10、全国环境博士生学术会议将对会议主旨报告和部分分会场的会议内容进行在线录制，请将手机关闭或置于静音状态；请勿闲聊或随意走动，保持会场安静；报告期间，若需离开或进入会场，请放轻脚步，安静出入。</p>
+                <p>11、请珍惜交流机会，用心倾听、认真思考、大胆提问，以达到拓展学术视野、激发创新灵感、启发科学思维和增进学术友谊的目的。</p>
+                <p>12、冷餐会及校园参观（参观地点路线待定，请随时关注网站信息更新）。</p>
+                <p>13、若需提前离开或有任何其他问题，请与组委会联系。联系方式：房阔（13131488864），张硕（18201063906）。</p>
+                <p><strong>&nbsp;</strong></p>
+                <p><strong>3 </strong><strong>住宿交通</strong></p>
+                <p>3.1住宿信息</p>
+                <p>住宿暂定为汉庭酒店，兰亭汇酒店，具体信息以后期会议通知为准，请参会者注意网站信息更新和查收邮箱。</p>
+                <p>汉庭酒店：</p>
+                <p>地址：北京市海淀区王庄路27号（城建四公司）</p>
+                <p>联系电话 ：(010)62313232</p>
+                <p>兰亭汇酒店：</p>
+                <p>地址：北京市海淀区成府路35号（城铁13号线五道口站西北角）</p>
+                <p>联系电话：(010)62619296</p>
+                <p>&nbsp;3.2交通信息</p>
+                <p>清华大学环境学院（中意环境节能楼）位于清华大学东门西北面约200米。</p>
+                <p><strong>（</strong><strong>1</strong><strong>）北京西站：约</strong><strong>15</strong><strong>公里</strong></p>
+                <p>1）乘坐特19路公交(北京西站-西苑枢纽站)，在北京西站上车，在东升园站下车，向北步行700米可抵达清华大学东门。（约1小时20分）</p>
+                <p>2）乘坐地铁9号线（国家图书馆方向），在北京西站上车，在国家图书馆站下车，换乘地4号线大兴线(安河桥北方向)，在中关村站下车(C东南口出)，步行至中关村南站，乘坐466路(或355路)公交，在清华东路西口站下车，步行200米至清华大学东门。（约50分钟）</p>
+                <p><strong>（</strong><strong>2</strong><strong>）北京站：约</strong><strong>18</strong><strong>公里</strong></p>
+                <p>乘坐地铁2号线(内环)，在北京站上车，在西直门站下车，换乘地铁13号线(东直门方向)，在五道口站下车(B西南口出)，步行700米至清华大学东门。（约1小时）</p>
+                <p><strong>（</strong><strong>3</strong><strong>）北京南站：约</strong><strong>17</strong><strong>公里</strong></p>
+                <p>乘坐地铁4号线大兴线(安河桥北方向)，在北京南站上车，在西直门站下车，换乘地铁13号线(东直门方向)，在五道口站下车(B西南口出)，步行700米至清华大学东门。（约1小时）</p>
+                <p><strong>（</strong><strong>4</strong><strong>）首都机场</strong><strong>T2</strong><strong>航站楼：约</strong><strong>33</strong><strong>公里</strong></p>
+                <p>1）乘坐机场大巴5路线（机场&mdash;中关村），在中关村（4号桥）站下车，①可打的至清华大学东门；②可步行至保福寺桥西站，乘坐913路(或333外，466路)公交，在清华东路西口站下车，步行200米至清华大学东门。（约1小时40分）</p>
+                <p>2）乘坐地铁机场线，在三元桥站下车，换乘地铁10号线(外环)，在知春路站下车，乘坐地铁13号线(东直门方向)，在五道口站下车(B西南口出)，步行700米至清华大学东门。（约1小时30分）</p>
+                <p><strong>&nbsp;</strong></p>
+                <p><strong>温馨提示：</strong></p>
+                <p>1、北京路况复杂，交通拥堵，请根据时间合理安排出行方式；</p>
+                <p>2、公共交通人多拥挤，请注意安全并看管好随身财物；</p>
+                <p>3、北京市出租车白天收费标准为：起步价13元（3公里），之后每公里2.3元。</p>
+                <p>&nbsp;</p>
+                <p><strong>4 </strong><strong>交流环节</strong></p>
+                <p>待定</p>
+                <p>关于会议期间交流活动及会议结束后的参观安排，详情请注意官网信息更新和查收邮件。</p>
+
+                <div class="split-line"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
