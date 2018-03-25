@@ -84,18 +84,60 @@
                     <div class="title-area-text">稿件查询</div>
                     <div class="manu-check-area">
                         <div class="manu-list" id="manu-check-table">
-                            <a class="manu-item manu-item-even">
-                                <div class="manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
-                                <div class="manu-item-date">2018-03-02</div>
-                            </a>
-                            <a class="manu-item manu-item-odd">
-                                <div class="manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
-                                <div class="manu-item-date">2018-03-02</div>
-                            </a>
-                            <a class="manu-item manu-item-even">
-                                <div class="manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
-                                <div class="manu-item-date">2018-03-02</div>
-                            </a>
+
+                        </div>
+                        <div class="modal fade" id="manuDetailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">稿件详情</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-success">
+                                                <span class="detail-modal-field">稿件编号</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="detail-modal-field">中文标题</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                            <li class="list-group-item list-group-item-success">
+                                                <span class="detail-modal-field">英文标题</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="detail-modal-field">中文关键字</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                            <li class="list-group-item list-group-item-success">
+                                                <span class="detail-modal-field">英文关键字</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="detail-modal-field">主题</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                            <li class="list-group-item list-group-item-success">
+                                                <span class="detail-modal-field">投稿日期</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="detail-modal-field">稿件状态</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                            <li class="list-group-item list-group-item-success">
+                                                <span class="detail-modal-field">审稿意见</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -161,40 +203,40 @@
                             <input type="text" id="more-author-show" class="form-control" placeholder="添加作者" disabled="disabled">
                             <p class="more-author-list" style="display: none;"></p>
                             <span class="input-group-btn">
-                            <button class="btn btn-default btn-select-file" type="button" data-toggle="modal" data-target="#myModal">点击进行添加</button>
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">添加作者</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="input-group input-group-self">
-                                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者姓名：</span>
-                                                <input type="text" class="form-control" placeholder="请输入作者姓名" id="summary_input_more_author_name">
+                                <button class="btn btn-default btn-select-file" type="button" data-toggle="modal" data-target="#myModal">点击进行添加</button>
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">添加作者</h4>
                                             </div>
-                                            <div class="input-group input-group-self">
-                                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者拼音：</span>
-                                                <input type="text" class="form-control" placeholder="请输入作者拼音(全小写，姓在前，姓和名用空格分开)" id="summary_input_more_spell">
+                                            <div class="modal-body">
+                                                <div class="input-group input-group-self">
+                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者姓名：</span>
+                                                    <input type="text" class="form-control" placeholder="请输入作者姓名" id="summary_input_more_author_name">
+                                                </div>
+                                                <div class="input-group input-group-self">
+                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者拼音：</span>
+                                                    <input type="text" class="form-control" placeholder="请输入作者拼音(全小写，姓在前，姓和名用空格分开)" id="summary_input_more_spell">
+                                                </div>
+                                                <div class="input-group input-group-self">
+                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
+                                                    <input type="text" class="form-control" placeholder="请输入作者邮箱" id="summary_input_more_email">
+                                                </div>
+                                                <div class="input-group input-group-self">
+                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者单位：</span>
+                                                    <input type="text" class="form-control" placeholder="请输入作者单位" id="summary_input_more_unit">
+                                                </div>
                                             </div>
-                                            <div class="input-group input-group-self">
-                                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
-                                                <input type="text" class="form-control" placeholder="请输入作者邮箱" id="summary_input_more_email">
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                <button type="button" id="modal-add-author" class="btn btn-primary">添加</button>
                                             </div>
-                                            <div class="input-group input-group-self">
-                                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者单位：</span>
-                                                <input type="text" class="form-control" placeholder="请输入作者单位" id="summary_input_more_unit">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                            <button type="button" id="modal-add-author" class="btn btn-primary">添加</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </span>
+                            </span>
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>

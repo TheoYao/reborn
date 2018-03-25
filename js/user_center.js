@@ -131,17 +131,20 @@ $(document).ready(function() {
         });
     }
 
-    function contribution(username,page,pagesize) {
+    contribution(username);
+    function contribution(username) {
         //请求稿件查询列表
         $.ajax({
-            type: "POST",
+            /*type: "POST",
             url:  url +"Document/show",
             data: {
                 username: username,
                 pagesize: pagesize || '10',
                 page: page || '1',
                 type: 'all'
-            },
+            },*/
+            type: "GET",
+            url: "./json/show_product.json",
             dataType: 'json',
             success: function (res) {
                 if(res.status==1){
@@ -163,172 +166,20 @@ $(document).ready(function() {
         for (i=0; i<data.length; i++){
             var curData = data[i];
             var curTitle = curData["chineseTitle"];
-            var curDate = CurData["create_time"].split(" ")[0];
+            var curDate = curData["create_time"].split(" ")[0];
             var curDocuId = curData["docu_id"]
             if (i%2 == 1){
-                aimStr += "<a class=\"manu-item manu-item-even\" docuid="+curDocuId+"><div class=\"manu-item-title\">"+curTitle+"</div><div class=\"manu-item-date\">"+curDate+"</div></a>"
+                aimStr += "<div class=\"manu-item manu-item-even\" docuid="+curDocuId+"><div class=\"manu-item-title\">"+curTitle+"</div><div class=\"manu-item-date\">"+curDate+"</div></div>"
             }
             else {
-                aimStr += "<a class=\"manu-item manu-item-odd\" docuid="+curDocuId+"><div class=\"manu-item-title\">"+curTitle+"</div><div class=\"manu-item-date\">"+curDate+"</div></a>"
+                aimStr += "<div class=\"manu-item manu-item-odd\" docuid="+curDocuId+"><div class=\"manu-item-title\">"+curTitle+"</div><div class=\"manu-item-date\">"+curDate+"</div></div>"
             }
         }
         ele = $("#manu-check-table");
         ele.html(aimStr);
+
         return
-
     }
-    function noAlreadyModify(username,page,pagesize){
-        //待修改稿件查询列表
-        $.ajax({
-            type: "POST",
-            url:  url +"Document/show",
-            data: {
-                username: username,
-                pagesize: pagesize || '10',
-                page: page || '1',
-                type: 'doing'
-            },
-            dataType: 'json',
-            success: function (res) {
-                if(res.status==1){
-                    var data = res.data;
-                    var ele =$('.page .modify-contribution');
-                    if(data.length>0) {
-                        var flag =2;
-                        renderList(res, username,flag);
-                        initPagination(ele, res.info, page, pagesize, username, flag, 'doing');
-                    }else {
-                        ele.html('暂无此类数据');
-                    }
-                }else {
-                    console.log(res.info);
-                }
-            }
-
-        });
-    }
-    function noAlreadyReview(username,page,pagesize){
-        //未审件查询列表
-        $.ajax({
-            type: "POST",
-            url:  url +"Document/show",
-            data: {
-                username: username,
-                pagesize: pagesize || '10',
-                page: page || '1',
-                type: 'not_audit'
-            },
-            dataType: 'json',
-            success: function (res) {
-                if(res.status==1){
-                    var data = res.data;
-                    var ele =$('.page .no-already-contribution');
-                    if(data.length>0) {
-                        var flag =3;
-                        renderList(res, username,flag);
-                        initPagination(ele, res.info, page, pagesize, username, flag, 'not_audit')
-                    }else {
-                        ele.html('暂无此类数据')
-                    }
-                }else {
-                    console.log(res.info);
-                }
-            }
-
-        });
-    }
-    function alreadyReview(username,page,pagesize){
-        //已审稿件查询列表
-        $.ajax({
-            type: "POST",
-            url:  url +"Document/show",
-            data: {
-                username: username,
-                pagesize: pagesize || '10',
-                page: page || '1',
-                type: 'audit'
-            },
-            dataType: 'json',
-            success: function (res) {
-                if(res.status==1){
-                    var data = res.data;
-                    var ele =$('.page .already-contribution');
-                    if(data.length>0) {
-                        var flag =4;
-                        renderList(res, username, flag);
-                        initPagination(ele, res.info, page, pagesize, username, flag, 'audit')
-                    }else {
-                        ele.html('暂无此类数据')
-                    }
-                }else {
-                    console.log(res.info);
-                }
-            }
-
-        });
-    }
-    function noAlreadyAllocate(username,page,pagesize){
-        //待分配稿件查询列表
-        $.ajax({
-            type: "POST",
-            url:  url +"Document/show",
-            data: {
-                username: username,
-                pagesize: pagesize || '10',
-                page: page || '1',
-                type: 'not_distribute'
-            },
-            dataType: 'json',
-            success: function (res) {
-                if(res.status==1){
-                    var data = res.data;
-                    var ele =$('.page .no-allocate-contribution');
-                    if(data.length>0) {
-                        var flag =5;
-                        renderList(res, username,flag);
-                        initPagination(ele, res.info, page, pagesize, username, flag, 'not_distribute')
-                    }else {
-                        ele.html('暂无此类数据')
-                    }
-                }else {
-                    console.log(res.info);
-                }
-            }
-
-        });
-    }
-    function alreadyAllocate(username,page,pagesize){
-
-        //已分配稿件查询列表
-        $.ajax({
-            type: "POST",
-            url:  url +"Document/show",
-            data: {
-                username: username,
-                pagesize: pagesize || '10',
-                page: page || '1',
-                type: 'distribute'
-            },
-            dataType: 'json',
-            success: function (res) {
-                if(res.status==1){
-                    var data = res.data;
-                    var ele =$('.page .allocate-contribution');
-                    if(data.length>0) {
-                        var flag =6;
-                        renderList(res, username, flag);
-                        initPagination(ele, res.info, page, pagesize, username, flag, 'distribute')
-                    }else {
-                        ele.html('暂无此类数据');
-                    }
-                }else {
-                    console.log(res.info);
-                }
-            }
-
-        });
-    }
-
 
     //添加更多作者
     $('#modal-add-author').on('click', function () {
@@ -608,13 +459,66 @@ $(document).ready(function() {
     function IsInfoTableEmpty(){
         var info_center_table = $('#info-center-table');
         if (info_center_table.children().length == 0) {
-            info_center_table.append($("<a class=\"manu-item manu-item-even\"><div class=\"manu-item-title\">暂无消息</div></a>"))
+            info_center_table.append($("<div class=\"manu-item manu-item-even\"><div class=\"manu-item-title\">暂无消息</div></div>"))
         }
 
         var manu_check_table = $('#manu-check-table');
         if (manu_check_table.children().length == 0) {
-            manu_check_table.append($("<a class=\"manu-item manu-item-even\"><div class=\"manu-item-title\">暂无稿件</div></a>"))
+            manu_check_table.append($("<div class=\"manu-item manu-item-even\"><div class=\"manu-item-title\">暂无稿件</div></div>"))
         }
-    }
+    };
 
-})
+
+    $('.manu-check-area').on('click', "div.manu-item", function() {
+        var docuid = $(this).attr("docuid");
+        $.ajax({
+            /*type: "POST",
+            url:  url +"Document/showById",
+            data: {
+                username: username,
+                docu_id: docuid,
+            },*/
+            type: "GET",
+            url: "./json/product_detail.json",
+            dataType: 'json',
+            success: function (res) {
+                if (res.status == 1) {
+                    var data = res.data;
+                    var curData = data[0];
+                    $('#manuDetailModal').modal()
+                    var modal_value = $(".detail-modal-content");
+                    $(modal_value[0]).text(curData["docu_id"]);
+                    $(modal_value[1]).text(curData["chineseTitle"]);
+                    $(modal_value[2]).text(curData["englishTitle"]);
+                    $(modal_value[3]).text(curData["keyChinese"]);
+                    $(modal_value[4]).text(curData["keyEnglish"]);
+                    $(modal_value[5]).text(curData["theme"]);
+                    $(modal_value[6]).text(curData["create_time"]);
+                    var manuStatus = "未知";
+                    switch(curData["status"]) {
+                        case "1":
+                            manuStatus = "已提交";
+                            break;
+                        case "2":
+                            manuStatus = "待审";
+                            break;
+                        case "3":
+                            manuStatus = "";
+                            break;
+                        case "4":
+                            manuStatus = "";
+                            break;
+                        case "5":
+                            manuStatus = "不宜采纳";
+                            break;
+                    }
+                    $(modal_value[7]).text(manuStatus);
+                    $(modal_value[8]).text(curData["audit_opinion"] || "暂无审稿意见");
+                } else {
+                    console.log(res.info);
+                }
+            }
+        })
+    });
+
+});

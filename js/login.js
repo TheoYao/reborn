@@ -195,8 +195,6 @@ $(function() {
         //登录
         $('#sign-in-btn').on('click',function () {
             //登录
-            swal('奇怪了');
-            return false
             var uname = $.trim($('#sign-in-username').val());
             var upwd =$.trim($('#sign-in-pwd').val());
             if(uname && upwd){
