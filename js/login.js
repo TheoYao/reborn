@@ -171,7 +171,7 @@ $(function() {
                 success: function (data) {
                     if (data.status == 1) {
                         swal('注册成功', "","success");
-                        window.location.href = "../Form/login.html#login";
+                        window.location.href = "login.html#login";
 
                     } else {
                         swal(data.info);

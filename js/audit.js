@@ -16,5 +16,5 @@ $(document).ready(function() {
         $("#audit-nav-button").remove()
     }
     alert("permission denied")
-    window.location.href = "../Form/login.html#signin"
+    window.location.href = "login.html#signin"
 });

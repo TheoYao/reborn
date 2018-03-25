@@ -75,8 +75,7 @@ $(document).ready(function() {
     function fillPersonInfo() {
         $.ajax({
             type: "GET",
-            // url: url+"Form/getUserInfo",
-            url: "./json/searchUser.json",
+            url: url+"Form/getUserInfo",
             data: {
                 username: username
             },
@@ -133,17 +132,15 @@ $(document).ready(function() {
     function contribution(username) {
         //请求稿件查询列表
         $.ajax({
-            /*type: "POST",
+            type: "POST",
             url:  url +"Document/show",
             data: {
                 username: username,
-                pagesize: pagesize || '10',
-                page: page || '1',
                 type: 'all'
-            },*/
-            type: "GET",
+            },
+            /*type: "GET",
             url: "./json/show_product.json",
-            dataType: 'json',
+            dataType: 'json',*/
             success: function (res) {
                 if(res.status==1){
                     var data = res.data;
