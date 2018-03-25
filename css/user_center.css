@@ -27,7 +27,6 @@ ul,li{ padding:0;margin:0;list-style:none}
     border-top:7px solid #009200;
 }
 .navbar .logo-area {
-    padding-top: 15px;
     padding-left: 16px;
     width: 100%;
     height: 120px;
@@ -62,7 +61,7 @@ ul,li{ padding:0;margin:0;list-style:none}
 }
 
 .navbar .top-func-area {
-    padding-top: 30px;
+    padding-top: 50px;
     width: 360px;
     display: inline-block;
     vertical-align: top;

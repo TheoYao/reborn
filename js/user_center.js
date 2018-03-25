@@ -1,6 +1,4 @@
 $(document).ready(function() {
-    $.cookie('cookie_info', JSON.stringify({"username":"xuebin","identity":"contribute,audit"}));
-
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
     var username = '';
     var identity = '';
@@ -8,7 +6,7 @@ $(document).ready(function() {
         var username =JSON.parse($.cookie('cookie_info')).username;
         var identity =JSON.parse($.cookie('cookie_info')).identity;
 
-        $("#sign-area-name").text(username)
+        $(".sign-area").empty()
     }else {
         window.location.href = "../Form/login.html#signin"
     }
@@ -287,36 +285,49 @@ $(document).ready(function() {
             swal('请填写作者地址');
             return false
         }
-        var data = new FormData();
-        data.append('username', username);
-        data.append('fileSrc', fileSrc);
-        data.append('chineseTitle', chineseTitle);
-        data.append('englishTitle', englishTitle);
-        data.append('keyChinese', keyChinese);
-        data.append('keyEnglish', keyEnglish);
-        data.append('theme', theme);
-        data.append('author', JSON.stringify(author));
-        data.append('remarks', remarks);
-        $.ajax({
-            type: "POST",
-            url: url +"Document/submit",
-            data: data,
-            dataType: 'json',
-            processData: false,
-            contentType: false,
-            success: function (data) {
-                if (data.status == 1) {
-                    swal("提交成功！", "请等待审核。", "success");
-                    //window.location.href='/app/Tpl/Form/user.html'
-                } else {
-                    swal("出现问题", data.info, "error");
-                    return false;
-                }
-            },
-            error: function () {
-                swal('网路不给力，请稍候再试');
-            }
-        })
+
+        swal(
+            {
+                title: "确定提交吗？",
+                text: "提交后信息将无法修改！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定提交",
+                closeOnConfirm: false
+            }, function(){
+                var data = new FormData();
+                data.append('username', username);
+                data.append('fileSrc', fileSrc);
+                data.append('chineseTitle', chineseTitle);
+                data.append('englishTitle', englishTitle);
+                data.append('keyChinese', keyChinese);
+                data.append('keyEnglish', keyEnglish);
+                data.append('theme', theme);
+                data.append('author', JSON.stringify(author));
+                data.append('remarks', remarks);
+
+                $.ajax({
+                    type: "POST",
+                    url: url +"Document/submit",
+                    data: data,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        if (data.status == 1) {
+                            swal("提交成功！", "请等待审核。", "success");
+                            //window.location.href='/app/Tpl/Form/user.html'
+                        } else {
+                            swal("出现问题", data.info, "error");
+                            return false;
+                        }
+                    },
+                    error: function () {
+                        swal('网路不给力，请稍候再试');
+                    }
+                })
+            });
     });
 
     $('#btn-submit-personal-info').on('click', function () {
@@ -369,46 +380,55 @@ $(document).ready(function() {
             swal('请输入地址');
             return false
         }
+        swal(
+            {
+                title: "确定提交吗？",
+                text: "提交后信息将无法修改！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定提交",
+                closeOnConfirm: false
+            }, function(){
+                $.ajax({
+                    type: "POST",
+                    url: url+"Form/editUserInfo",
+                    data: {
+                        username: userName,
+                        email: email,
+                        sex: sex,
+                        birthDate: birthDate,
+                        school: school,
+                        userID: userId,
+                        stuName: stuName,
+                        docName: docName,
+                        phone: phone,
+                        address: address
+                    },
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $('#btn-submit-personal-info').css({"background": "rgba(11,11,11,0.1)"});
 
-        $.ajax({
-            type: "POST",
-            url: url+"Form/editUserInfo",
-            data: {
-                username: userName,
-                email: email,
-                sex: sex,
-                birthDate: birthDate,
-                school: school,
-                userID: userId,
-                stuName: stuName,
-                docName: docName,
-                phone: phone,
-                address: address
-            },
-            dataType: 'json',
-            beforeSend: function () {
-                $('#btn-submit-personal-info').css({"background": "rgba(11,11,11,0.1)"});
+                    },
+                    success: function (data) {
+                        if (data.status == 1) {
+                            swal('修改成功', "","success");
+                            window.location.reload();
 
-            },
-            success: function (data) {
-                if (data.status == 1) {
-                    swal('修改成功', "","success");
-                    window.location.reload();
+                        } else {
+                            swal(data.info);
+                            return false;
+                        }
 
-                } else {
-                    swal(data.info);
-                    return false;
-                }
+                    },
+                    complete: function () {
 
-            },
-            complete: function () {
-
-            },
-            error: function () {
-                swal('对不起，当前服务器开小差，请稍候再试', '', "error")
-            }
-
-        });
+                    },
+                    error: function () {
+                        swal('对不起，当前服务器开小差，请稍候再试', '', "error")
+                    }
+                });
+            });
     });
 
     $('#btn-submit-modify-pwd').on('click', function () {
@@ -429,30 +449,41 @@ $(document).ready(function() {
             return false;
         }
 
-        $.ajax({
-            type: "POST",
-            url: url +"Form/modifyPassword",
-            data: {
-                username: username,
-                oldPwd: oldPwd,
-                newPwd: newPwd
-            },
-            dataType: 'json',
-            success: function (data) {
-                if (data.status == 1) {
-                    swal('设置成功');
-                    window.location.reload();
-                } else {
-                    swal("修改失败，请重新设置")
+        swal(
+            {
+                title: "确定提交吗？",
+                text: "提交后信息将无法修改！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定提交",
+                closeOnConfirm: false
+            }, function(){
+                $.ajax({
+                    type: "POST",
+                    url: url +"Form/modifyPassword",
+                    data: {
+                        username: username,
+                        oldPwd: oldPwd,
+                        newPwd: newPwd
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.status == 1) {
+                            swal('设置成功');
+                            window.location.reload();
+                        } else {
+                            swal("修改失败，请重新设置")
 
-                    return false;
-                }
-            },
-            error: function () {
-                swal('网路不给力，请稍候再试');
-            }
+                            return false;
+                        }
+                    },
+                    error: function () {
+                        swal('网路不给力，请稍候再试');
+                    }
+                })
+            });
 
-        })
     });
 
     IsInfoTableEmpty();
