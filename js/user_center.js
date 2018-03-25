@@ -8,7 +8,7 @@ $(document).ready(function() {
 
         $(".sign-area").empty()
     }else {
-        window.location.href = "../Form/login.html#signin"
+        window.location.href = "login.html#signin"
     }
     if(identity.indexOf('audit') == -1){
         $("#audit-nav-button").remove()

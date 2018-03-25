@@ -1,7 +1,6 @@
 //登录 注册逻辑
 $(function() {
     //tab切换
-    // var url = "http://yf-rdqa-dev064-sunxuebin.epc.baidu.com:8099/app/index.php/";
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
 
     var ok1=false;
