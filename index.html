@@ -24,22 +24,8 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/flipclock.min.js"></script>
+    <script src="js/base.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-
-            var url = $("#cartoonVideo").attr('src');
-
-            $("#myModal").on('hide.bs.modal', function(){
-                $("#cartoonVideo").attr('src', '');
-            });
-
-
-            $("#myModal").on('show.bs.modal', function(){
-                $("#cartoonVideo").attr('src', url);
-            });
-        });
-    </script>
 
 </head>
 
@@ -144,7 +130,7 @@
         <div class="slider-wrap">
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <a href="#myModal" data-toggle="modal"><img src="images/slider-1.jpg"></a>
+                    <a href="#myModal" data-toggle="modal" id="slider-with-video"><img src="images/slider-1.jpg"></a>
                 </div>
 
                 <div class="mySlides fade">
@@ -172,10 +158,8 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">YouTube Video</h4>
                         </div>
-                        <div class="modal-body">
-                            <iframe id="cartoonVideo" width="560" height="315" src="videos/marvel.mp4" frameborder="0" allowfullscreen></iframe>
+                        <div class="modal-body" id="modal-show-video">
                         </div>
                     </div>
                 </div>
@@ -185,40 +169,7 @@
     </section>
 
     <script>
-        var slideIndex = 1;
-        var timer;
-        showSlides();
 
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            if (slideIndex > slides.length) {slideIndex = 1}
-            if (slideIndex <= 0) (slideIndex=slides.length)
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            timer = setTimeout(function() {
-                plusSlides(1);
-            }, 7000);
-        }
-
-        function plusSlides(n) {
-            clearTimeout(timer);
-            slideIndex += n;
-            showSlides();
-        }
-
-        function currentSlide(n) {
-            clearTimeout(timer);
-            slideIndex = n;
-            showSlides();
-        }
     </script>
 
     <section class="time-line TimelineBg">
@@ -359,25 +310,7 @@
         </div>
     </section>
     <script type="text/javascript">
-        var clock;
 
-        $(document).ready(function() {
-
-            // Grab the current date
-            var currentDate = new Date();
-
-            // Set some date in the future. In this case, it's always Jan 1
-            var futureDate  = new Date(2018, 10, 18);
-
-            // Calculate the difference in seconds between the future and current date
-            var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-
-            // Instantiate a coutdown FlipClock
-            clock = $('.clock').FlipClock(diff, {
-                clockFace: 'DailyCounter',
-                countdown: true
-            });
-        });
     </script>
 
 
