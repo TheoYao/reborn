@@ -119,19 +119,13 @@ $(function() {
 
             var docName = $.trim($('#sign-up-tutor').val());
             if(docName=='') {
-                swal('请输入学号');
-                return false
-            }
-
-            var docName = $.trim($('#sign-up-tutor').val());
-            if(docName=='') {
-                swal('请输入学号');
+                swal('请输入导师姓名');
                 return false
             }
 
             var phone = $.trim($('#sign-up-mobile').val());
             if(phone=='') {
-                swal('请输入学号');
+                swal('请输入手机号');
                 return false
             }
 

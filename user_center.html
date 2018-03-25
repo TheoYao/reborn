@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/favicon.png">
     <title>十一届全国博士生学术会议</title>
-
+    <link rel="stylesheet" type="text/css" href="css/datetimepicker.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css" />
 
@@ -42,8 +42,8 @@
                             <a class="english-version" href="#">English Version</a>
                         </div>
                         <div class="sign-area">
-                            <a class="sign-in" href="login.html#signin">登录</a>
-                            <a class="sign-up" href="login.html#signup">注册</a>
+                            <span id="sign-area-name"></span>
+                            <a class="sign-out" href="login.html#signin">退出</a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
             <div class="user-body-area">
                 <div class="user-wrap-area">
                     <div class="user-wrap-tab tab-active">作者中心</div>
-                    <div class="user-wrap-tab"><a href="audit.html">审稿中心</a></div>
+                    <div class="user-wrap-tab" id="audit-nav-button"><a href="audit.html">审稿中心</a></div>
                 </div>
 
 
@@ -83,8 +83,7 @@
                     </div>
                     <div class="title-area-text">稿件查询</div>
                     <div class="manu-check-area">
-
-                        <div class="manu-list">
+                        <div class="manu-list" id="manu-check-table">
                             <a class="manu-item manu-item-even">
                                 <div class="manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
                                 <div class="manu-item-date">2018-03-02</div>
@@ -102,60 +101,32 @@
 
                     <div class="title-area-text">最新消息</div>
                     <div class="info-center-area">
-
-                        <div class="title-area"></div>
-                        <div class="manu-list">
-                            <a class="manu-item manu-item-even">
-                                <div class="manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
-                                <div class="manu-item-date">2018-03-02</div>
-                            </a>
-                            <a class="manu-item manu-item-odd">
-                                <div class="manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
-                                <div class="manu-item-date">2018-03-02</div>
-                            </a>
-                            <a class="manu-item manu-item-even">
-                                <div class="manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
-                                <div class="manu-item-date">2018-03-02</div>
-                            </a>
-                            <a class="manu-item manu-item-odd">
-                                <div class="manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
-                                <div class="manu-item-date">2018-03-02</div>
-                            </a>
-                            <a class="manu-item manu-item-even">
-                                <div class="manu-item-title">不同过滤介质的生物充气过滤器对饮用水中消毒副产物前体的影响</div>
-                                <div class="manu-item-date">2018-03-02</div>
-                            </a>
+                        <div class="manu-list" id="info-center-table">
                         </div>
                     </div>
                 </div>
-
 
                 <div id="user-center-show-body-1" class="user-center-index"  style="display: none;">
                     <form class="user-contribute-deliver" enctype="multipart/form-data">
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field" id="summary_submit_input0">&nbsp;&nbsp;&nbsp;摘要上传：</span>
                             <input type="file" id="summary-file-input" name="fileString" class="form-control" placeholder="请选择文件" accept=".doc, .doc">
-                            <!--
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-select-file" type="button">点击进行选择</button>
-                            </span>
-                            -->
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;中文标题：</span>
-                            <input type="text" class="form-control" placeholder="Username" id="summary_input_cn_title">
+                            <input type="text" class="form-control" placeholder="请输入中文标题" id="summary_input_cn_title">
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;英文标题：</span>
-                            <input type="text" class="form-control" placeholder="Username" id="summary_input_egls_title">
+                            <input type="text" class="form-control" placeholder="请输入英文标题" id="summary_input_egls_title">
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">中文关键字：</span>
-                            <input type="text" class="form-control" placeholder="Username" id="summary_input_cn_kwd">
+                            <input type="text" class="form-control" placeholder="关键字以逗号隔开" id="summary_input_cn_kwd">
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">英文关键字：</span>
-                            <input type="text" class="form-control" placeholder="Username" id="summary_input_egls_kwd">
+                            <input type="text" class="form-control" placeholder="关键字以逗号隔开" id="summary_input_egls_kwd">
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题：</span>
@@ -171,19 +142,19 @@
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者姓名：</span>
-                            <input type="text" class="form-control" placeholder="Username" id="summary_input_author_name">
+                            <input type="text" class="form-control" placeholder="请输入作者姓名" id="summary_input_author_name">
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者拼音：</span>
-                            <input type="text" class="form-control" placeholder="Username" id="summary_input_author_spell">
+                            <input type="text" class="form-control" placeholder="请输入作者拼音(全小写，姓在前，姓和名用空格分开)" id="summary_input_author_spell">
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
-                            <input type="text" class="form-control" placeholder="Username" id="summary_input_email">
+                            <input type="text" class="form-control" placeholder="请输入作者邮箱" id="summary_input_email">
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者单位：</span>
-                            <input type="text" class="form-control" placeholder="Username" id="summary_input_unit">
+                            <input type="text" class="form-control" placeholder="请输入作者单位" id="summary_input_unit">
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;更多作者：</span>
@@ -201,19 +172,19 @@
                                         <div class="modal-body">
                                             <div class="input-group input-group-self">
                                                 <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者姓名：</span>
-                                                <input type="text" class="form-control" placeholder="Username" id="summary_input_more_author_name">
+                                                <input type="text" class="form-control" placeholder="请输入作者姓名" id="summary_input_more_author_name">
                                             </div>
                                             <div class="input-group input-group-self">
                                                 <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者拼音：</span>
-                                                <input type="text" class="form-control" placeholder="Username" id="summary_input_more_spell">
+                                                <input type="text" class="form-control" placeholder="请输入作者拼音(全小写，姓在前，姓和名用空格分开)" id="summary_input_more_spell">
                                             </div>
                                             <div class="input-group input-group-self">
                                                 <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
-                                                <input type="text" class="form-control" placeholder="Username" id="summary_input_more_email">
+                                                <input type="text" class="form-control" placeholder="请输入作者邮箱" id="summary_input_more_email">
                                             </div>
                                             <div class="input-group input-group-self">
                                                 <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者单位：</span>
-                                                <input type="text" class="form-control" placeholder="Username" id="summary_input_more_unit">
+                                                <input type="text" class="form-control" placeholder="请输入作者单位" id="summary_input_more_unit">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -227,7 +198,7 @@
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>
-                            <input type="text" class="form-control" placeholder="Username"  id="summary_submit_remark">
+                            <input type="text" class="form-control" placeholder="备注信息"  id="summary_submit_remark">
                         </div>
                     </form>
                     <div class="summary_submit_button_area">
@@ -246,47 +217,47 @@
 
                 <div id="user-center-show-body-5" class="user-center-index" style="display: none;">
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名：</span>
-                        <input type="text" class="form-control" value="xuebin" aria-describedby="personal_info_input1">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名：</span>
+                        <input type="text" class="form-control" id="personal_info_input_username" disabled="disabled">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input2">&nbsp;账号(邮箱)：</span>
-                        <input type="text" class="form-control" value="364455209@qq.com" aria-describedby="basic-personal_info_input2" disabled="disabled">
+                        <span class="input-group-addon summary_submit_field">&nbsp;账号(邮箱)：</span>
+                        <input type="text" class="form-control" id="personal_info_input_mail" disabled="disabled">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：</span>
-                        <input type="text" class="form-control" value="sunxuebin" aria-describedby="personal_info_input3">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：</span>
+                        <input type="text" class="form-control"  id="personal_info_input_name">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：</span>
-                        <select class="selectpicker form-control" title="性别">
-                            <option selected="selected">男</option>
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：</span>
+                        <select class="selectpicker form-control" id="personal_info_input_sex">
+                            <option>男</option>
                             <option>女</option>
                         </select>
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input5">&nbsp;&nbsp;&nbsp;出生年月：</span>
-                        <input type="text" class="form_datetime form-control" value="2017-06-14" aria-describedby="personal_info_input5">
+                        <span class="input-group-addon summary_submit_field" >&nbsp;&nbsp;&nbsp;出生年月：</span>
+                        <input type="text" class="form_datetime form-control" id="personal_info_input_birth">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input6">&nbsp;&nbsp;&nbsp;所在院校：</span>
-                        <input type="text" class="form-control" value="清华大学" aria-describedby="personal_info_input6">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;所在院校：</span>
+                        <select class="selectpicker form-control input-res-school" data-live-search="true" id="personal_info_input_school"></select>
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学号：</span>
-                        <input type="text" class="form-control" value="学号" aria-describedby="personal_info_input7">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学号：</span>
+                        <input type="text" class="form-control" id="personal_info_input_stuno">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input8">&nbsp;&nbsp;&nbsp;导师姓名：</span>
-                        <input type="text" class="form-control" value="sunxuebin" aria-describedby="personal_info_input8">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;导师姓名：</span>
+                        <input type="text" class="form-control" id="personal_info_input_docno">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input9">&nbsp;&nbsp;&nbsp;手机号码：</span>
-                        <input type="text" class="form-control" value="19098789876" aria-describedby="personal_info_input9">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;手机号码：</span>
+                        <input type="text" class="form-control" id="personal_info_mobile">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="personal_info_input10">&nbsp;&nbsp;&nbsp;详细地址：</span>
-                        <input type="text" class="form-control" value="山东省泰安市泰山区test" aria-describedby="personal_info_input10">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;详细地址：</span>
+                        <input type="text" class="form-control" id="personal_info_input_addr">
                     </div>
                     <div class="summary_submit_button_area">
                         <div>
@@ -297,16 +268,16 @@
 
                 <div id="user-center-show-body-6" class="user-center-index" style="display: none;">
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="pmodify_password_input1">&nbsp;&nbsp;&nbsp;原密码：</span>
-                        <input type="text" class="form-control" aria-describedby="personal_info_input1">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;原密码：</span>
+                        <input type="text" class="form-control" id="modify_password_input_ori">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="modify_password_input2">&nbsp;&nbsp;&nbsp;新密码：</span>
-                        <input type="text" class="form-control" aria-describedby="basic-personal_info_input2">
+                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;新密码：</span>
+                        <input type="text" class="form-control" id="modify_password_input_new">
                     </div>
                     <div class="input-group input-group-self">
-                        <span class="input-group-addon summary_submit_field" id="modify_password_input3">确认密码：</span>
-                        <input type="text" class="form-control" aria-describedby="personal_info_input3">
+                        <span class="input-group-addon summary_submit_field">确认密码：</span>
+                        <input type="text" class="form-control"  id="modify_password_input_again">
                     </div>
                     <div class="summary_submit_button_area">
                         <div>
@@ -401,6 +372,15 @@
                         }
                         else {
                             y.removeClass("active")
+                        }
+                    }
+                    else if(i>4) {
+                        var y=$("#user-nav-bottom-item-"+i)
+                        if (i==index) {
+                            y.addClass("user-nav-bottom-item-active")
+                        }
+                        else {
+                            y.removeClass("user-nav-bottom-item-active")
                         }
                     }
                 }

@@ -124,6 +124,11 @@ ul,li{ padding:0;margin:0;list-style:none}
     border-bottom: 1px solid rgba(50, 50, 50, 0.8);
     cursor: pointer;
 }
+.user-main-area .user-nav-bottom-item-active {
+    background-color: #9BCE4A;
+    color:#ffffff;
+    border:1px solid #ffffff;
+}
 
 .user-main-area .user-nav-area .forbid {
     cursor: not-allowed;
@@ -132,6 +137,8 @@ ul,li{ padding:0;margin:0;list-style:none}
 .user-main-area .user-nav-bottom .del-bottom-border {
     border-bottom: none;
 }
+
+
 
 .user-main-area .user-body-area{
     display:inline-block;
