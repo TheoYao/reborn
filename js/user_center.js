@@ -332,7 +332,6 @@ $(document).ready(function() {
 
         var email = $.trim($('#sign-up-email').val());
 
-
         var stuName = $.trim($('#personal_info_input_name').val());
         if(stuName=='') {
             swal('请填写姓名');
@@ -373,7 +372,7 @@ $(document).ready(function() {
 
         //地址拼接
         var address = $.trim($('#personal_info_input_addr').val());
-        if(phone=='') {
+        if(address=='') {
             swal('请输入地址');
             return false
         }

@@ -85,9 +85,11 @@ $(function() {
             var dpwd = $('#sign-up-pwd-again').val();
             if(dpwd==''){
                 swal('请再次确认你的密码');
+                return false
             }
             if(dpwd!=password){
                 swal('两次输入密码不一致');
+                return false
             }
 
             var stuName = $.trim($('#sign-up-name').val());
@@ -130,21 +132,25 @@ $(function() {
 
             //地址拼接
             var resProvince=$('.res-province option:selected').val();
-            if(resProvince=='') {
+            if(resProvince=='省份') {
                 swal('请选择省份');
                 return false
             }
             var resCity=$('.res-city option:selected').val();
-            if(resCity=='') {
+            if(resCity=='地级市') {
                 swal('请选择城市');
                 return false
             }
             var resCounty=$('.res-county option:selected').val();
-            if(resCity=='') {
+            if(resCounty=='市、县级市') {
                 swal('请选择县区');
                 return false
             }
             var addressText = $.trim($('#sign-up-more-address').val());
+            if(addressText=='') {
+                swal('请输入详细地址');
+                return false
+            }
             var address = resProvince +resCity+resCounty + String(addressText);
 
             $.ajax({
