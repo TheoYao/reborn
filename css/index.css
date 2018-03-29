@@ -335,4 +335,22 @@ border-top:7px solid #009200;
     width:100%;
 }
 
+.backToTop {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    font-size: 36px;
+    color: rgba(0,0,0,0.5);
+    width: 60px;
+    padding: 0 0 5px 12px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: 1px solid rgba(222,222,222,0.8);
+    background: rgba(238, 240, 236, 1.0);
+}
 
+.backToTop:hover {
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+}
