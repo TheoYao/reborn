@@ -83,7 +83,7 @@ $(document).ready(function() {
             success: function (data) {
                 $('.selectpicker').selectpicker('refresh');
                 if (data.status == 1) {
-                    var curData = data.data[0];
+                    var curData = data.data;
                     $("#personal_info_input_username").attr("value", curData["username"]);
                     $("#personal_info_input_mail").attr("value", curData["email"]);
                     $("#personal_info_input_name").attr("value", curData["stuName"]);

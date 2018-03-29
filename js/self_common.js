@@ -6,7 +6,8 @@ $(document).ready(function() {
         window.location.href = "index.html"
     });
 
-    if($.cookie('cookie_info')) {
+    if($.cookie('cookie_info') != undefined && $.cookie('cookie_info') != "") {
+        var hhhh = $.cookie('cookie_info')
         var username = JSON.parse($.cookie('cookie_info')).username;
         var identity = JSON.parse($.cookie('cookie_info')).identity;
 
