@@ -33,7 +33,7 @@ ul,li{ padding:0;margin:0;list-style:none}
 }
 
 .navbar .logo-icon{
-    width: 600px;
+    width: 610px;
     display: inline-block;
 }
 
@@ -151,7 +151,6 @@ ul,li{ padding:0;margin:0;list-style:none}
 
 .user-main-area .user-wrap-tab a{
     text-decoration: none;
-    color: #000000;
 }
 
 .user-main-area .user-wrap-area .user-wrap-tab {

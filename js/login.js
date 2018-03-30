@@ -176,9 +176,17 @@ $(function() {
                 },
                 success: function (data) {
                     if (data.status == 1) {
-                        swal('注册成功', "","success");
-                        window.location.href = "login.html#signin";
-
+                        //swal('注册成功', "","success");
+                        swal({
+                                title: "注册成功",
+                                text: "",
+                                type: "success",
+                                confirmButtonColor: "#DD6B55",
+                                confirmButtonText: "确定",
+                                closeOnConfirm: false
+                            }, function() {
+                                window.location.href = "http://ndac.env.tsinghua.edu.cn/app/Mainpage/login.html";
+                            })
                     } else {
                         swal(data.info);
                         return false;
@@ -222,7 +230,7 @@ $(function() {
                                 identity: data.data.identity
                             };
                             $.cookie('cookie_info', JSON.stringify(cookie_info));
-                            window.location.href = "../Mainpage/index.html";
+                            window.location.href = "user_center.html";
 
                         } else {
                             swal("error", data.info, "error");

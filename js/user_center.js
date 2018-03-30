@@ -6,7 +6,6 @@ $(document).ready(function() {
         var username =JSON.parse($.cookie('cookie_info')).username;
         var identity =JSON.parse($.cookie('cookie_info')).identity;
 
-        $(".sign-area").empty()
     }else {
         window.location.href = "login.html#signin"
     }
@@ -87,7 +86,7 @@ $(document).ready(function() {
                     $("#personal_info_input_username").attr("value", curData["username"]);
                     $("#personal_info_input_mail").attr("value", curData["email"]);
                     $("#personal_info_input_name").attr("value", curData["stuName"]);
-                    if (curData["sex"] == 0) {
+                    if (curData["sex"] == "男") {
                         $("button[data-id='personal_info_input_sex']").attr("title", "男");
                         $("button[data-id='personal_info_input_sex'] .filter-option").text("男")
                     }
@@ -99,7 +98,7 @@ $(document).ready(function() {
                     $("#personal_info_input_birth").attr("value", curData["birthDate"]);
 
                     $("button[data-id='personal_info_input_school']").attr("title", curData["school"]);
-                    $("button[data-id='personal_info_input_school'] .filter-option").text(curData["school"])
+                    $("button[data-id='personal_info_input_school'] .filter-option").text(curData["school"]);
 
                     if (curData["userID"] != "") {
                         $("#personal_info_input_stuno").attr("value", curData["userID"]);
@@ -112,6 +111,10 @@ $(document).ready(function() {
                     $("#personal_info_mobile").attr("value", curData["phone"]);
                     $("#personal_info_input_addr").attr("value", curData["address"]);
 
+
+                    /*填充tips*/
+                    $("#school_name").text(curData["school"]);
+                    $("#person_name").text(curData["username"]);
                 } else {
                     swal(data.info);
                     return false;
@@ -162,7 +165,7 @@ $(document).ready(function() {
             var curData = data[i];
             var curTitle = curData["chineseTitle"];
             var curDate = curData["create_time"].split(" ")[0];
-            var curDocuId = curData["docu_id"]
+            var curDocuId = curData["docu_id"];
             if (i%2 == 1){
                 aimStr += "<div class=\"manu-item manu-item-even\" docuid="+curDocuId+"><div class=\"manu-item-title\">"+curTitle+"</div><div class=\"manu-item-date\">"+curDate+"</div></div>"
             }
@@ -200,7 +203,7 @@ $(document).ready(function() {
             return false
         }
         $('.more-author-list').append('<span class="more-author-item" data-name='+addName+' data-ping='+addPing+' data-email='+addEmail+' data-company='+addCompany+'>'+addName+'</span>')
-        if (typeof($("#more-author-show").attr("value"))=="undefined") {
+        if ($("#more-author-show").attr("value")) {
             $('#more-author-show').attr("value", addName)
         }
         else {
@@ -217,6 +220,10 @@ $(document).ready(function() {
         $('#myModal').modal('hide');
     }
 
+    $("#clear-more-author").on('click', function () {
+        $(".more-author-list").empty();
+        $('#more-author-show').attr("value", "");
+    })
 
     $('#btn-submit-summary').on('click', function () {
         var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
@@ -286,7 +293,7 @@ $(document).ready(function() {
         swal(
             {
                 title: "确定提交吗？",
-                text: "提交后信息将无法修改！",
+                text: "每人只能提交一份稿件，提交后信息将无法修改！",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
@@ -330,7 +337,7 @@ $(document).ready(function() {
     $('#btn-submit-personal-info').on('click', function () {
         var userName = $.trim($('#personal_info_input_username').val());
 
-        var email = $.trim($('#sign-up-email').val());
+        var email = $.trim($('#personal_info_input_mail').val());
 
         var stuName = $.trim($('#personal_info_input_name').val());
         if(stuName=='') {
@@ -379,7 +386,6 @@ $(document).ready(function() {
         swal(
             {
                 title: "确定提交吗？",
-                text: "提交后信息将无法修改！",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
@@ -448,7 +454,6 @@ $(document).ready(function() {
         swal(
             {
                 title: "确定提交吗？",
-                text: "提交后信息将无法修改！",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
@@ -466,11 +471,18 @@ $(document).ready(function() {
                     dataType: 'json',
                     success: function (data) {
                         if (data.status == 1) {
-                            swal('设置成功');
-                            window.location.reload();
+                            swal({
+                                    title: "设置成功",
+                                    type: "success",
+                                    confirmButtonColor: "#DD6B55",
+                                    confirmButtonText: "确定",
+                                    closeOnConfirm: false
+                                }, function() {
+                                $.cookie('cookie_info', '', {expires: -1});
+                                window.location.href = "http://ndac.env.tsinghua.edu.cn/app/Mainpage/login.html";
+                            })
                         } else {
-                            swal("修改失败，请重新设置")
-
+                            swal("修改失败，请重新设置");
                             return false;
                         }
                     },
@@ -499,15 +511,17 @@ $(document).ready(function() {
     $('.manu-check-area').on('click', "div.manu-item", function() {
         var docuid = $(this).attr("docuid");
         $.ajax({
-            /*type: "POST",
+            type: "POST",
             url:  url +"Document/showById",
             data: {
                 username: username,
-                docu_id: docuid,
-            },*/
+                docu_id: docuid
+            },
+            /*
             type: "GET",
             url: "./json/product_detail.json",
             dataType: 'json',
+            */
             success: function (res) {
                 if (res.status == 1) {
                     var data = res.data;
@@ -541,6 +555,7 @@ $(document).ready(function() {
                     }
                     $(modal_value[7]).text(manuStatus);
                     $(modal_value[8]).text(curData["audit_opinion"] || "暂无审稿意见");
+                    gafd $(modal_value[8]).text("curData["docu_id"]);
                 } else {
                     console.log(res.info);
                 }

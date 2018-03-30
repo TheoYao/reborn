@@ -237,16 +237,16 @@ border-top:7px solid #009200;
     z-index:1;
     margin-bottom:0;
 
-    transition: height 1s;
-    -moz-transition: height 1s;	/* Firefox 4 */
-    -webkit-transition: height 1s;	/* Safari 和 Chrome */
-    -o-transition: height 1s;
+    transition: height 0.3s;
+    -moz-transition: height 0.3s;	/* Firefox 4 */
+    -webkit-transition: height 0.3s;	/* Safari 和 Chrome */
+    -o-transition: height 0.3s;
 }
 
 .conference-topic .cfr-topic-item:hover{
     margin-top:0;
     height:450px;
-    z-index:7;
+    z-index: 99;
     opacity: 1.0;
 }
 .conference-topic .cfr-topic-item img{
@@ -257,32 +257,38 @@ border-top:7px solid #009200;
 
 
 #tab-0 {
+    z-index:7;
 }
 
 #tab-1 {
+    z-index:6;
     margin-left:120px;
 }
 
 #tab-2 {
+    z-index:5;
     margin-left:240px;
 }
 
 #tab-3 {
+    z-index:4;
     margin-left:360px;
 }
 
 #tab-4 {
+    z-index:3;
     margin-left:480px;
 }
 
 #tab-5 {
+    z-index:2;
     margin-left:600px;
 }
 
 #tab-6 {
+    z-index:1;
     margin-left:720px;
 }
-
 
 
 .count-down {
@@ -353,4 +359,11 @@ border-top:7px solid #009200;
 .backToTop:hover {
     color: white;
     background-color: rgba(0,0,0,0.8);
+}
+
+#sign-out {
+    width: 30px;
+    cursor: pointer;
+    color: #0066cc;
+    display: inline-block;
 }

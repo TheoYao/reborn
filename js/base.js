@@ -1,12 +1,5 @@
 $(document).ready(function() {
 
-    if($.cookie('cookie_info')) {
-        var username = JSON.parse($.cookie('cookie_info')).username;
-        var identity = JSON.parse($.cookie('cookie_info')).identity;
-
-        $(".sign-area").empty();
-        $(".sign-area").html("<span id=\"sign-area-name\">"+username+"&nbsp;</span><a id=\"sign-out\" href=\"login.html#signin\">退出</a>");
-    }
     /*********** video-modal **********/
 
     var videoUrl = $("#cartoonVideo").attr('src');

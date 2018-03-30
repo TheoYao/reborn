@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css" />
     <link rel="stylesheet" type="text/css" href="css/sweetalert.css" />
 
-
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/user_center.css" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -78,8 +78,8 @@
 
             <div class="user-body-area">
                 <div class="user-wrap-area">
-                    <div class="user-wrap-tab tab-active">作者中心</div>
-                    <div class="user-wrap-tab" id="audit-nav-button"><a href="audit.html">审稿中心</a></div>
+                    <a href="user_center.html"> <div class="user-wrap-tab tab-active">作者中心</div></a>
+                    <a href="audit.html"><div class="user-wrap-tab" id="audit-nav-button">审稿中心</div></a>
                 </div>
 
 
@@ -135,6 +135,10 @@
                                             </li>
                                             <li class="list-group-item list-group-item-success">
                                                 <span class="detail-modal-field">审稿意见</span>
+                                                <span class="detail-modal-content"></span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="detail-modal-field">稿件下载</span>
                                                 <span class="detail-modal-content"></span>
                                             </li>
                                         </ul>
@@ -209,6 +213,7 @@
                             <input type="text" id="more-author-show" class="form-control" placeholder="添加作者" disabled="disabled">
                             <p class="more-author-list" style="display: none;"></p>
                             <span class="input-group-btn">
+                                <button class="btn btn-default btn-select-file" type="button" id="clear-more-author">清空更多作者</button>
                                 <button class="btn btn-default btn-select-file" type="button" data-toggle="modal" data-target="#myModal">点击进行添加</button>
                                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
@@ -405,7 +410,13 @@
                 if (index > 1 && index < 5) {
                     return
                 }
-
+                if (index == 5) {
+                    var manu_list = $(".manu-check-area .manu-list");
+                    if (manu_list.length>0){
+                        swal("您已投稿，不能重复投稿")
+                        return
+                    }
+                }
                 for (i = 0; i < 7; i++) {
                     var x = $("#user-center-show-body-"+i);
                     if (i == index) {
