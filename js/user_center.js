@@ -151,6 +151,9 @@ $(document).ready(function() {
                     if(data.length>0) {
                         renderManuList(data);
                     }
+                    else{
+                        IsInfoTableEmpty();
+                    }
                 }else {
                     console.log(res.info);
                 }
@@ -494,7 +497,7 @@ $(document).ready(function() {
 
     });
 
-    IsInfoTableEmpty();
+
     function IsInfoTableEmpty(){
         var info_center_table = $('#info-center-table');
 
@@ -506,6 +509,9 @@ $(document).ready(function() {
         if (manu_check_table.children().length == 0) {
             manu_check_table.attr("isPost", "0");
             manu_check_table.append($("<div class=\"manu-item manu-item-even\"><div class=\"manu-item-title\">暂无稿件</div></div>"))
+        }
+        else {
+            manu_check_table.attr("isPost", "1");
         }
     };
 
