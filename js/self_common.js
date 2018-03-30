@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // $.cookie('cookie_info', JSON.stringify({"username": "xuebin", "identity": "contribute,audit"}));
+    //$.cookie('cookie_info', JSON.stringify({"username": "xuebin", "identity": "contribute,audit"}));
 
     $('.sign-area').on('click', "div#sign-out", function() {
         $.cookie('cookie_info', '', { expires: -1 });

@@ -26,4 +26,23 @@ $(document).ready(function() {
         clockFace: 'DailyCounter',
         countdown: true
     });
+
+
+    $(".cfr-topic-item").mouseover(function(){
+        var item_list = $(".cfr-topic-item");
+        var this_id = $(this).attr("id").split("-")[1];
+
+        for(i=0; i<item_list.length; i++) {
+            $(item_list[i]).css("z-index", 10-i);
+            $(item_list[i]).css("margin-top", 0);
+            $(item_list[i]).css("height", "420px");
+            $(item_list[i]).css("opacity", 0.8);
+        }
+        $(this).css("z-index", 17);
+        $(this).css("margin-top", 0);
+        $(this).css("height", "450px");
+        $(this).css("z-index", 99);
+        $(this).css("opacity", 1.0);
+        //$("p").css("background-color","yellow");
+    });
 });
