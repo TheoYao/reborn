@@ -410,10 +410,10 @@
                 if (index > 1 && index < 5) {
                     return
                 }
-                if (index == 5) {
-                    var manu_list = $(".manu-check-area .manu-list");
-                    if (manu_list.length>0){
-                        swal("您已投稿，不能重复投稿")
+                if (index == 1) {
+                    var manu_list = $("#manu-check-table");
+                    if (manu_list.attr("isPost") != "0"){
+                        swal("您已投稿，不能重复投稿");
                         return
                     }
                 }
