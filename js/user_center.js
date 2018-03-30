@@ -321,7 +321,7 @@ $(document).ready(function() {
                     success: function (data) {
                         if (data.status == 1) {
                             swal("提交成功！", "请等待审核。", "success");
-                            //window.location.href='/app/Tpl/Form/user.html'
+                            window.location.reload();
                         } else {
                             swal("出现问题", data.info, "error");
                             return false;
@@ -557,7 +557,7 @@ $(document).ready(function() {
                     }
                     $(modal_value[7]).text(manuStatus);
                     $(modal_value[8]).text(curData["audit_opinion"] || "暂无审稿意见");
-                    $(modal_value[8]).html("<div id=\"download_abstract\" docuid="+curData["docu_id"]+"><a>点击下载</a></div>");
+                    $(modal_value[9]).html("<span id=\"download_abstract\" docuid="+curData["docu_id"]+"><a>点击下载</a></span>");
                 } else {
                     console.log(res.info);
                 }
@@ -565,7 +565,7 @@ $(document).ready(function() {
         })
     });
 
-    $('#manuDetailModal').on('click', "div#download_abstract", function() {
+    $('#manuDetailModal').on('click', "span#download_abstract", function() {
         var cid = $(this).attr("docuid");
         window.open('http://ndac.env.tsinghua.edu.cn' + '/app/data/'+cid+'.tar.gz');
     });
