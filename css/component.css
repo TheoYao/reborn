@@ -12,7 +12,7 @@
 	position: relative;
 	display: block;
 	float: right;
-	padding: 0.8em;
+	padding: 0.5em 0 0 0.2em;
 	width: 60%;
 	border: none;
 	border-radius: 0;
@@ -774,11 +774,12 @@
 .input__field--juro {
 	position: absolute;
 	z-index: 100;
-	padding: 2.15em 0.75em 0;
+	/*padding: 2.15em 0.75em 0;*/
 	width: 100%;
 	background: transparent;
 	color: #111111;
 	font-size: 0.85em;
+    margin: 1.8em 0 0 0.5em;
 }
 
 .input__label--juro {
@@ -1096,3 +1097,8 @@
 	-webkit-transform: translate3d(0, -50%, 0);
 	transform: translate3d(0, -50%, 0);
 }
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+

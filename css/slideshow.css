@@ -55,6 +55,7 @@
     border:1px solid rgba(222,222,222,0.8);
     background-color: rgba(66,66,66,0.8);
     margin-left:7px;
+    text-decoration:none;
 }
 
 /* Position the "next button" to the right */
@@ -79,6 +80,7 @@
     bottom: 8px;
     width: 100%;
     text-align: center;
+    text-decoration:none;
 }
 
 .slider-wrap .slider-dot {
@@ -105,6 +107,7 @@
 
 .slider-wrap .active, .slider-wrap .dot:hover {
     background-color: rgba(78, 163, 171, 1.0);
+    text-decoration:none;
 }
 
 /* Fading animation */
