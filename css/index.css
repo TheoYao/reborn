@@ -299,8 +299,24 @@ border-top:7px solid #009200;
     margin-top: 30px;
 }
 
+.clock-label {
+    margin: 10px 50px 10px 240px;
+}
+.clock-day-label{
+
+}
+.clock-hour-label{
+    margin-left:160px;
+}
+.clock-minute-label{
+    margin-left:110px;
+}
+.clock-second-label{
+    margin-left:110px;
+}
+
 .self-clock {
-    margin: 50px 0 50px 150px;
+    margin: 0 0 50px 150px;
 }
 
 .footer {
@@ -309,12 +325,12 @@ border-top:7px solid #009200;
 .footer .footer-wrap {
     margin:auto;
     width: 1200px;
-    height: 270px;
+    height: 200px;
     position: relative;
 }
 
 .footer .footer-main-area {
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 .footer .footer-col-item {

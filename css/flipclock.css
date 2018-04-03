@@ -186,7 +186,8 @@
   height: 100px; }
 
 .flip-clock-divider:first-child {
-  width: 0; }
+  width: 0;
+  }
 
 .flip-clock-dot {
   display: block;
@@ -201,9 +202,12 @@
 .flip-clock-divider .flip-clock-label {
   position: absolute;
   top: -1.5em;
-  right: -86px;
+  right: -90px;
   color: black;
-  text-shadow: none; }
+  text-shadow: none;
+  /* margin-left: 500px; */
+  display: none;
+  }
 
 .flip-clock-divider.minutes .flip-clock-label {
   right: -88px; }
