@@ -179,7 +179,6 @@ ul,li{ padding:0;margin:0;list-style:none}
     width:100px;
     background:rgba(92, 160, 47, 1.0);
     color: #FFFFFF;
-    cursor: none;
 }
 .user-main-area .user-wrap-area .tab-active:hover {
     background:rgba(92, 160, 47, 1.0);
@@ -354,6 +353,10 @@ ul,li{ padding:0;margin:0;list-style:none}
     border-right: 1px solid rgba(55, 55, 55, 0.4);
 }
 
+
+#manuDetailModal #download_abstract{
+    cursor:pointer;
+}
 
 /******* audit.html******/
 
