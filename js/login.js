@@ -272,165 +272,92 @@ $(function() {
 
 
     //找回密码
-    $('.doc-content-forget-pwd').on('click',function () {
-        popup.init();
-        var tHtml = [], eHtml=[];
-        tHtml.push('<span class="popup-title">找回密码</span><i class="popup-close">x</i>');
-        $('.popup-header').html(tHtml.join(''));
-        eHtml.push(' <ol class="edit-title-step">');
-        eHtml.push('<li class="title-step-one active"><span>1、输入邮箱</span></li>');
-        eHtml.push(' <li class="title-step-two"><span>2、修改密码</span></li>');
-        eHtml.push(' <li class="title-step-three" ><span>3、完成</span></li>');
-        eHtml.push('</ol>');
-        eHtml.push('<div class="form-step form-step-one active">');
-        eHtml.push(' <div class="form-group"> <label class="control-label">邮箱：</label> <input class="form-control edit-form-email" type="text" placeholder="请输入邮箱"></div>');
-        eHtml.push(' <div class="form-group"> <label class="control-label">验证码：</label> <input class="form-control edit-form-code" type="text" placeholder="填写验证码"><span class="verify-code"></span><span class="change-code">换一张</span></div>');
-        eHtml.push('<div class="form-group-error step-one-error"></div>');
-        eHtml.push('<div class="form-group-btn"> <button  class="edit-btn-primary btn-primary btn-step-one">下一步</button> </div>');
-        eHtml.push(' </div>');
-        eHtml.push('<div class="form-step form-step-two">');
-        eHtml.push(' <div class="form-group"> <label class="control-label">邮箱验证码：</label> <input class="form-control verify-code-confirm" type="text" placeholder="请输入邮箱验证码"></div> ');
-        eHtml.push(' <div class="form-group"> <label class="control-label">新密码：</label> <input  class="form-control form-new-pwd" type="password" placeholder="请设置6位以上的密码"></div>');
-        eHtml.push(' <div class="form-group"> <label class="control-label">确认新密码：</label> <input class="form-control form-new-dpwd" type="password" placeholder="请确认新密码"></div>');
-        eHtml.push('<div class="form-group-error step-two-error"></div>');
-        eHtml.push('<div class="form-group-btn"> <button  class="edit-btn-primary btn-primary btn-step-two">下一步</button> </div>');
-        eHtml.push('</div>');
-        eHtml.push(' <div class="form-step form-step-three">');
-        eHtml.push('<div class="form-group"> <p class="three-text">密码重置成功！请用新密码登录：</p><p class="three-text"><span class="edit-btn-primary btn-login">立即登录</span> <a href="../From/home.html" class="home-callback-btn">返回首页</a></p></div>');
-        eHtml.push('</div>');
-        $('.popup-edit').html(eHtml.join(''));
-        $('.popup-footer').html('');
+    $('#forget_pwd').on('click', function() {
+        $('#forgetPwdModal').modal()
+    });
 
-        popup.popupEvent();
-        var verifyCode = $('.verify-code');
-        verifyCode.html(getCode());
-        verifyCode.on('click', function () {
-            verifyCode.html(getCode());
-        });
-        var okCode =false;
-        $('.change-code').on('click', function () {
-            verifyCode.html(getCode());
-            $('.step-one-error').html('');
-        });
-        $('.edit-form-code').focus(function(){
-            $('.step-one-error').html('');
-        }).blur(function(){
-            var editCode = $(this).val();
-            if(editCode.toLowerCase()!=($('.verify-code').html()).toLowerCase()){
-                $('.step-one-error').html('验证码错误');
-                verifyCode.html(getCode());
-                return false
-            }
-
-        });
-        var oneStep = $('.btn-step-one');
-        oneStep.on('click', function () {
-            var email =$.trim($('.edit-form-email').val());
-            var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
-            if(!(emailReg.test(email)) || email == ''){
-                $('.step-one-error').html('请填写正确格式邮箱');
-                return false
-            }
-            $.ajax({
-                type: "POST",
-                data: {
-                    email: email
-                },
-                url: url + "Form/resetPassword",
-                dataType: 'json',
-                beforeSend: function () {
-                    oneStep.attr('disabled', 'disabled');
-                    oneStep.css({"background": "#ccc"});
-                },
-                success: function (data) {
-                    if (data.status == 1) {
-                        $('.form-step-two').addClass('active').siblings().removeClass('active');
-                        $('.title-step-two').addClass('active');
-                        bindTwoEvent(email);
-                    } else {
-                        $('.step-one-error').html(data.info);
-                        return false;
-                    }
-
-                },
-                complete: function () {
-                    oneStep.removeAttr('disabled');
-                    oneStep.css({"background": "#0275d8"});
-                },
-                error: function () {
-                    alert('对不起，当前服务器开小差，请稍候再试')
-                }
-
-            });
-        });
-
-
-        function getCode() {
-            var rangeStr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";//-->索引0-61
-            var str = "";
-            while (str.length < 4) {
-                var ran = Math.round(Math.random() * (61 - 0) + 0);
-                var ranStr = rangeStr[ran];
-                //如果大小写也不能重复
-                var tempRan = ranStr.toLowerCase();
-                var tempStr = str.toLowerCase();
-                if (tempStr.indexOf(tempRan) === -1) {
-                    str += ranStr;
-                }
-            }
-            return str;
+    $('#modal-modify-pwd').on('click', function() {
+        var userName = $.trim($('#forget_pwd_username').val());
+        if(userName=='') {
+            swal('请填写用户名');
+            return false
         }
-        function bindTwoEvent(email) {
-            var twoStep = $('.btn-step-two');
-            $('.btn-step-two').on('click', function () {
-                var code=$.trim($('.verify-code-confirm').val());
-                var pwd=$('.form-new-pwd').val();
-                var dpwd=$('.form-new-dpwd').val();
-                if(dpwd!=pwd || dpwd=='' ||pwd.length<6){
-                    $('.step-two-error').html('请确认你的密码');
-                    return false
-                }
+        var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+        var email = $.trim($('#forget_pwd_mail').val());
+        if(!(emailReg.test(email)) || email == ''){
+            swal('请填写正确格式的邮箱');
+            return false
+        }
+
+        var phone = $.trim($('#forget_pwd_mobile').val());
+        if(phone=='') {
+            swal('请输入手机号');
+            return false
+        }
+
+        var docName = $.trim($('#forget_pwd_tutor').val());
+        if(docName=='') {
+            swal('请输入导师姓名');
+            return false
+        }
+
+
+        var password = $('#forget_pwd_pwd').val();
+        if(password.length<6 || password == ''){
+            swal('请设置6位以上的密码');
+            return false
+        }
+
+        var dpwd = $('#forget_pwd_pwd_again').val();
+        if(dpwd==''){
+            swal('请再次确认你的密码');
+            return false
+        }
+        if(dpwd!=password){
+            swal('两次输入密码不一致');
+            return false
+        }
+        swal(
+            {
+                title: "确定修改吗？",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定",
+                closeOnConfirm: false
+            }, function(){
+                var data = new FormData();
+
+                data.append('username', username);
+                data.append('email', email);
+                data.append('docName', docName);
+                data.append('phone', phone);
+                data.append('password', password);
+
                 $.ajax({
                     type: "POST",
-                    data: {
-                        email: email,
-                        code: code,
-                        password: pwd
-                    },
-                    url: url + "Form/confirmReset",
+                    url: url +"",
+                    data: data,
                     dataType: 'json',
-                    beforeSend: function () {
-                        twoStep.attr('disabled', 'disabled');
-                        twoStep.css({"background": "#ccc"});
-                    },
+                    processData: false,
+                    contentType: false,
                     success: function (data) {
                         if (data.status == 1) {
-                            $('.form-step-three').addClass('active').siblings().removeClass('active');
-                            $('.title-step-three').addClass('active');
-                            $('.btn-login').on('click', function () {
-                                $('.popup').remove();
-                            });
+                            swal("修改成功！", "新密码为:" + data.newPwd, "success");
+                            window.location.reload();
                         } else {
-                            $('.step-two-error').html(data.info);
+                            swal("出现问题", data.info, "error");
                             return false;
-
                         }
-
-                    },
-                    complete: function () {
-                        twoStep.removeAttr('disabled');
-                        twoStep.css({"background": "#0275d8"});
                     },
                     error: function () {
-                        alert('对不起，当前服务器开小差，请稍候再试')
+                        swal('网路不给力，请稍候再试');
                     }
-
-                });
+                })
             });
-        }
-
 
     });
+
 
 
     bindEvent();

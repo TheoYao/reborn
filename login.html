@@ -123,6 +123,48 @@
                         </label>
                     </span>
                     <p class="loginContentBtn" id="sign-in-btn"><a href="javascript:void(0);">登录</a></p>
+                    <div id="forget_pwd"><a href="javascript:void(0);">忘记密码?</a></div>
+                    <div class="modal fade" id="forgetPwdModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">忘记密码</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;用户名：</span>
+                                        <input type="text" class="form-control" placeholder="请输入用户名" id="forget_pwd_username">
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱：</span>
+                                        <input type="text" class="form-control" placeholder="请输入邮箱" id="forget_pwd_mail">
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手机：</span>
+                                        <input type="text" class="form-control" placeholder="请输入手机号" id="forget_pwd_mobile">
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;导师姓名：</span>
+                                        <input type="text" class="form-control" placeholder="请输入导师姓名" id="forget_pwd_tutor">
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;新密码：</span>
+                                        <input type="password" class="form-control" placeholder="请输入新密码" id="forget_pwd_pwd">
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;确认密码：</span>
+                                        <input type="password" class="form-control" placeholder="请再次输入新密码" id="forget_pwd_pwd_again">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button type="button" id="modal-modify-pwd" class="btn btn-primary">确定修改</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
 

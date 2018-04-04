@@ -95,6 +95,13 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
     font-size: 0.8rem;
 }
 
+#forget_pwd{
+    width: 100%;
+    padding-right:10px;
+    font-size:15px;
+    text-align: right;
+}
+
 #footer{
     /*margin: 150px;*/
     /*position: absolute;*/

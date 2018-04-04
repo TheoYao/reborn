@@ -273,7 +273,7 @@ $(document).ready(function() {
             return false
         }
         if(!(/[\u4E00-\u9FA5\uF900-\uFA2D]||\，*||\,*/.test(keyChinese))){
-            swal('请填写不错过5个关键字，以逗号隔开');
+            swal('请填写不过超过5个关键字，以逗号隔开');
             return false
         }
         if(authorName==''){
