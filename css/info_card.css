@@ -24,11 +24,13 @@
     color: rgba(22, 22, 22, 0.5);
     font-weight: bold;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .image-cover {
     width:300px;
     height: 300px;
+    cursor: pointer;
 }
 .image-cover img{
     position: absolute;
