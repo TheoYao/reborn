@@ -50,8 +50,8 @@ $(document).ready(function() {
     function loadNews() {
         $.ajax({
             type: "GET",
-            url: url+"Inner/getNews",
-            //url: "json/getNews.json",
+            //url: url+"Inner/getNews",
+            url: "json/getNews.json",
             dataType: 'json',
             success: function (data) {
                 if(data.length == 0) {
@@ -61,7 +61,7 @@ $(document).ready(function() {
                 $(".info-main-area").empty();
                 for(var i=0; i<data.length; i++) {
                     var title = data[i].title.slice(0, 24);
-                    var content = data[i].content.slice(0, 200)+"...";
+                    var content = data[i].content.slice(0, 180)+"...";
                     var newsId = data[i].id;
 
                     htmlStr += ("<div class=\"info-item\" news_id=" + newsId + "><div class=\"info-title\">" + title + "</div>");
