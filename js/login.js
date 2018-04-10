@@ -277,8 +277,8 @@ $(function() {
     });
 
     $('#modal-modify-pwd').on('click', function() {
-        var userName = $.trim($('#forget_pwd_username').val());
-        if(userName=='') {
+        var username = $.trim($('#forget_pwd_username').val());
+        if(username=='') {
             swal('请填写用户名');
             return false
         }
