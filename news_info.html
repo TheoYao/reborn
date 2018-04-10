@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!- scale control -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="SHORTCUT ICON" type="image/x-icon" href="images/favicon.ico">
+    <title>十一届全国博士生学术会议</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/info_page.css" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/self_common.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".nav-item").on('click',function () {
+                var nav_items = $('.nav-item');
+                for (var i=0; i<nav_items.length; i++){
+                    $(nav_items[i]).removeClass("active");
+                }
+                $(this).addClass("active");
+            });
+        });
+    </script>
+
+</head>
+
+<body data-spy="scroll" data-target="#myScrollSpy">
+<div class="navbar navbar-bg">
+    <div class="main-wrap">
+        <span class="navbar-bg">
+            <div class="top-line"></div>
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <a href="index.html"><img src="./images/index-logo-icon.png"></a>
+                    <img src="./images/index-logo-text.png">
+                </div>
+                <div class="top-func-area">
+                    <div class="version-control">
+                        <a class="english-version" href="#">English Version</a>
+                    </div>
+                    <div class="sign-area">
+                        <a class="sign-in" href="login.html#signin">登录</a>
+                        <a class="sign-up" href="login.html#signup">注册</a>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </div>
+</div>
+
+<section class="nav-menu">
+    <div class="main-wrap">
+        <div class="split-line"></div>
+        <ul class="nav-ul-bg">
+            <li>
+                <div class="drop-down">
+                    <a href="index.html" target="_self"><button class="drop-btn">首页</button></a>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <a href="cfr_intro.html" target="_self"><button class="drop-btn">会议介绍<div class="triangle-down"></div></button></a>
+                    <div class="drop-down-content">
+                        <a href="cfr_intro.html#about-cfr" target="_self">关于会议</a>
+                        <a href="cfr_intro.html#cfr-topic" target="_self">会议主题</a>
+                        <a href="cfr_intro.html#time-process" target="_self">时间节点</a>
+                        <a href="cfr_intro.html#select-std" target="_self">评选办法</a>
+                        <a href="cfr_intro.html#committee-expert" target="_self">专家委员会</a>
+                        <a href="cfr_intro.html#organization-arch" target="_self">组织架构</a>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <a href="cfr_arrange.html" target="_self"><button class="drop-btn">会议安排<div class="triangle-down"></div></button></a>
+                    <div class="drop-down-content">
+                        <a href="cfr_arrange.html#salutatory-oration" target="_self" >欢迎词</a>
+                        <a href="cfr_arrange.html#cfr-schedule" target="_self">会议日程</a>
+                        <a href="cfr_arrange.html#core-reporter" target="_self">主旨演讲人</a>
+                        <a href="cfr_arrange.html#traffic-board" target="_self">住宿交通</a>
+                        <a href="cfr_arrange.html#about-sightseeing" target="_self">观光信息</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <a href="cfr_register.html" target="_self"><button class="drop-btn">参会注册</button></a>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <a href="download_page.html" target="_self"><button class="drop-btn">文件下载<div class="triangle-down"></div></button></a>
+                    <div class="drop-down-content">
+                        <a href="download_page.html#cfr-related" target="_self">参会文件</a>
+                        <a href="download_page.html#look-back" target="_self">往期回顾</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <a href="paper_command.html" target="_self"><button class="drop-btn">投稿要求</button></a>
+
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <a href="host_addr.html" target="_self"><button class="drop-btn">举办地点</button></a>
+                </div>
+            </li>
+            <li>
+                <div class="drop-down">
+                    <a href="contact_us.html" target="_self"><button class="drop-btn">联系我们<div class="triangle-down"></div></button></a>
+                    <div class="drop-down-content">
+                        <a href="contact_us.html#committee-intro" target="_self">组委会介绍</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="split-line"></div>
+    </div>
+</section>
+
+<div class="main-area">
+    <div class="main-wrap">
+        <div class="side-affix" id="myScrollSpy">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+                <li class="nav-item active"><a href="#">新闻</a></li>
+            </ul>
+        </div>
+        <div class="content-body">
+            <h4 id="news-info-title">热点|2017年环境领域的国家科学技术奖花落谁家</h4>
+            <p>国家科学技术奖励大会于1月8日上午在人民大会堂开幕。经过多级严格评审，2017年度国家科学技术奖励大会共评选出271个项目和9名科技专家。博论的小编们也及时整理出了环境领域全部的国家科学技术奖，一共有13项（占获奖总数近5%，小编认为这是一个很高的比例了），包括3项国家自然科学奖、3项国家技术发明奖和7项国家科技进步奖，涉及水污染控制、废气处理、土壤修复、固废处理、清洁生产等多个分领域。在获奖单位中，清华大学和中国环境科学院表现最为突出，各摘得3项奖励，另外中国科学院生态中心摘得2项大奖。让我们具体来看一下获奖名单。</p>
+            <p>&nbsp;</p>
+            <table style="width: 807px;" border="1">
+                <tbody>
+                <tr>
+                    <td style="width: 811px;" colspan="4">
+                        <p style="text-align: center;">国家自然科学奖（共3项）</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>卤代持久性有机污染物环境污染特征与物化控制原理</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>余刚，黄俊，邓述波，王斌，杨波</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>清华大学</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>饮用水中天然源风险物质的识别、转化与调控机制</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>杨敏， 张昱，王东升，张海峰，巫晓琴</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>中国科学院生态环境研究中心，北京大学</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>功能纳米材料和微生物修复难降解有机物和重金属污染湿地新方法</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>曾光明， 龚继来， 黄丹莲，刘云国</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>湖南大学</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 811px;" colspan="4">
+                        <p style="text-align: center;">国家技术发明奖（共3项）</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>基于高能效纳晶薄膜电极的工业废水电催化深度处理技术及应用</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>牛军峰，全燮， 杨凤林，殷立峰， 吕斯濠，汤顺良</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>北京师范大学，大连理工大学，东莞理工大学，江苏江华水处理设备有限公司</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>功能性吸附微界面构造及深度净水技术</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>刘会娟，刘锐平， 兰华春，赵赫，曲久辉， 王万寿</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>中国科学院生态环境研究中心，杭州回水科技股份有限公司</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>基于页岩矾行业全过程污染防治的短流程清洁生产关键技术</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>张一敏，温勇， 刘涛，郝文彬， 艾军， 包申旭</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>武汉科技大学， 环境保护部华南环境科学研究所，陕西五洲矿业股份有限公司， 武汉理工大学</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 811px;" colspan="4">
+                        <p style="text-align: center;">国家科技进步（共7项）</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>工业排放烟气用聚四氟乙烯基过滤材料关键技术及产业华</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>郭玉海，徐志梁，陈美玉，朱海霖，王峰，郑帼，唐红艳，周存，陈建勇，姜学梁</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>浙江理工大学，浙江格尓泰斯环保特材科技股份有限公司，西安工程大学，天津工业大学，浙江宇邦滤材科技有限公司</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>填埋场地下水污染系统防控与强化修复关键技术及应用</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>席北斗，李广贺，姜永海，李鸣晓，魏丽，张列宇，张益，刘军，张广胜，何亮</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>中国环科院，清华大学，北京高能时代环境技术股份有限公司，上海环境卫生工程设计院有限公司，南京万德斯环保科技股份有限公司，力合科技（湖南）股份有限公司，北京环境工程技术有限公司</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>流域水环境重金属污染风险防控理论技术与应用</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>吴丰昌，段宁，党支，降林华，胡清，虢清伟，赵晓丽，邓晓冰，张远，易筱筠</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>中国环科院，华南理工大学，环境保护部华南环境科学研究所，南方科技大学，广西壮族自治区环境监测中心站</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>膜集成城镇污水深度净化技术与工程应用</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>黄霞，文剑平，文湘华，俞开昌，梁鹏，陈亦力，李锁定，薛涛，肖康，陈春生</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>清华大学，北京碧水源科技股份有限公司</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>高铝粉煤灰提取氢化铝多联产技术开发与产业示范</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>孙俊民，苏杰，张生，曹瑞忠，陈刚，邓忠贵，洪景南，周立平，陈晓霞</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>内蒙古大唐国际再生资源开发有限公司，大唐国际发电股份有限公司</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>危险废物回转式多段热解焚烧及污染物协同控制关键技术</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>严建华，蒋旭光，李晓东，张文辉，池涌，陆胜勇，王琦，黄群星，马增益，李丽</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>浙江大学，杭州大地环保工程有限公司，中国市政工程华北设计研究总院有限公司，中国环科院，浙江物华天宝能源环保有限公司</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 49px;">
+                        <p>二等奖</p>
+                    </td>
+                    <td style="width: 222px;">
+                        <p>全国农田氮磷面源污染检测技术体系创建与应用</p>
+                    </td>
+                    <td style="width: 220px;">
+                        <p>任天志，刘宏斌，范先鹏，邹国元，翟丽梅，胡万里，张富林，杜连凤，王洪媛，郑向群</p>
+                    </td>
+                    <td style="width: 320px;">
+                        <p>中国农业科学院农业资源与农业区划研究所，湖北省农业科学院植保土肥研究所，北京市农林科学院，云南省农业科学院农业环境资源研究所，农业部环境保护科研监测所，宁夏农林科学院农业资源与环境研究所，浙江省农业科学院</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+</div>
+<a href="#top"><div class="backToTop">&#8682;</div></a>
+</body>
+</html>

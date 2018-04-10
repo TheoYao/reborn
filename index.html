@@ -12,15 +12,22 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/flipclock.css">
+    <link rel="stylesheet" type="text/css" href="css/windy.css" />
+    <link rel="stylesheet" type="text/css" href="css/windy_demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/style2.css" />
 
 
     <link rel="stylesheet" type="text/css" href="./css/slideshow.css" />
     <link rel="stylesheet" type="text/css" href="./css/time_line.css" />
     <link rel="stylesheet" type="text/css" href="./css/sweetalert.css"/>
 
+
     <link rel="stylesheet" type="text/css" href="css/info_card.css">
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+    <noscript><link rel="stylesheet" type="text/css" href="css/noJS.css" /></noscript>
+
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/sweetalert-dev.js"></script>
@@ -148,6 +155,40 @@
                 </div>
 
                 <div class="mySlides fade">
+                    <section class="main">
+
+                        <div class="windy-demo windy-demo-2">
+                            <ul id="wi-el" class="wi-container">
+                                <li><img src="images/demo2/1.jpg" alt="image1"/></li>
+                                <li><img src="images/demo2/2.jpg" alt="image2"/></li>
+                                <li><img src="images/demo2/3.jpg" alt="image3"/></li>
+                                <li><img src="images/demo2/4.jpg" alt="image4"/></li>
+                                <li><img src="images/demo2/5.jpg" alt="image5"/></li>
+                                <li><img src="images/demo2/6.jpg" alt="image6"/></li>
+                                <li><img src="images/demo2/7.jpg" alt="image7"/></li>
+                                <li><img src="images/demo2/8.jpg" alt="image8"/></li>
+                                <li><img src="images/demo2/9.jpg" alt="image9"/></li>
+                                <li><img src="images/demo2/10.jpg" alt="image10"/></li>
+                                <li><img src="images/demo2/11.jpg" alt="image11"/></li>
+                                <li><img src="images/demo2/12.jpg" alt="image12"/></li>
+                            </ul>
+                            <nav>
+                                <span id="nav-prev">prev</span>
+                                <span id="nav-next">next</span>
+                            </nav>
+                        </div>
+                        <p class="info"><strong>提示:</strong> 如果想要看连续的效果，用鼠标按住上面的小箭头.</p>
+
+                    </section>
+                </div>
+
+
+                <script type="text/javascript" src="js/jquery.windy.js"></script>
+                <script type="text/javascript">
+
+                </script>
+
+                <div class="mySlides fade">
                     <img src="images/slider/slider-4.jpg">
                 </div>
                 <div class="mySlides fade">
@@ -211,6 +252,7 @@
         /*********** slider **********/
         var slideIndex = 1;
         var timer;
+        allownavnext = false;
         showSlides();
 
         function showSlides() {
@@ -227,9 +269,18 @@
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
+            if (slideIndex == 4) {
+                allownavnext = true;
+                navnext();
+            }
+            else{
+                allownavnext = false;
+                navnext();
+            }
             timer = setTimeout(function() {
                 plusSlides(1);
             }, 7000);
+
         }
 
         function plusSlides(n) {
@@ -243,6 +294,63 @@
             slideIndex = n;
             showSlides();
         }
+
+
+        var $el = $( '#wi-el' ),
+            windy = $el.windy( {
+                // rotation and translation boundaries for the items transitions
+                boundaries : {
+                    rotateX : { min : 40 , max : 90 },
+                    rotateY : { min : -15 , max : 45 },
+                    rotateZ : { min : -10 , max : 10 },
+                    translateX : { min : -400 , max : 400 },
+                    translateY : { min : -400 , max : 400 },
+                    translateZ : { min : 350 , max : 550 }
+                }
+            } ),
+            allownavnext = false,
+            allownavprev = false;
+
+        $( '#nav-prev' ).on( 'mousedown', function( event ) {
+
+            allownavprev = true;
+            navprev();
+
+        } ).on( 'mouseup mouseleave', function( event ) {
+
+            allownavprev = false;
+
+        } );
+
+        $( '#nav-next' ).on( 'click', function( event ) {
+
+            allownavnext = true;
+            navnext();
+
+        } ).on( 'mouseup mouseleave', function( event ) {
+
+            //allownavnext = false;
+
+        } );
+
+        function navnext() {
+            if( allownavnext ) {
+                windy.next();
+                setTimeout( function() {
+                    navnext();
+                }, 450 );
+            }
+        }
+
+        function navprev() {
+            if( allownavprev ) {
+                windy.prev();
+                setTimeout( function() {
+                    navprev();
+                }, 550 );
+            }
+        }
+
     </script>
 
     <section class="time-line TimelineBg">
