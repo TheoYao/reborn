@@ -7,7 +7,8 @@
 .windy-demo ul.wi-container {
 	width: 1200px;
 	height: 500px;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	/*box-shadow: 0 1px 2px rgba(0,0,0,0.2);*/
+	background: rgba(238, 240, 236, 1.0);
 }
 
 .windy-demo li img {
@@ -21,7 +22,7 @@
 	padding: 0 10px;
 	line-height: 74px;
 	margin: 0;
-	color: #ccc;
+	/*color: #ccc;*/
 	text-align: center;
 }
 
@@ -34,7 +35,7 @@
 	left:  10px;
 	width: 50%;
 	height: 20%;
-	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	/*box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);*/
 	-webkit-transform: rotate(-3deg);
 	-moz-transform: rotate(-3deg);
 	-ms-transform: rotate(-3deg);
@@ -54,12 +55,13 @@
 
 .windy-demo ul.wi-container li {
 	padding: 0;
-	border: 10px solid #DDD;
+	border: 2px solid #DDD;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	background: rgba(238, 240, 236, 1.0);
 }
 
 

@@ -1,7 +1,7 @@
 .slider-picturer {
     padding: 0 0 0 0;
     height: 100%;
-    width: 100%;
+    /*width: 100%;*/
     /*background: rgba(238, 240, 236, 1.0);*/
 }
 
@@ -11,7 +11,11 @@
 .slider-wrap img {
     vertical-align: middle;
     height: 100%;
-    width: 100%;
+    /*width: 100%;*/
+}
+.slider-wrap .windy-demo img{
+    height: 100%;
+    margin:0 auto;
 }
 .slider-wrap {
     margin:auto;
