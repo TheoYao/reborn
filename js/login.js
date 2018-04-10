@@ -295,12 +295,6 @@ $(function() {
             return false
         }
 
-        var docName = $.trim($('#forget_pwd_tutor').val());
-        if(docName=='') {
-            swal('请输入导师姓名');
-            return false
-        }
-
 
         var password = $('#forget_pwd_pwd').val();
         if(password.length<6 || password == ''){
@@ -330,20 +324,19 @@ $(function() {
 
                 data.append('username', username);
                 data.append('email', email);
-                data.append('docName', docName);
                 data.append('phone', phone);
                 data.append('password', password);
 
                 $.ajax({
                     type: "POST",
-                    url: url +"",
+                    url: url +"Form/forgetPassword",
                     data: data,
                     dataType: 'json',
                     processData: false,
                     contentType: false,
                     success: function (data) {
                         if (data.status == 1) {
-                            swal("修改成功！", "新密码为:" + data.newPwd, "success");
+                            swal("修改成功！", "", "success");
                             window.location.reload();
                         } else {
                             swal("出现问题", data.info, "error");
@@ -355,7 +348,6 @@ $(function() {
                     }
                 })
             });
-
     });
 
 
