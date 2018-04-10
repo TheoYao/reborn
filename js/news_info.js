@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
     loadNews();
     function loadNews() {
         $.ajax({

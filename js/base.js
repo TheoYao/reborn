@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
     /*********** video-modal **********/
 
     var videoUrl = $("#cartoonVideo").attr('src');
@@ -14,7 +14,7 @@ $(document).ready(function() {
     });
 
     $("#slider-with-video").on('click', function(){
-        $("#modal-show-video").html("<iframe id=\"cartoonVideo\" width=\"560\" height=\"315\" src=\"videos/marvel.mp4\" frameborder=\"0\" allowfullscreen></iframe>")
+        $("#modal-show-video").html("<iframe id=\"cartoonVideo\" width=\"560\" height=\"315\" src=\"//player.bilibili.com/player.html?aid=21906500&cid=36172299&page=1\" frameborder=\"0\" allowfullscreen></iframe>")
     });
 
     /************ count down***********/
