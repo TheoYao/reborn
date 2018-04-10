@@ -12,6 +12,7 @@
     margin: 0 15px 0 15px;
     display: inline-block;
     background-color: #FFFFFF;
+    overflow: hidden;
 
 }
 
@@ -22,6 +23,7 @@
     line-height: 20px;
     color: rgba(22, 22, 22, 0.5);
     font-weight: bold;
+    overflow: hidden;
 }
 
 .image-cover {

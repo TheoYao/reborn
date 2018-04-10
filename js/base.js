@@ -45,4 +45,43 @@ $(document).ready(function() {
         $(this).css("opacity", 1.0);
         //$("p").css("background-color","yellow");
     });
+
+    loadNews();
+    function loadNews() {
+        $.ajax({
+            type: "GET",
+            //url: url+"Inner/getNews",
+            url: "json/getNews.json",
+            dataType: 'json',
+            success: function (data) {
+                if(data.length == 0) {
+                    return
+                }
+                var htmlStr = "";
+                $(".info-main-area").empty();
+                for(var i=0; i<data.length; i++) {
+                    var title = data[i].title.slice(0, 24);
+                    var content = data[i].content.slice(0, 200)+"...";
+                    var newsId = data[i].id;
+
+                    htmlStr += ("<div class=\"info-item\" news_id=" + newsId + "><div class=\"info-title\">" + title + "</div>");
+                    htmlStr += ("<div class=\"image-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
+                    htmlStr += ("<div class=\"image-locate\"><img src=\"images/info_card"+(i+1)+".jpg\"></div></div></div>");
+                }
+                $(".info-main-area").html(htmlStr);
+            },
+            complete: function () {
+
+            },
+            error: function () {
+                swal('对不起，当前服务器开小差，请稍候再试', '', "error")
+            }
+
+        });
+    }
+
+    $('.info-main-area').on('click', "div.info-item", function() {
+        var news_id = $(this).attr("news_id");
+        window.location.href = "./news_info.html#"+news_id;
+    });
 });
