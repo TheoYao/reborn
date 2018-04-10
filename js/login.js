@@ -105,11 +105,12 @@ $(function() {
             }
 
             var birthDate = $('#sign-up-birthday').val();
+            /*
             if(birthDate=='') {
                 swal('请选择出生年月');
                 return false
             }
-
+            */
             var school = $('#sign-up-school option:selected').val();
             if(school=='') {
                 swal('请选择学校');
@@ -125,8 +126,8 @@ $(function() {
             }
 
             var phone = $.trim($('#sign-up-mobile').val());
-            if(phone=='') {
-                swal('请输入手机号');
+            if(phone=='' || phone.length != 11) {
+                swal('请输入正确格式的手机号');
                 return false
             }
 
@@ -277,11 +278,6 @@ $(function() {
     });
 
     $('#modal-modify-pwd').on('click', function() {
-        var username = $.trim($('#forget_pwd_username').val());
-        if(username=='') {
-            swal('请填写用户名');
-            return false
-        }
         var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
         var email = $.trim($('#forget_pwd_mail').val());
         if(!(emailReg.test(email)) || email == ''){

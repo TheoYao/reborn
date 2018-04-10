@@ -114,7 +114,7 @@ $(document).ready(function() {
 
                     /*填充tips*/
                     $("#school_name").text(curData["school"]);
-                    $("#person_name").text(curData["username"]);
+                    $("#person_name").text(curData["stuName"]);
                 } else {
                     swal(data.info);
                     return false;
