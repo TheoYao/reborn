@@ -50,8 +50,8 @@ $(document).ready(function() {
     function loadNews() {
         $.ajax({
             type: "GET",
-            url: url+"Inner/getNews",
-            //url: "json/getNews.json",
+            //url: url+"Inner/getNews",
+            url: "json/getNews.json",
             dataType: 'json',
             success: function (data) {
                 if(data.length == 0) {

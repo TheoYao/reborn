@@ -12,8 +12,6 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/flipclock.css">
-    <link rel="stylesheet" type="text/css" href="css/windy.css" />
-    <link rel="stylesheet" type="text/css" href="css/windy_demo.css" />
     <link rel="stylesheet" type="text/css" href="css/style2.css" />
 
 
@@ -23,10 +21,9 @@
 
 
     <link rel="stylesheet" type="text/css" href="css/info_card.css">
+    <link rel="stylesheet" type="text/css" href="css/auto_flash.css">
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
-    <noscript><link rel="stylesheet" type="text/css" href="css/noJS.css" /></noscript>
 
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -155,27 +152,45 @@
                 </div>
 
                 <div class="mySlides fade">
-                    <section class="main">
-                        <div class="windy-demo windy-demo-2">
-                            <ul id="wi-el" class="wi-container">
-                                <li><img src="images/demo2/1.jpg" alt="image1"/></li>
-                                <li><img src="images/demo2/2.jpg" alt="image2"/></li>
-                                <li><img src="images/demo2/3.jpg" alt="image3"/></li>
-                                <li><img src="images/demo2/4.jpg" alt="image4"/></li>
-                                <li><img src="images/demo2/5.jpg" alt="image5"/></li>
-                                <li><img src="images/demo2/6.jpg" alt="image6"/></li>
-                                <li><img src="images/demo2/7.jpg" alt="image7"/></li>
-                                <li><img src="images/demo2/8.jpg" alt="image8"/></li>
-                                <li><img src="images/demo2/9.jpg" alt="image9"/></li>
-                                <li><img src="images/demo2/10.jpg" alt="image10"/></li>
-                                <!--
-                                <li><img src="images/demo2/11.jpg" alt="image11"/></li>
-                                <li><img src="images/demo2/12.jpg" alt="image12"/></li>
-                                -->
-                            </ul>
+                    <div class="animation-container">
+                        <div class="myFlyin">
+                            <img src="images/thisout/1.jpg">
+                        </div>
+                        <div class="myFlyin">
+                            <img src="images/thisout/3.jpg">
+                        </div>
+                        <div class="myFlyin">
+                            <img src="images/thisout/5.jpg">
+                        </div>
+                        <div class="myFlyin">
+                            <img src="images/thisout/7.jpg">
+                        </div>
+                        <div class="myFlyin">
+                            <img src="images/thisout/9.jpg">
+                        </div>
+                        <div class="myFlyin">
+                            <img src="images/thisout/11.jpg">
+                        </div>
+                        <div class="myFlyout">
+                            <img src="images/thisout/2.jpg">
+                        </div>
+                        <div class="myFlyout">
+                            <img src="images/thisout/4.jpg">
+                        </div>
+                        <div class="myFlyout">
+                            <img src="images/thisout/6.jpg">
+                        </div>
+                        <div class="myFlyout">
+                            <img src="images/thisout/8.jpg">
+                        </div>
+                        <div class="myFlyout">
+                            <img src="images/thisout/10.jpg">
+                        </div>
+                        <div class="myFlyout">
+                            <img src="images/thisout/12.jpg">
                         </div>
 
-                    </section>
+                    </div>
                 </div>
 
 
@@ -247,7 +262,54 @@
 
     <script>
         /*********** slider **********/
-        var slideIndex = 1;
+
+        var left_index = 0;
+        makeLeftFly();
+        function makeLeftFly() {
+            var left_items = $(".myFlyin");
+            for(var i=0; i<left_items.length; i++) {
+                if (i==left_index || i == (left_index+1)%left_items.length){
+                    continue
+                }
+                $(left_items[i]).css({height:"50px", width:"50px", left:"520px",top:"200px", "z-index" :"1", opacity: 0.5});
+            }
+            $(left_items[left_index]).css("z-index", 99);
+            $(left_items[left_index]).animate(
+                {height:"300px", width:"300px",left:"100px", top:"100px",opacity: 1},
+                500);
+
+            $(left_items[(left_index+1)%left_items.length]).css("z-index", 98);
+            $(left_items[(left_index+1)%left_items.length]).animate(
+                {height:"200px", width:"200px",left:"350px", top:"150px",opacity: 0.8},
+                500);
+
+
+            var right_items = $(".myFlyout");
+            //$(left_items[left_index]).css({"display": "inline-block"});
+            for(var i=0; i<right_items.length; i++) {
+                if (i==left_index || i == (left_index+1)%right_items.length){
+                    continue
+                }
+                $(right_items[i]).css({height:"50px", width:"50px", right:"520px",top:"200px", "z-index" :"1", opacity: 0.5});
+            }
+            $(right_items[left_index]).css("z-index", 99);
+            $(right_items[left_index]).animate(
+                {height:"300px", width:"300px",right:"100px", top:"100px",opacity: 1},
+                500);
+
+            $(right_items[(left_index+1)%right_items.length]).css("z-index", 98);
+            $(right_items[(left_index+1)%right_items.length]).animate(
+                {height:"200px", width:"200px",right:"350px", top:"150px",opacity: 0.8},
+                500);
+
+            left_index  = left_index+1;
+            left_index = left_index % left_items.length;
+            ani_timer = setTimeout(function() {
+                makeLeftFly();
+            }, 1500);
+        }
+
+        var slideIndex = 4;
         var timer;
         allownavnext = false;
         showSlides();
@@ -260,93 +322,32 @@
                 slides[i].style.display = "none";
             }
             if (slideIndex > slides.length) {slideIndex = 1}
-            if (slideIndex <= 0) (slideIndex=slides.length)
+            if (slideIndex <= 0) (slideIndex=slides.length);
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
             if (slideIndex == 4) {
-                allownavnext = true;
-                navnext();
-            }
-            else{
-                allownavnext = false;
-                navnext();
-            }
 
-            timer = setTimeout(function() {
+            }
+            slider_timer = setTimeout(function() {
                 plusSlides(1);
             }, 7000);
+
 
         }
 
         function plusSlides(n) {
-            clearTimeout(timer);
+            clearTimeout(slider_timer);
             slideIndex += n;
             showSlides();
         }
 
         function currentSlide(n) {
-            clearTimeout(timer);
+            clearTimeout(slider_timer);
             slideIndex = n;
             showSlides();
-        }
-
-
-        var $el = $( '#wi-el' ),
-            windy = $el.windy( {
-                // rotation and translation boundaries for the items transitions
-                boundaries : {
-                    rotateX : { min : 40 , max : 90 },
-                    rotateY : { min : -15 , max : 45 },
-                    rotateZ : { min : -10 , max : 10 },
-                    translateX : { min : -400 , max : 400 },
-                    translateY : { min : -400 , max : 400 },
-                    translateZ : { min : 350 , max : 550 }
-                }
-            } ),
-            allownavnext = false,
-            allownavprev = false;
-
-        $( '#nav-prev' ).on( 'mousedown', function( event ) {
-
-            allownavprev = true;
-            navprev();
-
-        } ).on( 'mouseup mouseleave', function( event ) {
-
-            allownavprev = false;
-
-        } );
-
-        $( '#nav-next' ).on( 'click', function( event ) {
-
-            allownavnext = true;
-            navnext();
-
-        } ).on( 'mouseup mouseleave', function( event ) {
-
-            //allownavnext = false;
-
-        } );
-
-        function navnext() {
-            if( allownavnext ) {
-                windy.next();
-                setTimeout( function() {
-                    navnext();
-                }, 800 );
-            }
-        }
-
-        function navprev() {
-            if( allownavprev ) {
-                windy.prev();
-                setTimeout( function() {
-                    navprev();
-                }, 550 );
-            }
         }
 
     </script>
