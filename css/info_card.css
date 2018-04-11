@@ -92,3 +92,8 @@
     -o-transform-origin: top;
     */
 }
+
+.no-cover img{
+    bottom: -300px;
+    height: 0;
+}

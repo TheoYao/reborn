@@ -50,8 +50,8 @@ $(document).ready(function() {
     function loadNews() {
         $.ajax({
             type: "GET",
-            //url: url+"Inner/getNews",
-            url: "json/getNews.json",
+            url: url+"Inner/getNews",
+            //url: "json/getNews.json",
             dataType: 'json',
             success: function (data) {
                 if(data.length == 0) {
@@ -65,7 +65,14 @@ $(document).ready(function() {
                     var newsId = data[i].id;
 
                     htmlStr += ("<div class=\"info-item\" news_id=" + newsId + "><div class=\"info-title\">" + title + "</div>");
-                    htmlStr += ("<div class=\"image-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
+                    if (newsId == 1) {
+                        htmlStr += ("<div class=\"image-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
+
+                    }
+                    else{
+                        htmlStr += ("<div class=\"image-cover no-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
+
+                    }
                     htmlStr += ("<div class=\"image-locate\"><img src=\"images/info_card"+(i+1)+".jpg\"></div></div></div>");
                 }
                 $(".info-main-area").html(htmlStr);
