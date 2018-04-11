@@ -14,7 +14,7 @@ $(document).ready(function() {
     });
 
     $("#slider-with-video").on('click', function(){
-        $("#modal-show-video").html("<iframe width=\"560\" height=\"315\" src=\"//player.bilibili.com/player.html?aid=21906500&cid=36172299&page=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>")
+        $("#modal-show-video").html("<iframe width=\"560\" height=\"315\" src=\"./videos/marvel.mp4\" scrolling=\"no\" frameborder=\"no\" allowfullscreen></iframe>")
     });
 
     /************ count down***********/
@@ -61,11 +61,11 @@ $(document).ready(function() {
                 $(".info-main-area").empty();
                 for(var i=0; i<data.length; i++) {
                     var title = data[i].title.slice(0, 24);
-                    var content = data[i].content.slice(0, 180)+"...";
+                    var content = data[i].content.slice(0, 100)+"...";
                     var newsId = data[i].id;
 
                     htmlStr += ("<div class=\"info-item\" news_id=" + newsId + "><div class=\"info-title\">" + title + "</div>");
-                    if (newsId == 1) {
+                    if (newsId == 1 || newsId == 10) {
                         htmlStr += ("<div class=\"image-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
 
                     }
@@ -73,7 +73,7 @@ $(document).ready(function() {
                         htmlStr += ("<div class=\"image-cover no-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
 
                     }
-                    htmlStr += ("<div class=\"image-locate\"><img src=\"images/info_card"+(i+1)+".jpg\"></div></div></div>");
+                    htmlStr += ("<div class=\"image-locate\"><img src=\"images/info_card"+newsId+".jpg\"></div></div></div>");
                 }
                 $(".info-main-area").html(htmlStr);
             },

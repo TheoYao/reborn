@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
-    //loadNews();
+    loadNews();
     function loadNews() {
         $.ajax({
             type: "GET",
