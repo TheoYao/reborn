@@ -1,11 +1,11 @@
 $(document).ready(function() {
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
-    loadNews();
+    //loadNews();
     function loadNews() {
         $.ajax({
             type: "GET",
-            url: url+"Inner/getNews",
-            //url: "json/getNews.json",
+            //url: url+"Inner/getNews",
+            url: "json/getNews.json",
             dataType: 'json',
             success: function (data) {
                 if(data.length == 0) {
