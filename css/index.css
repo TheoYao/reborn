@@ -376,9 +376,12 @@ border-top:7px solid #009200;
     /*color:#383838;*/
     color: rgba(56,56,56,0.5);
     text-decoration: none;
-    display: block;
     white-space:nowrap;
-    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer a:hover {
+    color:#383838;
 }
 
 .footer .footer-contact-item {
@@ -406,7 +409,9 @@ border-top:7px solid #009200;
     font-size: 36px;
     color: rgba(0,0,0,0.5);
     width: 60px;
-    padding: 0 0 5px 12px;
+    vertical-align: middle;
+    text-align: center;
+    padding-bottom:10px;
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
