@@ -306,6 +306,7 @@ ul,li{ padding:0;margin:0;list-style:none}
     width: 100px;
 }
 
+
 .footer {
     bottom:0;
     background:#93a3b0;
@@ -313,12 +314,12 @@ ul,li{ padding:0;margin:0;list-style:none}
 .footer .footer-wrap {
     margin:auto;
     width: 1200px;
-    height: 270px;
+    height: 200px;
     position: relative;
 }
 
 .footer .footer-main-area {
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 .footer .footer-col-item {
@@ -336,6 +337,19 @@ ul,li{ padding:0;margin:0;list-style:none}
     /*color:#383838;*/
     color: rgba(56,56,56,0.5);
     text-decoration: none;
+    white-space:nowrap;
+    margin-bottom: 1rem;
+}
+
+.footer a:hover {
+    color:#383838;
+}
+
+.footer .footer-contact-item {
+    font-size: 1.2rem;
+    /*color:#383838;*/
+    color: rgba(56,56,56,0.5);
+    text-decoration: none;
     display: block;
     white-space:nowrap;
     padding-bottom: 0.5rem;
@@ -348,6 +362,7 @@ ul,li{ padding:0;margin:0;list-style:none}
 .footer .qrcode img{
     width:100%;
 }
+
 
 /******* detail modal ******/
 #manuDetailModal .detail-modal-field{
