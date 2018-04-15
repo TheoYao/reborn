@@ -28,8 +28,50 @@
 
     <script src="js/self_common.js"></script>
     <script src="js/user_center.js"></script>
+    <style type="text/css">
+        #toggle-button{ display: none; }
+        .button-label{
+            position: relative;
+            display: inline-block;
+            width: 400px;
+            height: 30px;
+            background-color: #ccc;
+            box-shadow: #ccc 0px 0px 0px 2px;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-left:20px;
+        }
+        .circle{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        .button-label .text {
+            line-height: 30px;
+            font-size: 18px;
+            text-shadow: 0 0 2px #ddd;
+        }
 
+        .on { color: #fff; display: none; text-indent: 80px;}
+        .off { color: #fff; display: inline-block; text-indent: 300px;}
+        .button-label .circle{
+            left: 0;
+            transition: all 0.3s;
+        }
+        #toggle-button:checked + label.button-label .circle{
+            left: 370px;
+        }
+        #toggle-button:checked + label.button-label .on{ display: inline-block; }
+        #toggle-button:checked + label.button-label .off{ display: none; }
+        #toggle-button:checked + label.button-label{
+            background-color: #51ccee;
+        }
 
+    </style>
 </head>
 
 <body>
@@ -154,6 +196,13 @@
                     <div class="title-area-text">最新消息</div>
                     <div class="info-center-area">
                         <div class="manu-list" id="info-center-table">
+                            <div class="manu-item manu-item-even">
+                                <a href="download_page.html" target="_blank">
+                                    <div class="manu-item-title">模板下载</div>
+                                    <div class="manu-item-date">2018-04-01</div>
+                                </a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -161,27 +210,27 @@
                 <div id="user-center-show-body-1" class="user-center-index"  style="display: none;">
                     <form class="user-contribute-deliver" enctype="multipart/form-data">
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field" id="summary_submit_input0">&nbsp;&nbsp;&nbsp;摘要上传：</span>
+                            <span class="input-group-addon summary_submit_field" id="summary_submit_input0">&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>摘要上传：</span>
                             <input type="file" id="summary-file-input" name="fileString" class="form-control" placeholder="请选择文件" accept=".doc, .docx">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;中文标题：</span>
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>中文标题：</span>
                             <input type="text" class="form-control" placeholder="请输入中文标题" id="summary_input_cn_title">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;英文标题：</span>
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>英文标题：</span>
                             <input type="text" class="form-control" placeholder="请输入英文标题" id="summary_input_egls_title">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">中文关键字：</span>
+                            <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>中文关键字：</span>
                             <input type="text" class="form-control" placeholder="关键字以逗号隔开" id="summary_input_cn_kwd">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">英文关键字：</span>
+                            <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>英文关键字：</span>
                             <input type="text" class="form-control" placeholder="关键字以逗号隔开" id="summary_input_egls_kwd">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题：</span>
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>主题：</span>
                             <select class="selectpicker form-control" data-live-search="true"  title="请选择主题" id="summary_input_topic">
                                 <option>水污染控制与资源化</option>
                                 <option>大气污染与控制</option>
@@ -193,23 +242,23 @@
                             </select>
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者姓名：</span>
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>作者姓名：</span>
                             <input type="text" class="form-control" placeholder="请输入作者姓名" id="summary_input_author_name">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者拼音：</span>
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>作者拼音：</span>
                             <input type="text" class="form-control" placeholder="请输入作者拼音(全小写，姓在前，姓和名用空格分开)" id="summary_input_author_spell">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>邮箱地址：</span>
                             <input type="text" class="form-control" placeholder="请输入作者邮箱" id="summary_input_email">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者单位：</span>
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>作者单位：</span>
                             <input type="text" class="form-control" placeholder="请输入作者单位" id="summary_input_unit">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;更多作者：</span>
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多作者：</span>
                             <input type="text" id="more-author-show" class="form-control" placeholder="添加作者" disabled="disabled">
                             <p class="more-author-list" style="display: none;"></p>
                             <span class="input-group-btn">
@@ -224,21 +273,32 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="input-group input-group-self">
-                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者姓名：</span>
+                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>作者姓名：</span>
                                                     <input type="text" class="form-control" placeholder="请输入作者姓名" id="summary_input_more_author_name">
                                                 </div>
                                                 <div class="input-group input-group-self">
-                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者拼音：</span>
+                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>作者拼音：</span>
                                                     <input type="text" class="form-control" placeholder="请输入作者拼音(全小写，姓在前，姓和名用空格分开)" id="summary_input_more_spell">
                                                 </div>
                                                 <div class="input-group input-group-self">
-                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;邮箱地址：</span>
+                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>邮箱地址：</span>
                                                     <input type="text" class="form-control" placeholder="请输入作者邮箱" id="summary_input_more_email">
                                                 </div>
                                                 <div class="input-group input-group-self">
-                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;作者单位：</span>
+                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>作者单位：</span>
                                                     <input type="text" class="form-control" placeholder="请输入作者单位" id="summary_input_more_unit">
                                                 </div>
+                                                <div class="input-group input-group-self">
+                                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;通讯作者：</span>
+                                                    <input type="checkbox" id="toggle-button" name="switch">
+                                                    <label for="toggle-button" class="button-label">
+                                                        <span class="circle"></span>
+                                                        <span class="text on">是</span>
+                                                        <span class="text off">否</span>
+                                                    </label>
+                                                </div>
+
+
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -249,8 +309,9 @@
                                 </div>
                             </span>
                         </div>
+
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>
                             <input type="text" class="form-control" placeholder="备注信息"  id="summary_submit_remark">
                         </div>
                     </form>

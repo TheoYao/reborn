@@ -189,6 +189,7 @@ $(document).ready(function() {
         var addPing = $.trim($('#summary_input_more_spell').val());
         var addEmail = $.trim($('#summary_input_more_email').val());
         var addCompany = $.trim($('#summary_input_more_unit').val());
+        var isCommuAuthor =document.getElementById("toggle-button").checked;
         if(addName==''){
             alert('请填写作者姓名');
             return false
@@ -205,6 +206,9 @@ $(document).ready(function() {
             alert('请填写作者地址');
             return false
         }
+        if(isCommuAuthor){
+            addName = addName + "(通讯作者)"
+        }
         $('.more-author-list').append('<span class="more-author-item" data-name='+addName+' data-ping='+addPing+' data-email='+addEmail+' data-company='+addCompany+'>'+addName+'</span>')
         if (!$("#more-author-show").attr("value")) {
             $('#more-author-show').attr("value", addName)
@@ -220,6 +224,7 @@ $(document).ready(function() {
         $('#summary_input_more_spell').val("");
         $('#summary_input_more_email').val("");
         $('#summary_input_more_unit').val("");
+        document.getElementById("toggle-button").checked = false;
         $('#myModal').modal('hide');
     }
 

@@ -72,6 +72,10 @@ ul,li{ padding:0;margin:0;list-style:none}
     text-align: center
 }
 
+.necessary-tips {
+    color: #ee1111;
+}
+
 .user-main-area .top-line{
     border-top:2px solid rgba(120,120,120,0.5);
 }
@@ -183,7 +187,7 @@ ul,li{ padding:0;margin:0;list-style:none}
 .user-main-area .user-wrap-area .tab-active:hover {
     background:rgba(92, 160, 47, 1.0);
     color: #FFFFFF;
-    cursor: default;
+    /*cursor: default;*/
 }
 
 
