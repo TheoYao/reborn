@@ -451,7 +451,7 @@ $(document).ready(function() {
             return false;
         }
         if(newPwd.length<6 || newPwd == ''){
-           swalhtml('请设置6位以上的密码');
+           swal('请设置6位以上的密码');
             return false;
         }
         if(cPwd != newPwd || cPwd==''){

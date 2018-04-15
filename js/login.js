@@ -318,7 +318,6 @@ $(function() {
             }, function(){
                 var data = new FormData();
 
-                data.append('username', username);
                 data.append('email', email);
                 data.append('phone', phone);
                 data.append('password', password);
