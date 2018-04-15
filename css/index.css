@@ -99,7 +99,7 @@ ul,li{padding:0;margin:0;list-style:none;}
 .nav-menu ul, .nav-menu ul li {background-color: rgba(238, 240, 236, 1.0);}
 
 .nav-menu ul li{
-    width: 120px;
+    width: 105px;
     text-align: center;
     display: inline-block;
 }
@@ -432,4 +432,29 @@ border-top:7px solid #009200;
 
 .content-body {
     text-align: justify;
+}
+
+
+.expert-row {
+    width:830px;
+}
+.expert-item{
+    vertical-align: top;
+    display:inline-block;
+    width:200px;
+    height: 270px;
+    margin: 10px 10px 10px 50px;
+}
+.expert-item img{
+    top:0;
+    width:150px;
+    margin-left:25px;
+    height:180px;
+    vertical-align:bottom;
+}
+
+.expert-item .expert-item-context{
+    width:100%;
+    text-align:center;
+    height:40px;
 }
