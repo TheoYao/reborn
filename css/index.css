@@ -425,3 +425,11 @@ border-top:7px solid #009200;
     color: #0066cc;
     display: inline-block;
 }
+
+.content-body img{
+    margin:15px 0 15px 0;
+}
+
+.content-body {
+    text-align: justify;
+}
