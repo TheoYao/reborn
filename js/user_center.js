@@ -206,7 +206,7 @@ $(document).ready(function() {
             return false
         }
         $('.more-author-list').append('<span class="more-author-item" data-name='+addName+' data-ping='+addPing+' data-email='+addEmail+' data-company='+addCompany+'>'+addName+'</span>')
-        if ($("#more-author-show").attr("value")) {
+        if (!$("#more-author-show").attr("value")) {
             $('#more-author-show').attr("value", addName)
         }
         else {
@@ -226,7 +226,7 @@ $(document).ready(function() {
     $("#clear-more-author").on('click', function () {
         $(".more-author-list").empty();
         $('#more-author-show').attr("value", "");
-    })
+    });
 
     $('#btn-submit-summary').on('click', function () {
         var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
