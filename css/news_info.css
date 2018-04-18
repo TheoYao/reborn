@@ -6,3 +6,49 @@
 .content-body p{
     text-align: justify;
 }
+
+.news-list-body{
+    margin-top: 20px;
+    padding-left:20px;
+    width: 850px;
+    display: inline-block;
+    /* text-align: justify; */
+    /* text-indent: 30px; */
+}
+
+.news-list-body .list-group-item{
+    cursor:pointer;
+    color:rgba(10, 10, 10, 0.9)
+}
+
+.news-list-body .list-group-item:hover .item-title{
+    color: rgba(1,1,1,1)
+}
+
+.news-list-body .list-group-item:hover .item-date{
+    color: rgba(1,1,1,1)
+}
+
+.news-list-body .item-title {
+    display: inline-block;
+    width: 500px;
+    overflow: hidden;
+    white-space:nowrap;
+    padding: 0 0 0 0;
+    font-size:15px;
+}
+
+.news-list-body .item-date {
+    display: inline-block;
+    float: right;
+    border-left: 2px solid rgba(92, 160, 47, 0.8);
+    text-align: right;
+    overflow: hidden;
+    white-space:nowrap;
+    padding: 0 0 0 0;
+    font-size:15px;
+}
+
+a.list-group-item{
+    background-color:rgba(238, 240, 236, 1.0)
+}
