@@ -344,11 +344,11 @@ border-top:7px solid #009200;
 }
 
 .self-clock {
-    margin: 0 0 50px 150px;
+    margin: 70px 0 70px 150px;
 }
 
 .footer {
-    background:#93a3b0;
+    background:rgba(0,0,0, 0.5);
 }
 .footer .footer-wrap {
     margin:auto;
@@ -368,26 +368,26 @@ border-top:7px solid #009200;
 }
 .footer .footer-col-name {
     font-size: 1.6em;
-    color:#585858;
+    color:rgba(255,255,255,0.7);
     padding-bottom: 1rem;
 }
 .footer a {
     font-size: 1.2rem;
     /*color:#383838;*/
-    color: rgba(56,56,56,0.5);
+    color:rgba(255,255,255,0.7);
     text-decoration: none;
     white-space:nowrap;
     margin-bottom: 1rem;
 }
 
 .footer a:hover {
-    color:#383838;
+    color:#181818;
 }
 
 .footer .footer-contact-item {
     font-size: 1.2rem;
     /*color:#383838;*/
-    color: rgba(56,56,56,0.5);
+    color:rgba(255,255,255,0.7);
     text-decoration: none;
     display: block;
     white-space:nowrap;

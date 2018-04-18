@@ -1,5 +1,10 @@
-//登录 注册逻辑
-$(function() {
+$(document).ready(function() {
+    if ($.cookie('cookie_info')) {
+        var username = JSON.parse($.cookie('cookie_info')).username;
+        var identity = JSON.parse($.cookie('cookie_info')).identity;
+
+        window.location.href = "user_center.html"
+    }
     //tab切换
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
 
