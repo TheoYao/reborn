@@ -58,8 +58,9 @@ $(document).ready(function() {
                     return
                 }
                 var htmlStr = "";
+                var maxNewsLength = 6;
                 $(".info-main-area").empty();
-                for(var i=0; i<data.length; i++) {
+                for(var i=0; i<data.length&&i<maxNewsLength; i++) {
                     var title = data[i].title.slice(0, 24);
                     var content = data[i].content.slice(0, 100)+"...";
                     var newsId = data[i].id;

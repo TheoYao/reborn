@@ -52,3 +52,7 @@
 a.list-group-item{
     background-color:rgba(238, 240, 236, 1.0)
 }
+
+.nav-page {
+    float:right;
+}
