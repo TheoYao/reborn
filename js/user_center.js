@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $.cookie('cookie_info', JSON.stringify({"username": "xuebin", "identity": "contribute,audit"}));
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
     var username = '';
     var identity = '';
@@ -360,10 +361,6 @@ $(document).ready(function() {
         }
 
         var birthDate = $('#personal_info_input_birth').val();
-        if(birthDate=='') {
-            swal('请选择出生年月');
-            return false
-        }
 
         var school = $("button[data-id='personal_info_input_school']").attr("title");
         if(school=='') {
