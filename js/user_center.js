@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $.cookie('cookie_info', JSON.stringify({"username": "xuebin", "identity": "contribute,audit"}));
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
     var username = '';
     var identity = '';

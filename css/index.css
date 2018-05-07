@@ -433,6 +433,7 @@ border-top:7px solid #009200;
 
 .content-body img{
     margin:15px 0 15px 0;
+    max-width: 830px;
 }
 
 .content-body {
