@@ -2,8 +2,12 @@ $(document).ready(function() {
     if ($.cookie('cookie_info')) {
         var username = JSON.parse($.cookie('cookie_info')).username;
         var identity = JSON.parse($.cookie('cookie_info')).identity;
+        if(username == "xuebin") {
+            $.cookie('cookie_info', '', { expires: -1 });
+            return
+        }
 
-        window.location.href = "user_center.html"
+        window.location.href = "user_center.html?time=20180507.html"
     }
     //tab切换
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
