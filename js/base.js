@@ -52,7 +52,7 @@ $(document).ready(function() {
         $.ajax({
             type: "GET",
             //url: url+"Inner/getNews",
-            url: "json/getNews.json",
+            url: "json/getNews.json?time=20180507.json",
             dataType: 'json',
             success: function (data) {
                 if(data.length == 0) {
@@ -63,19 +63,18 @@ $(document).ready(function() {
                 $(".info-main-area").empty();
                 for(var i=0; i<data.length&&i<maxNewsLength; i++) {
                     var title = data[i].title.slice(0, 24);
-                    var content = data[i].content.slice(0, 100)+"...";
+                    var content = data[i].content.slice(0, 150)+"...";
                     var newsId = data[i].id;
 
                     htmlStr += ("<div class=\"info-item\" news_id=" + newsId + "><div class=\"info-title\">" + title + "</div>");
-                    if (newsId == 1 || newsId == 10) {
+                    if (newsId == 11 || newsId == 10 || newsId == 2) {
                         htmlStr += ("<div class=\"image-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
-
+                        htmlStr += ("<div class=\"image-locate\"><img src=\"images/info_card/info_card"+newsId+".jpg?time=20180507.jpg\"></div></div></div>");
                     }
                     else{
                         htmlStr += ("<div class=\"image-cover no-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
-
+                        htmlStr += ("</div></div>");
                     }
-                    htmlStr += ("<div class=\"image-locate\"><img src=\"images/info_card"+newsId+".jpg\"></div></div></div>");
                 }
                 $(".info-main-area").html(htmlStr);
             },
