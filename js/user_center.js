@@ -3,8 +3,8 @@ $(document).ready(function() {
     var username = '';
     var identity = '';
     if($.cookie('cookie_info')){
-        var username =JSON.parse($.cookie('cookie_info')).username;
-        var identity =JSON.parse($.cookie('cookie_info')).identity;
+        username =JSON.parse($.cookie('cookie_info')).username;
+        identity =JSON.parse($.cookie('cookie_info')).identity;
 
     }else {
         window.location.href = "login.html#signin"
