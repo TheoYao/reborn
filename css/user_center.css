@@ -155,6 +155,7 @@ ul,li{ padding:0;margin:0;list-style:none}
 
 .user-main-area .user-wrap-tab a{
     text-decoration: none;
+    color: #FFFFFF;
 }
 
 .user-main-area .user-wrap-area .user-wrap-tab {
@@ -165,6 +166,7 @@ ul,li{ padding:0;margin:0;list-style:none}
     padding:0.5rem 0 0.5rem 0;
     font-size: 20px;
     text-align: center;
+    background:rgba(80, 140, 30, 1.0);
 }
 
 .user-main-area .user-wrap-area .user-wrap-tab:hover {

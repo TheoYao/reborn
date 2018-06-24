@@ -12,16 +12,17 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-table.min.css">
-
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css" />
     <link rel="stylesheet" type="text/css" href="css/user_center.css" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-table.min.js"></script>
     <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/sweetalert-dev.js"></script>
     <script src="js/cookie.js"></script>
     <script src="js/self_common.js"></script>
-
+    <script src="js/audit.js"></script>
 
 </head>
 
@@ -74,6 +75,37 @@
                     <div class="audit-table" id="audit-table-0"  style="display: block;">
                         <table id="to-audit-table" ></table>
                     </div>
+                    <div class="modal fade" id="addCommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">稿件评价</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>状态：</span>
+                                        <select class="selectpicker form-control" id="add-comment-status" title="add-comment-status">
+                                            <option>请选择...</option>
+                                            <option>通过</option>
+                                            <option>大修</option>
+                                            <option>小修</option>
+                                            <option>拒绝</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">审稿意见：</span>
+                                        <input type="text" class="form_datetime form-control" id="add-comment-opinion">
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button type="button" id="modal-add-comment" class="btn btn-primary">确定</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="audit-table" id="audit-table-1" style="display: none;">
                         <table id="audited-table" ></table>
                     </div>
@@ -97,6 +129,9 @@
                         field: 'title',
                         title: '标题'
                     }, {
+                        field: 'docu_id',
+                        title: '稿件编号'
+                    },{
                         field: 'status',
                         title: '状态'
                     }, {
@@ -116,7 +151,7 @@
                     pageSize: 10,
                     columns: [{
                         field: 'id',
-                        title: '稿件编号'
+                        title: '序号'
                     }, {
                         field: 'title',
                         title: '标题'

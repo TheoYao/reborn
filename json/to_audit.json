@@ -1,79 +1,90 @@
 [
     {
         "id": 1,
+        "docu_id": 666,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 2,
+        "docu_id": 667,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 3,
+        "docu_id": 668,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 4,
+        "docu_id": 669,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 5,
+        "docu_id": 670,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 6,
+        "docu_id": 671,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 7,
+        "docu_id": 672,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 8,
+        "docu_id": 666,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 9,
+        "docu_id": 673,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 10,
+        "docu_id": 674,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     },
     {
         "id": 11,
+        "docu_id": 675,
         "title": "纺织原料全球生产网络的贸易格局和环境足迹",
         "send_time": "2017-08-12",
         "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div><a href='#'>稿件评价</a></div>"
+        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
     }
 ]
