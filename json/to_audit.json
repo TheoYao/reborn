@@ -1,90 +1,15 @@
-[
-    {
-        "id": 1,
-        "docu_id": 666,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 2,
-        "docu_id": 667,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 3,
-        "docu_id": 668,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 4,
-        "docu_id": 669,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 5,
-        "docu_id": 670,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 6,
-        "docu_id": 671,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 7,
-        "docu_id": 672,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 8,
-        "docu_id": 666,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 9,
-        "docu_id": 673,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 10,
-        "docu_id": 674,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    },
-    {
-        "id": 11,
-        "docu_id": 675,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "send_time": "2017-08-12",
-        "status": "待审",
-        "operate":"<div><a href='#'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
-    }
-]
+{
+    "data": [
+        {
+            "docu_id": "2018062316320137",
+            "chineseTitle": "大气中类腐植酸物质的成冰研究",
+            "allocate_time": "2018-06-28 03:42:04",
+            "filename": "2018062316320137.docx",
+            "id": 1,
+            "status": "待审",
+            "operate": "<div><a href='http://ndac.env.tsinghua.edu.cn/app/data/2018062316320137.docx'>下载稿件</a></div><div class='comment-add'><a href='#'>稿件评价</a></div>"
+        }
+    ],
+    "info": "success",
+    "status": 1
+}

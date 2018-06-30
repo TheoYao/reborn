@@ -84,18 +84,93 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="input-group input-group-self">
-                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>状态：</span>
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>学术水平：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios11"
+                                                   value="option1"> 高
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios12"
+                                                   value="option2"> 较高
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios13"
+                                                   value="option2"> 一般
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios14"
+                                                   value="option2"> 较低
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios15"
+                                                   value="option2"> 低
+                                        </label>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;<span class="necessary-tips">*</span>学术/技术创新性：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline2" id="optionsRadios21"
+                                                   value="option1"> 有
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline2" id="optionsRadios22"
+                                                   value="option2"> 无
+                                        </label>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>应用价值：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline3" id="optionsRadios31"
+                                                   value="option1"> 高
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline3" id="optionsRadios32"
+                                                   value="option2"> 一般
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline3" id="optionsRadios33"
+                                                   value="option2"> 低
+                                        </label>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>论文写作规范：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline4" id="optionsRadios41"
+                                                   value="option1"> 规范
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline4" id="optionsRadios42"
+                                                   value="option2"> 不规范
+                                        </label>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>英文摘要写作水平：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline5" id="optionsRadios51"
+                                                   value="option1"> 高
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline5" id="optionsRadios52"
+                                                   value="option2"> 一般
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline5" id="optionsRadios53"
+                                                   value="option2"> 低
+                                        </label>
+                                    </div>
+
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>论文总体评价：</span>
                                         <select class="selectpicker form-control" id="add-comment-status" title="add-comment-status">
                                             <option>请选择...</option>
-                                            <option>通过</option>
-                                            <option>大修</option>
-                                            <option>小修</option>
-                                            <option>拒绝</option>
+                                            <option>推荐采纳</option>
+                                            <option>不宜采纳</option>
                                         </select>
                                     </div>
                                     <div class="input-group input-group-self">
-                                        <span class="input-group-addon summary_submit_field">审稿意见：</span>
-                                        <input type="text" class="form_datetime form-control" id="add-comment-opinion">
+                                        <span style="height:110px;" class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>审稿意见：</span>
+                                        <!--<input style="height:120px;" type="text" class="form_datetime form-control" id="add-comment-opinion">-->
+                                        <textarea class="form-control" rows="5" placeholder="请输入不低于100个字符。" id="add-comment-opinion"></textarea>
                                     </div>
 
                                 </div>
@@ -115,8 +190,11 @@
 
 
             <script>
+                var ori_url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
+                var username = JSON.parse($.cookie('cookie_info')).username;
+
                 $('#to-audit-table').bootstrapTable({
-                    url: 'json/to_audit.json',
+                    url: ori_url + "Document/getAuditPaper?" + username,
                     cache: false,
                     pagination: true,
                     sidePagination: "client",
@@ -126,7 +204,7 @@
                         field: 'id',
                         title: '稿件编号'
                     }, {
-                        field: 'title',
+                        field: 'chineseTitle',
                         title: '标题'
                     }, {
                         field: 'docu_id',
@@ -135,7 +213,7 @@
                         field: 'status',
                         title: '状态'
                     }, {
-                        field: 'send_time',
+                        field: 'allocate_time',
                         title: '送审时间'
                     }, {
                         field: 'operate',
@@ -143,7 +221,7 @@
                     }],
                 });
                 $('#audited-table').bootstrapTable({
-                    url: 'json/audited.json',
+                    url: ori_url + "Document/getAuditedPaper?" + username,
                     cache: false,
                     pagination: true,
                     sidePagination: "client",

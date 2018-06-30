@@ -9,23 +9,71 @@ $(document).ready(function() {
     } else {
         var username = '';
         var identity = '';
-        //window.location.href = "../Form/login.html#signin"
+        window.location.href = "../Form/login.html#signin"
     }
-    /*
-    if (identity.indexOf('audit') == -1) {
+
+    if (identity.indexOf('auditor') == -1) {
         $("#audit-nav-button").remove();
         alert("permission denied");
         window.location.href = "login.html#signin";
     }
-    */
 
+    var docu_id = "";
     $('#to-audit-table').on('click', "div.comment-add", function() {
+        docu_id = $(this).parent().prev().prev().prev().text();
         $('#addCommentModal').modal()
     });
 
     $('#modal-add-comment').on('click', function () {
         var manu_status = $.trim($('#add-comment-status option:selected').val());
         var comment_text = $.trim($('#add-comment-opinion').val());
+        var academic_level = "";
+        var academic_innovation = "";
+        var application_value = "";
+        var paper_write = "";
+        var abstract_write = "";
+
+        if (document.getElementById("optionsRadios11").checked) {
+            academic_level = "高"
+        } else if (document.getElementById("optionsRadios12").checked) {
+            academic_level = "中"
+        } else if (document.getElementById("optionsRadios13").checked) {
+            academic_level = "一般"
+        } else if (document.getElementById("optionsRadios14").checked) {
+            academic_level = "较低"
+        } else if (document.getElementById("optionsRadios15").checked) {
+            academic_level = "低"
+        }
+
+        if (document.getElementById("optionsRadios21").checked) {
+            academic_innovation = "有"
+        } else if (document.getElementById("optionsRadios22").checked) {
+            academic_innovation = "无"
+        }
+
+        if (document.getElementById("optionsRadios31").checked) {
+            application_value = "高"
+        } else if (document.getElementById("optionsRadios32").checked) {
+            application_value = "一般"
+        } else if (document.getElementById("optionsRadios33").checked) {
+            application_value = "低"
+        }
+
+        if (document.getElementById("optionsRadios41").checked) {
+            paper_write = "有"
+        } else if (document.getElementById("optionsRadios42").checked) {
+            paper_write = "无"
+        }
+
+        if (document.getElementById("optionsRadios51").checked) {
+            abstract_write = "高"
+        } else if (document.getElementById("optionsRadios52").checked) {
+            abstract_write = "一般"
+        } else if (document.getElementById("optionsRadios53").checked) {
+            abstract_write = "低"
+        }
+
+
         if(manu_status=='请选择...'){
             alert('请选择审稿状态');
             return false
@@ -35,6 +83,15 @@ $(document).ready(function() {
             alert('请填写审稿意见');
             return false
         }
+
+        opinion = {};
+        opinion["manu_status"] = manu_status;
+        opinion["comment_text"] = comment_text;
+        opinion["academic_level"] = academic_level;
+        opinion["academic_innovation"] = academic_innovation;
+        opinion["application_value"] = application_value;
+        opinion["paper_write"] = paper_write;
+        opinion["abstract_write"] = abstract_write;
 
         swal(
             {
@@ -47,12 +104,12 @@ $(document).ready(function() {
             }, function(){
                 var data = new FormData();
                 data.append('username', username);
-                data.append('status', manu_status);
-                data.append('comment', comment_text);
+                data.append('docu_id', docu_id);
+                data.append('opinion', JSON.stringify(opinion));
 
                 $.ajax({
                     type: "POST",
-                    url: url +"Document/submit",
+                    url: url +"Document/audit",
                     data: data,
                     dataType: 'json',
                     processData: false,
