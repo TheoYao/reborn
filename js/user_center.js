@@ -9,7 +9,7 @@ $(document).ready(function() {
     }else {
         window.location.href = "login.html#signin"
     }
-    if(identity.indexOf('auditor') == -1){
+    if(identity.indexOf('editor') == -1){
         $("#audit-nav-button").remove()
     }
     //出生日期

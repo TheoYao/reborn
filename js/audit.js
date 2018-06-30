@@ -9,13 +9,13 @@ $(document).ready(function() {
     } else {
         var username = '';
         var identity = '';
-        window.location.href = "../Form/login.html#signin"
+        //window.location.href = "../Form/login.html#signin"
     }
 
-    if (identity.indexOf('auditor') == -1) {
-        $("#audit-nav-button").remove();
-        alert("permission denied");
-        window.location.href = "login.html#signin";
+    if (identity.indexOf('editor') == -1) {
+        //$("#audit-nav-button").remove();
+        //alert("permission denied");
+        //window.location.href = "login.html#signin";
     }
 
     var docu_id = "";
@@ -136,4 +136,28 @@ $(document).ready(function() {
     });
 
 
+    $('#audited-table').on('click', "div.comment-get", function() {
+        var docu_id = $(this).parent().prev().prev().text();
+        $.ajax({
+            type: "Get",
+            url: url +"Document/getopinion?"+docu_id,
+            data: data,
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                if (data.status == 1) {
+                    data.opinion
+                } else {
+                    swal("出现问题", data.info, "error");
+                    return false;
+                }
+            },
+            error: function () {
+                swal('网路不给力，请稍候再试');
+            }
+        })
+        docu_id = $(this).parent().prev().prev().prev().text();
+        $('#showCommentModal').modal()
+    });
 });

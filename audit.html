@@ -184,6 +184,111 @@
                     <div class="audit-table" id="audit-table-1" style="display: none;">
                         <table id="audited-table" ></table>
                     </div>
+                    <div class="modal fade" id="showCommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="theModalLabel">稿件评价</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>学术水平：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios111"
+                                                   value="option1" onclick="return false"> 高
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios112"
+                                                   value="option2" onclick="return false"> 较高
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios113"
+                                                   value="option2" onclick="return false"> 一般
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios114"
+                                                   value="option2" onclick="return false"> 较低
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline1" id="optionsRadios115"
+                                                   value="option2" onclick="return false"> 低
+                                        </label>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;<span class="necessary-tips">*</span>学术/技术创新性：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline2" id="optionsRadios121"
+                                                   value="option1"> 有
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline2" id="optionsRadios122"
+                                                   value="option2"> 无
+                                        </label>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>应用价值：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline3" id="optionsRadios131"
+                                                   value="option1"> 高
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline3" id="optionsRadios132"
+                                                   value="option2"> 一般
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline3" id="optionsRadios133"
+                                                   value="option2"> 低
+                                        </label>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>论文写作规范：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline4" id="optionsRadios141"
+                                                   value="option1"> 规范
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline4" id="optionsRadios142"
+                                                   value="option2"> 不规范
+                                        </label>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>英文摘要写作水平：</span>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline5" id="optionsRadios151"
+                                                   value="option1"> 高
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline5" id="optionsRadios152"
+                                                   value="option2"> 一般
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" name="optionsRadiosinline5" id="optionsRadios153"
+                                                   value="option2"> 低
+                                        </label>
+                                    </div>
+
+                                    <div class="input-group input-group-self">
+                                        <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>论文总体评价：</span>
+                                        <select class="selectpicker form-control" id="show-comment-status" title="add-comment-status">
+                                            <option>请选择...</option>
+                                            <option>推荐采纳</option>
+                                            <option>不宜采纳</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group input-group-self">
+                                        <span style="height:110px;" class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>审稿意见：</span>
+                                        <!--<input style="height:120px;" type="text" class="form_datetime form-control" id="add-comment-opinion">-->
+                                        <textarea class="form-control" rows="5" placeholder="请输入不低于100个字符。" id="show-comment-opinion"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -191,10 +296,11 @@
 
             <script>
                 var ori_url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
-                var username = JSON.parse($.cookie('cookie_info')).username;
+                //var username = JSON.parse($.cookie('cookie_info')).username;
 
                 $('#to-audit-table').bootstrapTable({
-                    url: ori_url + "Document/getAuditPaper?" + username,
+                    //url: ori_url + "Document/getAuditPaper?" + username,
+                    url: "json/to_audit.json",
                     cache: false,
                     pagination: true,
                     sidePagination: "client",
@@ -221,7 +327,8 @@
                     }],
                 });
                 $('#audited-table').bootstrapTable({
-                    url: ori_url + "Document/getAuditedPaper?" + username,
+                    //url: ori_url + "Document/getAuditedPaper?" + username,
+                    url: "json/audited.json",
                     cache: false,
                     pagination: true,
                     sidePagination: "client",
@@ -231,13 +338,13 @@
                         field: 'id',
                         title: '序号'
                     }, {
-                        field: 'title',
+                        field: 'chineseTitle',
                         title: '标题'
                     }, {
-                        field: 'status',
-                        title: '状态'
+                        field: 'docu_id',
+                        title: '稿件编号'
                     }, {
-                        field: 'resp_time',
+                        field: 'audit_time',
                         title: '审回时间'
                     }, {
                         field: 'opinion',

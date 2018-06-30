@@ -2,25 +2,8 @@
     {
         "id": 1,
         "docu_id": 666,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "resp_time": "2017-08-12",
-        "status": "不宜采纳",
-        "opinion":"<div class='comment-get'><a href='#'>查看审稿意见</a></div>"
-    },
-    {
-        "id": 2,
-        "docu_id": 777,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "resp_time": "2017-08-12",
-        "status": "不宜采纳",
-        "opinion":"<div class='comment-get'><a href='#'>查看审稿意见</a></div>"
-    },
-    {
-        "id": 3,
-        "docu_id": 888,
-        "title": "纺织原料全球生产网络的贸易格局和环境足迹",
-        "resp_time": "2017-08-12",
-        "status": "不宜采纳",
+        "chineseTitle": "纺织原料全球生产网络的贸易格局和环境足迹",
+        "audit_time": "2017-08-12",
         "opinion":"<div class='comment-get'><a href='#'>查看审稿意见</a></div>"
     }
 
