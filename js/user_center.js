@@ -184,7 +184,7 @@ $(document).ready(function() {
 
     //添加更多作者
     $('#modal-add-author').on('click', function () {
-        var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+        var emailReg=/[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;
         var addName = $.trim($('#summary_input_more_author_name').val());
         var addPing = $.trim($('#summary_input_more_spell').val());
         var addEmail = $.trim($('#summary_input_more_email').val());
@@ -234,7 +234,7 @@ $(document).ready(function() {
     });
 
     $('#btn-submit-summary').on('click', function () {
-        var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+        var emailReg=/[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;
         var fileSrc = $("input[name=fileString]")[0].files[0];
         var chineseTitle = $.trim($('#summary_input_cn_title').val());
         var englishTitle = $.trim($('#summary_input_egls_title').val());

@@ -78,7 +78,7 @@ $(document).ready(function() {
                 swal('请填写用户名');
                 return false
             }
-            var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+            var emailReg=/[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;
             var email = $.trim($('#sign-up-email').val());
             if(!(emailReg.test(email)) || email == ''){
                 swal('请填写正确格式的邮箱');
@@ -287,7 +287,7 @@ $(document).ready(function() {
     });
 
     $('#modal-modify-pwd').on('click', function() {
-        var emailReg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+        var emailReg=/[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;
         var email = $.trim($('#forget_pwd_mail').val());
         if(!(emailReg.test(email)) || email == ''){
             swal('请填写正确格式的邮箱');

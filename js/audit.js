@@ -1,11 +1,8 @@
 $(document).ready(function() {
-
     var url = "http://ndac.env.tsinghua.edu.cn/app/index.php/";
     if ($.cookie('cookie_info')) {
         var username = JSON.parse($.cookie('cookie_info')).username;
         var identity = JSON.parse($.cookie('cookie_info')).identity;
-
-        $("#sign-area-name").text(username)
     } else {
         var username = '';
         var identity = '';

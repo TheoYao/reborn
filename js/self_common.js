@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.sign-area').on('click', "div#sign-out", function() {
+    $('.sign-area').on('click', "span#sign-out", function() {
         $.cookie('cookie_info', '', { expires: -1 });
         window.location.href = "index.html?time=1526625986.html"
     });
@@ -20,6 +20,6 @@ $(document).ready(function() {
 
         $(".sign-area").empty();
 
-        $(".sign-area").html("<span id=\"sign-area-name\"><a href=\"user_center.html?time=1526625986.html\">"+username+"&nbsp;</a></span><div id=\"sign-out\">退出</div>");
+        $(".sign-area").html("<span id=\"sign-area-name\"><a href=\"user_center.html?time=1526625986.html\">"+username+"&nbsp;&nbsp;</a></span><span id=\"sign-out\">退出</span>");
     }
 });
