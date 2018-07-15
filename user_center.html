@@ -326,7 +326,7 @@
                 </div>
 
                 <div id="user-center-show-body-2" class="user-center-index" style="display: none;"></div>
-                <div id="user-center-show-body-3" class="user-center-index" style="display: inline-block;">
+                <div id="user-center-show-body-3" class="user-center-index" style="display: none;">
                     <form class="user-contribute-deliver" enctype="multipart/form-data">
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>姓名：</span>
@@ -357,18 +357,21 @@
                                 <option>否</option>
                             </select>
                         </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>身份证号：</span>
-                            <input type="text" class="form-control" placeholder="请输入身份证号" id="acco_input_id">
-                        </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>手机号：</span>
-                            <input type="text" class="form-control" placeholder="请输入手机号" id="acco_input_mobile">
-                        </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出生年月：</span>
-                            <input type="text" class="form_datetime form-control" id="acco_input_birthday">
-                        </div>
+                        <span id="is_acco_area" style="display: none;">
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>身份证号：</span>
+                                <input type="text" class="form-control" placeholder="请输入身份证号" id="acco_input_id">
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>手机号：</span>
+                                <input type="text" class="form-control" placeholder="请输入手机号" id="acco_input_mobile">
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出生年月：</span>
+                                <input type="text" class="form_datetime form-control" id="acco_input_birthday">
+                            </div>
+                        </span>
+
                     </form>
                     <div class="summary_submit_button_area">
                         <div class="col-md-6"></div>
@@ -377,9 +380,90 @@
                         </div>
                         <div class="col-md-3"></div>
                     </div>
-
                 </div>
-                <div id="user-center-show-body-4" class="user-center-index" style="display: none;"></div>
+
+                <div id="user-center-show-body-4" class="user-center-index" style="display: inline-block;">
+                    <form class="user-contribute-deliver" enctype="multipart/form-data">
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>姓名：</span>
+                            <input type="text" class="form-control" placeholder="姓名" id="reimburse_input_name">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>银行：</span>
+                            <input type="text" class="form-control" placeholder="银行" id="reimburse_input_bank">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>持卡人姓名：</span>
+                            <input type="text" class="form-control" placeholder="持卡人姓名" id="reimburse_input_r_name">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>银行卡号：</span>
+                            <input type="text" class="form-control" placeholder="请输入银行卡号" id="reimburse_input_cid">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>开户支行：</span>
+                            <input type="text" class="form-control" placeholder="请输入开户支行" id="reimburse_input_bname">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>是否机票：</span>
+                            <select class="selectpicker form-control" id="reimburse_input_air" title="请选择">
+                                <option>是</option>
+                                <option>否</option>
+                            </select>
+                        </div>
+
+                        <span id="is_air_area" style="display: none;">
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>机票行程单号：</span>
+                                <input type="text" class="form-control" placeholder="请输入单号" id="reimburse_input_air_id">
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>机票起点：</span>
+                                <input type="text" class="form-control" placeholder="请输入起点" id="reimburse_input_air_begin">
+                            </div>
+
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>机票终点：</span>
+                                <input type="text" class="form-control" placeholder="请输入终点" id="reimburse_input_air_end">
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>金额：</span>
+                                <input type="text" class="form-control" placeholder="请输入金额" id="reimburse_input_air_price">
+                            </div>
+                        </span>
+                        <span id="is_railway_area" style="display: none;">
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票类型：</span>
+                            <select class="selectpicker form-control" id="reimburse_input_railway_type" title="请选择">
+                                <option>高铁（动车）二等座</option>
+                                <option>硬卧</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票起点：</span>
+                                <input type="text" class="form-control" placeholder="请输入起点" id="reimburse_input_railway_begin">
+                            </div>
+
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>机票终点：</span>
+                                <input type="text" class="form-control" placeholder="请输入终点" id="reimburse_input_railway_end">
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>金额：</span>
+                                <input type="text" class="form-control" placeholder="请输入金额" id="reimburse_input_railway_price">
+                            </div>
+                        </span>
+
+                    </form>
+                    <div class="summary_submit_button_area">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-3 submit-button-area-here">
+                            <button class="btn btn-success btn-summary" id="btn-submit-reimburse">提&nbsp;&nbsp;交</button>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
 
                 <div id="user-center-show-body-5" class="user-center-index" style="display: none;">
                     <div class="input-group input-group-self">

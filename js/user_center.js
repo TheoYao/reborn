@@ -573,4 +573,25 @@ $(document).ready(function() {
         var cid = $(this).attr("docuid");
         window.open('http://ndac.env.tsinghua.edu.cn' + '/app/data/'+cid);
     });
+
+    $('#acco_input_acco').on('changed.bs.select',function(e){
+        if ($("button[data-id='acco_input_acco']").attr("title") == "是") {
+            $("#is_acco_area").show();
+        }
+        else {
+            $("#is_acco_area").hide();
+        }
+    });
+
+    $('#reimburse_input_air').on('changed.bs.select',function(e){
+        if ($("button[data-id='reimburse_input_air']").attr("title") == "是") {
+            $("#is_air_area").show();
+            $("#is_railway_area").hide();
+        }
+        else {
+            $("#is_railway_area").show();
+            $("#is_air_area").hide();
+        }
+    });
+
 });
