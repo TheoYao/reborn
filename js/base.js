@@ -52,7 +52,7 @@ $(document).ready(function() {
         $.ajax({
             type: "GET",
             //url: url+"Inner/getNews",
-            url: "json/getNews.json?time=1526625986.json",
+            url: "json/getNews.json?time=1531645315.json",
             dataType: 'json',
             success: function (data) {
                 if(data.length == 0) {
@@ -69,7 +69,7 @@ $(document).ready(function() {
                     htmlStr += ("<div class=\"info-item\" news_id=" + newsId + "><div class=\"info-title\">" + title + "</div>");
                     if (newsId == 11 || newsId == 10 || newsId == 2) {
                         htmlStr += ("<div class=\"image-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
-                        htmlStr += ("<div class=\"image-locate\"><img src=\"images/info_card/info_card"+newsId+".jpg?time=1526625986.jpg\"></div></div></div>");
+                        htmlStr += ("<div class=\"image-locate\"><img src=\"images/info_card/info_card"+newsId+".jpg?time=1531645315.jpg\"></div></div></div>");
                     }
                     else{
                         htmlStr += ("<div class=\"image-cover no-cover\"><div class=\"info-content\"><div class=\"content-value\"><span class=\"content-cover\">"+content+" </span></div></div>");
