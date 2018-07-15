@@ -125,7 +125,7 @@
                 </div>
 
 
-                <div id="user-center-show-body-0" class="user-center-index" style="display: inline-block;">
+                <div id="user-center-show-body-0" class="user-center-index" style="display: none;">
                     <div class="welcome-tips-area">
                         <span class="label label-info welcome-tips-item">欢迎，来自<span id="school_name">清华大学</span>的<span id="person_name">xuebin</span>。</span>
                     </div>
@@ -326,7 +326,59 @@
                 </div>
 
                 <div id="user-center-show-body-2" class="user-center-index" style="display: none;"></div>
-                <div id="user-center-show-body-3" class="user-center-index" style="display: none;"></div>
+                <div id="user-center-show-body-3" class="user-center-index" style="display: inline-block;">
+                    <form class="user-contribute-deliver" enctype="multipart/form-data">
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>姓名：</span>
+                            <input type="text" class="form-control" placeholder="姓名" id="acco_input_name">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：</span>
+                            <select class="selectpicker form-control" id="acco_input_sex">
+                                <option>男</option>
+                                <option>女</option>
+                            </select>
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>学校：</span>
+                            <input type="text" class="form-control" placeholder="请输入学校" id="acco_input_school">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;是否穆斯林：</span>
+                            <select class="selectpicker form-control" id="acco_input_muslim" title="请选择">
+                                <option>是</option>
+                                <option>否</option>
+                            </select>
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">是否需要住宿：</span>
+                            <select class="selectpicker form-control" id="acco_input_acco" title="请选择">
+                                <option>是</option>
+                                <option>否</option>
+                            </select>
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>身份证号：</span>
+                            <input type="text" class="form-control" placeholder="请输入身份证号" id="acco_input_id">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>手机号：</span>
+                            <input type="text" class="form-control" placeholder="请输入手机号" id="acco_input_mobile">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出生年月：</span>
+                            <input type="text" class="form_datetime form-control" id="acco_input_birthday">
+                        </div>
+                    </form>
+                    <div class="summary_submit_button_area">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-3 submit-button-area-here">
+                            <button class="btn btn-success btn-summary" id="btn-submit-acco">提&nbsp;&nbsp;交</button>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+
+                </div>
                 <div id="user-center-show-body-4" class="user-center-index" style="display: none;"></div>
 
                 <div id="user-center-show-body-5" class="user-center-index" style="display: none;">
