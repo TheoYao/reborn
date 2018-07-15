@@ -547,18 +547,15 @@ $(document).ready(function() {
                     var manuStatus = "未知";
                     switch(curData["status"]) {
                         case "1":
-                            manuStatus = "已提交";
+                            manuStatus = "已提交，待审稿";
                             break;
                         case "2":
-                            manuStatus = "待审";
+                            manuStatus = "审稿中";
                             break;
                         case "3":
-                            manuStatus = "";
+                            manuStatus = "已接收";
                             break;
                         case "4":
-                            manuStatus = "";
-                            break;
-                        case "5":
                             manuStatus = "不宜采纳";
                             break;
                     }
