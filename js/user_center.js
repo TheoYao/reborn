@@ -594,4 +594,70 @@ $(document).ready(function() {
         }
     });
 
+    $('.user-nav-bottom-item,.user-nav-item')
+        .click(
+            function(){
+                var id_array = ($(this).attr("id")).split("-");
+                var index = parseInt(id_array[id_array.length - 1]);
+                if (index > 1 && index < 5) {
+                    return
+                }
+                if (index == 2) {
+                    index2Cal();
+                }
+                if (index == 1) {
+                    var manu_list = $("#manu-check-table");
+                    if (manu_list.attr("isPost") != "0"){
+                        swal("您已投稿，不能重复投稿");
+                        return
+                    }
+                }
+                for (i = 0; i < 7; i++) {
+                    var x = $("#user-center-show-body-"+i);
+                    if (i == index) {
+                        x.show()
+                    }
+                    else {
+                        x.hide()
+                    }
+                    if (i >= 1 && i <= 4) {
+                        var y = $("#user-nav-item-"+i);
+                        if (i==index) {
+                            y.addClass("active")
+                        }
+                        else {
+                            y.removeClass("active")
+                        }
+                    }
+                    else if(i>4) {
+                        var y=$("#user-nav-bottom-item-"+i)
+                        if (i==index) {
+                            y.addClass("user-nav-bottom-item-active")
+                        }
+                        else {
+                            y.removeClass("user-nav-bottom-item-active")
+                        }
+                    }
+                }
+
+            }
+        );
+
+    function index2Cal() {
+        swal(
+            {
+                title: "是否参与口头汇报？",
+                type: "warning",
+                text: "不做口头汇报，不予报销路费和住宿，并无法参加综合大奖的评选，但可以参加优秀海报奖的评选。",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定提交",
+                closeOnConfirm: true
+            }, function(){
+                $('#oral_report_area').show();
+                return true;
+            });
+    }
+
+    $('#')
 });

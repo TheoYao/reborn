@@ -125,7 +125,7 @@
                 </div>
 
 
-                <div id="user-center-show-body-0" class="user-center-index" style="display: none;">
+                <div id="user-center-show-body-0" class="user-center-index" style="display: inline-block;">
                     <div class="welcome-tips-area">
                         <span class="label label-info welcome-tips-item">欢迎，来自<span id="school_name">清华大学</span>的<span id="person_name">xuebin</span>。</span>
                     </div>
@@ -325,7 +325,29 @@
 
                 </div>
 
-                <div id="user-center-show-body-2" class="user-center-index" style="display: none;"></div>
+                <div id="user-center-show-body-2" class="user-center-index" style="display: none;">
+                    <form class="user-contribute-deliver" enctype="multipart/form-data">
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field" id="fulltext_post_input">&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>海报上传：</span>
+                            <input type="file" id="fulltext-post-input" name="fileString" class="form-control" placeholder="请选择文件" accept=".pdf">
+                        </div>
+                        <span id="oral_report_area" style="display: none;">
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field" id="fulltext_submit_input">&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>全文上传：</span>
+                                <input type="file" id="fulltext-file-input" name="fileString" class="form-control" placeholder="请选择文件" accept=".doc, .docx">
+                            </div>
+                        </span>
+                        <div class="summary_submit_button_area">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-3 submit-button-area-here">
+                                <button class="btn btn-success btn-summary" id="btn-submit-fulltext">提&nbsp;&nbsp;交</button>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+
+                    </form>
+                </div>
+
                 <div id="user-center-show-body-3" class="user-center-index" style="display: none;">
                     <form class="user-contribute-deliver" enctype="multipart/form-data">
                         <div class="input-group input-group-self">
@@ -334,7 +356,7 @@
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：</span>
-                            <select class="selectpicker form-control" id="acco_input_sex">
+                            <select class="selectpicker form-control" id="acco_input_sex" title="请选择">
                                 <option>男</option>
                                 <option>女</option>
                             </select>
@@ -382,7 +404,7 @@
                     </div>
                 </div>
 
-                <div id="user-center-show-body-4" class="user-center-index" style="display: inline-block;">
+                <div id="user-center-show-body-4" class="user-center-index" style="display: none;">
                     <form class="user-contribute-deliver" enctype="multipart/form-data">
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>姓名：</span>
@@ -595,52 +617,5 @@
 </section>
 <a href="#top"><div class="backToTop">&#8682;</div></a>
 
-<script>
-    $('.user-nav-bottom-item,.user-nav-item')
-        .click(
-            function(){
-                var id_array = ($(this).attr("id")).split("-");
-                var index = parseInt(id_array[id_array.length - 1]);
-                if (index > 1 && index < 5) {
-                    return
-                }
-                if (index == 1) {
-                    var manu_list = $("#manu-check-table");
-                    if (manu_list.attr("isPost") != "0"){
-                        swal("您已投稿，不能重复投稿");
-                        return
-                    }
-                }
-                for (i = 0; i < 7; i++) {
-                    var x = $("#user-center-show-body-"+i);
-                    if (i == index) {
-                        x.show()
-                    }
-                    else {
-                       x.hide()
-                    }
-                    if (i >= 1 && i <= 4) {
-                        var y = $("#user-nav-item-"+i);
-                        if (i==index) {
-                            y.addClass("active")
-                        }
-                        else {
-                            y.removeClass("active")
-                        }
-                    }
-                    else if(i>4) {
-                        var y=$("#user-nav-bottom-item-"+i)
-                        if (i==index) {
-                            y.addClass("user-nav-bottom-item-active")
-                        }
-                        else {
-                            y.removeClass("user-nav-bottom-item-active")
-                        }
-                    }
-                }
-
-            }
-        )
-</script>
 
 </body>
