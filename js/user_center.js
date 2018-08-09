@@ -90,7 +90,7 @@ $(document).ready(function() {
                         $("button[data-id='personal_info_input_sex']").attr("title", "男");
                         $("button[data-id='personal_info_input_sex'] .filter-option").text("男")
                     }
-                    else{
+                    else if (curData["sex"] == "女"){
                         $("button[data-id='personal_info_input_sex']").attr("title", "女");
                         $("button[data-id='personal_info_input_sex'] .filter-option").text("女")
                     }
@@ -115,6 +115,10 @@ $(document).ready(function() {
                     /*填充tips*/
                     $("#school_name").text(curData["school"]);
                     $("#person_name").text(curData["stuName"]);
+                    if (curData["school"] == "" || curData["stuName"]) {
+                        $(".welcome-tips-item").remove();
+                    };
+
                 } else {
                     swal(data.info);
                     return false;
@@ -167,6 +171,9 @@ $(document).ready(function() {
         for (i=0; i<data.length; i++){
             var curData = data[i];
             var curTitle = curData["chineseTitle"];
+            if (curTitle == null) {
+                curTitle = curData["englishTitle"];
+            }
             var curDate = curData["create_time"].split(" ")[0];
             var curDocuId = curData["docu_id"];
             if (i%2 == 1){
