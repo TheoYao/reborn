@@ -33,7 +33,7 @@ $(document).ready(function() {
         if (document.getElementById("optionsRadios11").checked) {
             academic_level = "高"
         } else if (document.getElementById("optionsRadios12").checked) {
-            academic_level = "中"
+            academic_level = "较高"
         } else if (document.getElementById("optionsRadios13").checked) {
             academic_level = "一般"
         } else if (document.getElementById("optionsRadios14").checked) {
@@ -171,82 +171,79 @@ $(document).ready(function() {
                         swal("出现问题", data.info, "error");
                         return false;
                     }
-                    for(var key in opinion_dict) {
-                        opinion_str = opinion_dict[key];
-                        opinion = JSON.parse(opinion_str);
-                        manu_status = opinion["manu_status"];
-                        abstract_write = opinion["abstract_write"];
-                        academic_innovation = opinion["academic_innovation"];
-                        academic_level = opinion["academic_level"];
-                        application_value = opinion["application_value"];
-                        paper_write = opinion["paper_write"];
-                        comment_text = opinion["comment_text"];
+                    opinion = opinion_dict
+                    manu_status = opinion["manu_status"];
+                    abstract_write = opinion["abstract_write"];
+                    academic_innovation = opinion["academic_innovation"];
+                    academic_level = opinion["academic_level"];
+                    application_value = opinion["application_value"];
+                    paper_write = opinion["paper_write"];
+                    comment_text = opinion["comment_text"];
 
 
-                        switch(academic_level) {
-                            case "高":
-                                document.getElementById("optionsRadios111").checked = true;
-                                break;
-                            case "较高":
-                                document.getElementById("optionsRadios112").checked = true;
-                                break;
-                            case "一般":
-                                document.getElementById("optionsRadios113").checked = true;
-                                break;
-                            case "较低":
-                                document.getElementById("optionsRadios114").checked = true;
-                                break;
-                            case "低":
-                                document.getElementById("optionsRadios115").checked = true;
-                                break;
-                        }
-
-                        switch(academic_innovation) {
-                            case "有":
-                                document.getElementById("optionsRadios121").checked = true;
-                                break;
-                            case "无":
-                                document.getElementById("optionsRadios122").checked = true;
-                                break;
-                        }
-
-                        switch(application_value) {
-                            case "高":
-                                document.getElementById("optionsRadios131").checked = true;
-                                break;
-                            case "一般":
-                                document.getElementById("optionsRadios132").checked = true;
-                                break;
-                            case "低":
-                                document.getElementById("optionsRadios133").checked = true;
-                                break;
-                        }
-
-                        switch(paper_write) {
-                            case "有":
-                                document.getElementById("optionsRadios141").checked = true;
-                                break;
-                            case "无":
-                                document.getElementById("optionsRadios142").checked = true;
-                                break;
-                        }
-
-                        switch(abstract_write) {
-                            case "高":
-                                document.getElementById("optionsRadios151").checked = true;
-                                break;
-                            case "一般":
-                                document.getElementById("optionsRadios152").checked = true;
-                                break;
-                            case "低":
-                                document.getElementById("optionsRadios153").checked = true;
-                                break;
-                        }
-
-                        $('#show-comment-status').attr("value", manu_status);
-                        $('#show-comment-opinion').html(comment_text);
-
+                    switch(academic_level) {
+                        case "高":
+                            document.getElementById("optionsRadios111").checked = true;
+                            break;
+                        case "较高":
+                            document.getElementById("optionsRadios112").checked = true;
+                            break;
+                        case "一般":
+                            document.getElementById("optionsRadios113").checked = true;
+                            break;
+                        case "较低":
+                            document.getElementById("optionsRadios114").checked = true;
+                            break;
+                        case "低":
+                            document.getElementById("optionsRadios115").checked = true;
+                            break;
                     }
+
+                    switch(academic_innovation) {
+                        case "有":
+                            document.getElementById("optionsRadios121").checked = true;
+                            break;
+                        case "无":
+                            document.getElementById("optionsRadios122").checked = true;
+                            break;
+                    }
+
+                    switch(application_value) {
+                        case "高":
+                            document.getElementById("optionsRadios131").checked = true;
+                            break;
+                        case "一般":
+                            document.getElementById("optionsRadios132").checked = true;
+                            break;
+                        case "低":
+                            document.getElementById("optionsRadios133").checked = true;
+                            break;
+                    }
+
+                    switch(paper_write) {
+                        case "有":
+                            document.getElementById("optionsRadios141").checked = true;
+                            break;
+                        case "无":
+                            document.getElementById("optionsRadios142").checked = true;
+                            break;
+                    }
+
+                    switch(abstract_write) {
+                        case "高":
+                            document.getElementById("optionsRadios151").checked = true;
+                            break;
+                        case "一般":
+                            document.getElementById("optionsRadios152").checked = true;
+                            break;
+                        case "低":
+                            document.getElementById("optionsRadios153").checked = true;
+                            break;
+                    }
+
+                    $('#show-comment-status').attr("value", manu_status);
+                    $('#show-comment-opinion').html(comment_text);
+
                 } else {
                     swal("出现问题", data.info, "error");
                     return false;
