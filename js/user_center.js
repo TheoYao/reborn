@@ -7,10 +7,12 @@ $(document).ready(function() {
         identity =JSON.parse($.cookie('cookie_info')).identity;
 
     }else {
-        window.location.href = "login.html#signin"
+        window.location.href = "login.html#signin";
     }
     if(identity.indexOf('editor') == -1){
-        $("#audit-nav-button").remove()
+        $("#audit-nav-button").remove();
+    } else {
+        window.location.href = "audit.html?time=1533606762.html";
     }
     //出生日期
     $('.form_datetime').datetimepicker({
@@ -94,6 +96,11 @@ $(document).ready(function() {
                         $("button[data-id='personal_info_input_sex']").attr("title", "女");
                         $("button[data-id='personal_info_input_sex'] .filter-option").text("女")
                     }
+                    else {
+                        $("button[data-id='personal_info_input_sex']").attr("title", "");
+                        $("button[data-id='personal_info_input_sex'] .filter-option").text("")
+                    }
+
 
                     $("#personal_info_input_birth").attr("value", curData["birthDate"]);
 
@@ -567,7 +574,14 @@ $(document).ready(function() {
                             break;
                     }
                     $(modal_value[7]).text(manuStatus);
-                    $(modal_value[8]).text(curData["audit_opinion"] || "暂无审稿意见");
+                    $(modal_value[8]).text("暂无审稿意见");
+                    if (curData["audit_opinion"]) {
+                        var trans_audit_opinion = JSON.parse(curData["audit_opinion"]);
+                        if (trans_audit_opinion) {
+                            $(modal_value[8]).text(trans_audit_opinion["comment_text"]);
+                        }
+
+                    }
                     $(modal_value[9]).html("<span id=\"download_abstract\" docuid="+curData["filename"]+"><a>点击下载</a></span>");
                 } else {
                     console.log(res.info);
