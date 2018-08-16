@@ -672,13 +672,84 @@ $(document).ready(function() {
                 text: "不做口头汇报，不予报销路费和住宿，并无法参加综合大奖的评选，但可以参加优秀海报奖的评选。",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "确定提交",
+                confirmButtonText: "是",
+                cancelButtonText: "否",
                 closeOnConfirm: true
             }, function(){
                 $('#oral_report_area').show();
                 return true;
             });
-    }
+    };
 
-    $('#')
+
+    $('#btn-submit-fulltext').on('click', function () {
+
+        var filePoster = $("input[name=filePoster]")[0].files[0];
+        var fileFulltext = $("input[name=fileFulltext]")[0].files[0];
+
+        var isRecoVol = $("button[data-id='fulltext_reco_vol']").attr("title");
+        if(isRecoVol=='') {
+            swal('请选择是否提交至全文集');
+            return false
+        }
+
+        var isRecoCol = $("button[data-id='fulltext_reco_col']").attr("title");
+        if(isRecoCol=='') {
+            swal('请选择是否提交至期刊');
+            return false
+        }
+
+
+        var filePosterName = filePoster.name.split(".");//获取上传文件的后缀
+        var filePosterSuf = filePosterName[filePosterName.length - 1]；
+        if( filePosterSuf!="pptx" && filePosterSuf!="ppt" ){
+            swal("只能上传.pptx和.ppt的海报！");
+        }
+
+        var fileFulltextName = fileFulltext.name.split(".");//获取上传文件的后缀
+        var fileFulltextSuf = fileFulltextName[fileFulltextName.length - 1]；
+        if( fileFulltextSuf!="doc" && fileFulltextSuf!="docx" ){
+            swal("只能上传.doc和.docx的文件！");
+        }
+
+
+        swal(
+            {
+                title: "确定提交吗？",
+                text: "每人只能提交一次，提交后信息将无法修改！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定提交",
+                closeOnConfirm: false
+            }, function(){
+                var data = new FormData();
+                data.append('username', username);
+                data.append('poster', filePoster);
+                data.append('fulltext', fileFulltext);
+                data.append('isRecoCol', isRecoCol);
+                data.append('isRecoVol', isRecoVol);
+
+                $.ajax({
+                    type: "POST",
+                    url: url +"Document/submit",
+                    data: data,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        if (data.status == 1) {
+                            swal("提交成功！", "恭候您参会。", "success");
+                            window.location.reload();
+                        } else {
+                            swal("出现问题", data.info, "error");
+                            return false;
+                        }
+                    },
+                    error: function () {
+                        swal('网路不给力，请稍候再试');
+                    }
+                })
+            });
+    });
 });
