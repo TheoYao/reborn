@@ -122,7 +122,7 @@ $(document).ready(function() {
                     /*填充tips*/
                     $("#school_name").text(curData["school"]);
                     $("#person_name").text(curData["stuName"]);
-                    if (curData["school"] == "" || curData["stuName"]) {
+                    if (curData["school"] == "" || curData["stuName"] == "") {
                         $(".welcome-tips-item").remove();
                     };
 
