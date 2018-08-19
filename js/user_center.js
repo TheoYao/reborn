@@ -12,7 +12,7 @@ $(document).ready(function() {
     if(identity.indexOf('editor') == -1){
         $("#audit-nav-button").remove();
     } else {
-        window.location.href = "audit.html?time=1533606762.html";
+        window.location.href = "audit.html?time=1534406113.html";
     }
     //出生日期
     $('.form_datetime').datetimepicker({
