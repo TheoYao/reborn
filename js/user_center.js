@@ -639,7 +639,7 @@ $(document).ready(function() {
                 }
                 if (index == 2) {
                     if (!isAbstractAc) {
-                        swal("您的稿件暂未被采纳");
+                        swal("您的稿件暂未被采纳", "请及时关注稿件状态");
                         return;
                     }
                 }
@@ -750,7 +750,7 @@ $(document).ready(function() {
                 return
             }
             if(fileFulltext.name != "fulltext.docx" && fileFulltext.name != "fulltext.doc") {
-                swal("请将海报命名为fulltext.docx或者fulltext.doc！");
+                swal("请将全文命名为fulltext.docx或者fulltext.doc！");
                 return
             }
             isFull = "true";
