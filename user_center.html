@@ -107,7 +107,7 @@
                 <div class="article-related">
                     <div class="nav-left-orange">
                         <div class="user-nav-item" id="user-nav-item-1">摘要投稿</div>
-                        <div class="user-nav-item forbid" id="user-nav-item-2">全文投稿</div>
+                        <div class="user-nav-item" id="user-nav-item-2">全文投稿</div>
                         <div class="user-nav-item forbid" id="user-nav-item-3">参会信息登记</div>
                         <div class="user-nav-item no-bottom-border forbid" id="user-nav-item-4">报销信息登记</div>
                     </div>
@@ -326,45 +326,50 @@
                 </div>
 
                 <div id="user-center-show-body-2" class="user-center-index" style="display: none;">
-                    <form class="" enctype="multipart/form-data">
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field" id="fulltext_post_input">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>海报上传：</span>
-                            <input type="file" id="fulltext-post-input" name="filePoster" class="form-control" placeholder="请选择文件" accept=".ppt, .pptx">
+                    <div id="fulltext_ready_upload" style="display:block">
+                        <div class="welcome-tips-area" style="margin-bottom:20px;">
+                            <div class="label label-info welcome-tips-item">如果您上传的稿件经下载检验为空白，请及时联系组委会，对此带来的不便我们深表歉意。</div>
                         </div>
-                        <span id="oral_report_area" style="display: none;">
+                        <form class="" enctype="multipart/form-data">
                             <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field" id="fulltext_submit_input">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>全文上传：</span>
-                                <input type="file" id="fulltext-file-input" name="fileFulltext" class="form-control" placeholder="请选择文件" accept=".doc, .docx">
+                                <span class="input-group-addon summary_submit_field" id="fulltext_post_input">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>海报上传：</span>
+                                <input type="file" id="fulltext-post-input" name="filePoster" class="form-control" placeholder="请选择文件" accept=".ppt, .pptx">
                             </div>
-                        </span>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">是否公开至会议全文集：</span>
-                            <select class="selectpicker form-control" id="fulltext_reco_vol" title="请选择">
-                                <option>是</option>
-                                <option>否</option>
-                            </select>
+                            <span id="oral_report_area" style="display: none;">
+                                <div class="input-group input-group-self">
+                                    <span class="input-group-addon summary_submit_field" id="fulltext_submit_input">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>全文上传：</span>
+                                    <input type="file" id="fulltext-file-input" name="fileFulltext" class="form-control" placeholder="请选择文件" accept=".doc, .docx">
+                                </div>
+
+                                <div class="input-group input-group-self">
+                                    <span class="input-group-addon summary_submit_field">是否公开至会议全文集：</span>
+                                    <select class="selectpicker form-control" id="fulltext_reco_vol" title="请选择">
+                                        <option>是</option>
+                                        <option>否</option>
+                                    </select>
+                                </div>
+                                <div class="input-group input-group-self">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是否推荐至FESE：</span>
+                                    <select class="selectpicker form-control" id="fulltext_reco_col" title="FESE: Frontiers of Environmental Science & Engineering">
+                                        <option>是</option>
+                                        <option>否</option>
+                                    </select>
+                                </div>
+                            </span>
+                        </form>
+                        <div class="summary_submit_button_area">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-3 submit-button-area-here">
+                                <button class="btn btn-success btn-summary" id="btn-submit-fulltext">提&nbsp;&nbsp;交</button>
+                            </div>
+                            <div class="col-md-3"></div>
                         </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是否推荐至FESE：</span>
-                            <select class="selectpicker form-control" id="fulltext_reco_col" title="FESE: Frontiers of Environmental Science & Engineering">
-                                <option>是</option>
-                                <option>否</option>
-                            </select>
-                        </div>
-                    </form>
-                    <div class="summary_submit_button_area">
-                        <div class="col-md-6"></div>
-                        <div class="col-md-3 submit-button-area-here">
-                            <button class="btn btn-success btn-summary" id="btn-submit-fulltext">提&nbsp;&nbsp;交</button>
-                        </div>
-                        <div class="col-md-3"></div>
                     </div>
                     <div id="fulltext_uploaded" style="display:none">
                         <div class="welcome-tips-area">
-                            <span class="label label-info welcome-tips-item">您已经成功上传，恭候参会。</span>
+                            <span class="label label-info welcome-tips-item">您已经成功上传。</span>
                             <div id="fulltext_download_area">
                             </div>
-
                         </div>
                     </div>
                 </div>

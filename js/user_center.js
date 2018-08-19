@@ -142,6 +142,7 @@ $(document).ready(function() {
         });
     }
 
+    var isAbstractAc = false;
     contribution(username);
     function contribution(username) {
         //请求稿件查询列表
@@ -160,6 +161,9 @@ $(document).ready(function() {
                     var data = res.data;
                     var ele =$('#manu-check-table');
                     if(data.length>0) {
+                        if (data[0].status==3) {
+                            isAbstractAc = true;
+                        }
                         renderManuList(data);
                     }
                     else{
@@ -343,84 +347,6 @@ $(document).ready(function() {
                     success: function (data) {
                         if (data.status == 1) {
                             swal("提交成功！", "请等待审核。", "success");
-                            window.location.reload();
-                        } else {
-                            swal("出现问题", data.info, "error");
-                            return false;
-                        }
-                    },
-                    error: function () {
-                        swal('网路不给力，请稍候再试');
-                    }
-                })
-            });
-    });
-
-
-    $('#btn-submit-fulltext').on('click', function () {
-        var filePoster = $("input[name=filePoster]")[0].files[0];
-        var fileFulltext = $("input[name=fileFulltext]")[0].files[0];
-        if (filePoster == undefined) {
-            swal('请上传海报');
-            return;
-        }
-
-
-        var isRecoVol = $("button[data-id='fulltext_reco_vol']").attr("title");
-        if(isRecoVol=='') {
-            swal('请选择是否提交至全文集');
-            return false
-        }
-
-
-        var isRecoCol = $("button[data-id='fulltext_reco_col']").attr("title");
-        if(isRecoCol=='') {
-            swal('请选择是否提交至期刊');
-            return false
-        }
-
-
-        var filePosterName = filePoster.name.split(".");//获取上传文件的后缀
-        var filePosterSuf = filePosterName[filePosterName.length - 1];
-        if( filePosterSuf!="pptx" && filePosterSuf!="ppt" ){
-            swal("只能上传.pptx和.ppt的海报！");
-            return
-        }
-
-        var fileFulltextName = fileFulltext.name.split(".");//获取上传文件的后缀
-        var fileFulltextSuf = fileFulltextName[fileFulltextName.length - 1];
-        if( fileFulltextSuf!="doc" && fileFulltextSuf!="docx" ){
-            swal("只能上传.doc和.docx的文件！");
-            return
-        }
-
-        swal(
-            {
-                title: "确定提交吗？",
-                text: "每人只能提交一次，提交后信息将无法修改！",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "确定提交",
-                closeOnConfirm: false
-            }, function(){
-                var data = new FormData();
-                data.append('username', username);
-                data.append('poster', filePoster);
-                data.append('fulltext', fileFulltext);
-                data.append('isRecoCol', isRecoCol);
-                data.append('isRecoVol', isRecoVol);
-
-                $.ajax({
-                    type: "POST",
-                    url: url +"Document/submitDetail",
-                    data: data,
-                    dataType: 'json',
-                    processData: false,
-                    contentType: false,
-                    success: function (data) {
-                        if (data.status == 1) {
-                            swal("提交成功！", "恭候您参会。", "success");
                             window.location.reload();
                         } else {
                             swal("出现问题", data.info, "error");
@@ -703,14 +629,18 @@ $(document).ready(function() {
                     return
                 }
 
-                if (index == 2) {
-                    index2Cal();
-                }
+
                 if (index == 1) {
                     var manu_list = $("#manu-check-table");
                     if (manu_list.attr("isPost") != "0"){
                         swal("您已投稿，不能重复投稿");
                         return
+                    }
+                }
+                if (index == 2) {
+                    if (!isAbstractAc) {
+                        swal("您的稿件暂未被采纳");
+                        return;
                     }
                 }
                 for (i = 0; i < 7; i++) {
@@ -731,7 +661,7 @@ $(document).ready(function() {
                         }
                     }
                     else if(i>4) {
-                        var y=$("#user-nav-bottom-item-"+i)
+                        var y=$("#user-nav-bottom-item-"+i);
                         if (i==index) {
                             y.addClass("user-nav-bottom-item-active")
                         }
@@ -740,11 +670,20 @@ $(document).ready(function() {
                         }
                     }
                 }
-
+                if (index == 2) {
+                    if (isFulltextSubmit) {
+                        return
+                    }
+                    index2Cal();
+                }
             }
         );
 
+    var isFulltextSubmit = false;
+    var isFulltextPostBoth = false;
     function index2Cal() {
+        isFulltextPostBoth = false;
+        $('#oral_report_area').hide();
         swal(
             {
                 title: "是否参与口头汇报？",
@@ -756,9 +695,155 @@ $(document).ready(function() {
                 cancelButtonText: "否",
                 closeOnConfirm: true
             }, function(){
+                isFulltextPostBoth = true;
                 $('#oral_report_area').show();
                 return true;
             });
     };
+
+    $('#btn-submit-fulltext').on('click', function () {
+        var filePoster = $("input[name=filePoster]")[0].files[0];
+        var fileFulltext = $("input[name=fileFulltext]")[0].files[0];
+        if (filePoster == undefined) {
+            swal('请上传海报');
+            return;
+        }
+
+        if (isFulltextPostBoth && fileFulltext == undefined) {
+            swal('请上传全文');
+            return;
+        }
+
+
+        var isRecoVol = $("button[data-id='fulltext_reco_vol']").attr("title");
+        if(isRecoVol=='请选择') {
+            swal('请选择是否提交至全文集');
+            return false
+        }
+
+
+        var isRecoCol = $("button[data-id='fulltext_reco_col']").attr("title");
+        if(isRecoCol=='FESE: Frontiers of Environmental Science & Engineering') {
+            swal('请选择是否提交至期刊');
+            return false
+        }
+
+
+        var filePosterName = filePoster.name.split(".");//获取上传文件的后缀
+        var filePosterSuf = filePosterName[filePosterName.length - 1];
+        if( filePosterSuf!="pptx" && filePosterSuf!="ppt" ){
+            swal("只能上传.pptx和.ppt的海报！");
+            return
+        }
+        if(filePoster.name != "poster.ppt" && filePoster.name != "poster.pptx") {
+            swal("请将海报命名为poster.ppt或者poster.pptx！");
+            return
+        }
+
+        var isFull = "false";
+
+        if (isFulltextPostBoth) {
+            var fileFulltextName = fileFulltext.name.split(".");//获取上传文件的后缀
+            var fileFulltextSuf = fileFulltextName[fileFulltextName.length - 1];
+            if( fileFulltextSuf!="doc" && fileFulltextSuf!="docx" ){
+                swal("只能上传.doc和.docx的文件！");
+                return
+            }
+            if(fileFulltext.name != "fulltext.docx" && fileFulltext.name != "fulltext.doc") {
+                swal("请将海报命名为fulltext.docx或者fulltext.doc！");
+                return
+            }
+            isFull = "true";
+        }
+
+
+        swal(
+            {
+                title: "确定提交吗？",
+                text: "每人只能提交一次，提交后信息将无法修改！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定提交",
+                closeOnConfirm: false
+            }, function(){
+                var data = new FormData();
+                data.append('username', username);
+                data.append('poster', filePoster);
+                data.append('fulltext', fileFulltext);
+                data.append('publish', isRecoCol);
+                data.append('recommend', isRecoVol);
+                data.append('isFull', isFull);
+
+                $.ajax({
+                    type: "POST",
+                    url: url +"Document/submitDetail",
+                    data: data,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        if (data.status == 1) {
+                            swal("提交成功！", "", "success");
+                            window.location.reload();
+                        } else {
+                            swal("出现问题", data.info, "error");
+                            return false;
+                        }
+                    },
+                    error: function () {
+                        swal('网路不给力，请稍候再试');
+                    }
+                })
+            });
+    });
+
+    fullText(username);
+    function fullText(username) {
+        //请求稿件查询列表
+        $.ajax({
+            type: "Get",
+            url:  url +"Document/getDetail?username=" + username,
+            /*
+            data: {
+                username: username,
+                type: 'all'
+            },
+            */
+            /*type: "GET",
+            url: "./json/show_product.json",*/
+            dataType: 'json',
+            success: function (res) {
+                if(res.status==1){
+                    var data = res.data;
+                    if (!data) {
+                        return
+                    }
+                    var area =$('#fulltext_uploaded');
+                    var upload_input_area=$('#fulltext_ready_upload');
+                    var ele =$('#fulltext_download_area');
+                    isFulltextSubmit = true;
+                    var htmlStr = "";
+                    if ("fulltext" in data) {
+                        if (data["fulltext"] != "") {
+                            htmlStr += "<p style=\"font-size: 20px;margin-top: 20px;\"><a href=\"http://ndac.env.tsinghua.edu.cn/"+ data["fulltext"] +"\">已上传全文（点击下载）</a></p>"
+                        }
+                    }
+                    if ("poster" in data) {
+                        if (data["poster"] != "") {
+                            htmlStr += "<p style=\"font-size: 20px;\"><a href=\"http://ndac.env.tsinghua.edu.cn/"+ data["poster"] +"\">已上传海报（点击下载）</a></p>"
+                        }
+                    }
+                    ele.html(htmlStr);
+                    upload_input_area.hide();
+                    area.show();
+
+                }
+            }
+
+        });
+
+
+    }
 
 });
