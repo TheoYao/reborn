@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('.sign-area').on('click', "span#sign-out", function() {
         $.cookie('cookie_info', '', { expires: -1 });
-        window.location.href = "index.html?time=1534406113.html"
+        window.location.href = "index.html?time=1534944403.html"
     });
 
     //if($.cookie('cookie_info') != undefined && $.cookie('cookie_info') != "" && $.cookie('cookie_info') != null) {
@@ -9,7 +9,7 @@ $(document).ready(function() {
         var respJson = JSON.parse($.cookie('cookie_info'));
         if (!("username" in respJson) || !("identity" in respJson)) {
             $.cookie('cookie_info', '', { expires: -1 });
-            window.location.href = "login.html?time=1534406113.html"
+            window.location.href = "login.html?time=1534944403.html"
         }
         var username = JSON.parse($.cookie('cookie_info')).username;
         if(username == "xuebin") {
@@ -20,6 +20,6 @@ $(document).ready(function() {
 
         $(".sign-area").empty();
 
-        $(".sign-area").html("<span id=\"sign-area-name\"><a href=\"user_center.html?time=1534406113.html\">"+username+"&nbsp;&nbsp;</a></span><span id=\"sign-out\">退出</span>");
+        $(".sign-area").html("<span id=\"sign-area-name\"><a href=\"user_center.html?time=1534944403.html\">"+username+"&nbsp;&nbsp;</a></span><span id=\"sign-out\">退出</span>");
     }
 });
