@@ -717,15 +717,25 @@ $(document).ready(function() {
 
         var isRecoVol = $("button[data-id='fulltext_reco_vol']").attr("title");
         if(isRecoVol=='请选择') {
-            swal('请选择是否提交至全文集');
-            return false
+            if (isFulltextPostBoth) {
+                swal('请选择是否提交至全文集');
+                return false
+            }
+            else {
+                isRecoVol = "";
+            }
         }
 
 
         var isRecoCol = $("button[data-id='fulltext_reco_col']").attr("title");
         if(isRecoCol=='FESE: Frontiers of Environmental Science & Engineering') {
-            swal('请选择是否提交至期刊');
-            return false
+            if (isFulltextPostBoth) {
+                swal('请选择是否提交至期刊');
+                return false
+            }
+            else{
+                isRecoCol = "";
+            }
         }
 
 
