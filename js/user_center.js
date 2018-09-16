@@ -608,6 +608,15 @@ $(document).ready(function() {
         }
     });
 
+    $('#acco_input_country').on('changed.bs.select',function(e){
+        if ($("button[data-id='acco_input_country']").attr("title") == "其他国家") {
+            $("#is_acco_implement_country").show();
+        }
+        else {
+            $("#is_acco_implement_country").hide();
+        }
+    });
+
     $('#reimburse_input_air').on('changed.bs.select',function(e){
         if ($("button[data-id='reimburse_input_air']").attr("title") == "是") {
             $("#is_air_area").show();
