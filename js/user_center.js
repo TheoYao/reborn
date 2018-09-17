@@ -608,6 +608,17 @@ $(document).ready(function() {
         }
     });
 
+    $('#reimburse_input_contact').on('changed.bs.select',function(e){
+        if ($("button[data-id='reimburse_input_contact']").attr("title") == "是") {
+            $("#more_air_area").show();
+            $("#more_railway_area").show();
+        }
+        else {
+            $("#more_air_area").hide();
+            $("#more_railway_area").hide();
+        }
+    });
+
     $('#acco_input_country').on('changed.bs.select',function(e){
         if ($("button[data-id='acco_input_country']").attr("title") == "其他国家") {
             $("#is_acco_implement_country").show();
