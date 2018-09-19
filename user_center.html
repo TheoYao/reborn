@@ -395,7 +395,9 @@
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国家地区：</span>
                             <select class="selectpicker form-control" id="acco_input_country" title="请选择">
                                 <option>中国大陆</option>
-                                <option>港澳台</option>
+                                <option>中国香港</option>
+                                <option>中国澳门</option>
+                                <option>中国台湾</option>
                                 <option>其他国家</option>
                             </select>
                         </div>
@@ -421,16 +423,21 @@
                         </div>
                         <span id="is_acco_area" style="display: none;">
                             <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;身份证号：</span>
-                                <input type="text" class="form-control" placeholder="请输入身份证号" id="acco_input_id">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证件类型：</span>
+                                <select class="selectpicker form-control" id="acco_input_id_type" title="请选择证件类型">
+                                    <option>中华人民共和国居民身份证</option>
+                                    <option>港澳居民来往内地通行证</option>
+                                    <option>台湾居民来往大陆通行证（台胞证）</option>
+                                    <option>护照</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;证件号码：</span>
+                                <input type="text" class="form-control" placeholder="请输入证件号码" id="acco_input_id_num">
                             </div>
                             <div class="input-group input-group-self">
                                 <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手机号：</span>
                                 <input type="text" class="form-control" placeholder="请输入手机号" id="acco_input_mobile">
-                            </div>
-                            <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出生年月：</span>
-                                <input type="text" class="form_datetime form-control" id="acco_input_birthday">
                             </div>
                             <div class="input-group input-group-self">
                                 <span class="input-group-addon summary_submit_field">&nbsp;住宿时间选择：</span>
@@ -459,13 +466,6 @@
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是否参加field trip：</span>
                             <select class="selectpicker form-control" id="acco_input_field_trip" title="请选择">
-                                <option>是</option>
-                                <option>否</option>
-                            </select>
-                        </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是否提供送站服务：</span>
-                            <select class="selectpicker form-control" id="acco_input_pick_service" title="乘坐飞机的可送到机场线地铁口，21日下午4点开始送站">
                                 <option>是</option>
                                 <option>否</option>
                             </select>
@@ -625,11 +625,6 @@
                                 </div>
                             </span>
                         </span>
-
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您对会议有何意见：</span>
-                            <input type="text" class="form-control" placeholder="" id="reimburse_input_advice">
-                        </div>
 
                     </form>
                     <div class="summary_submit_button_area">
