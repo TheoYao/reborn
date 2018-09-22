@@ -619,12 +619,12 @@ $(document).ready(function() {
         }
     });
 
-    $('#acco_input_country').on('changed.bs.select',function(e){
-        if ($("button[data-id='acco_input_country']").attr("title") == "其他国家") {
-            $("#is_acco_implement_country").show();
+    $('#acco_input_area').on('changed.bs.select',function(e){
+        if ($("button[data-id='acco_input_area']").attr("title") == "其他国家") {
+            $("#is_acco_implement_area").show();
         }
         else {
-            $("#is_acco_implement_country").hide();
+            $("#is_acco_implement_area").hide();
         }
     });
 
@@ -639,13 +639,20 @@ $(document).ready(function() {
         }
     });
 
+    $('#acco_input_meal').on('changed.bs.select',function(e){
+        $("#meal_more_area").hide();
+        if ($("button[data-id='acco_input_meal']").attr("title") == "其他(请注明)") {
+            $("#meal_more_area").show();
+        }
+    });
+
     $('.user-nav-bottom-item,.user-nav-item')
         .click(
             function(){
                 var id_array = ($(this).attr("id")).split("-");
                 var index = parseInt(id_array[id_array.length - 1]);
 
-                if (index > 2 && index < 5) {
+                if (index > 3 && index < 5) {
                     return
                 }
 
@@ -660,6 +667,12 @@ $(document).ready(function() {
                 if (index == 2) {
                     if (!isAbstractAc) {
                         swal("您的稿件暂未被采纳", "请及时关注稿件状态");
+                        return;
+                    }
+                }
+                if (index == 3) {
+                    if(!isFulltextSubmit) {
+                        swal("您尚未提交全文");
                         return;
                     }
                 }
@@ -867,6 +880,353 @@ $(document).ready(function() {
                     ele.html(htmlStr);
                     upload_input_area.hide();
                     area.show();
+
+                }
+            }
+
+        });
+
+
+    }
+
+
+    $('#btn-submit-acco').on('click', function () {
+        var name = $.trim($('#acco_input_name').val());
+        if(name=='') {
+            swal('请填写姓名');
+            return false
+        }
+        var sex = $.trim($('#acco_input_sex').val());
+        if(sex=='') {
+            swal('请填写性别');
+            return false
+        }
+        var school = $.trim($('#acco_input_school').val());
+        if(school=='') {
+            swal('请填写学校');
+            return false
+        }
+
+        var area_name = $("button[data-id='acco_input_area']").attr("title");
+        var area_more = $.trim($('#acco_input_more_area').val());
+        if(area_name=='请选择') {
+            swal('请选择国家地区');
+            return false
+        }
+        if(area_name=='其他国家') {
+            if (area_more == "") {
+                swal('您选择了其他国家，请输入具体国家名称');
+                return false
+            }
+        }
+
+        var meal = $("button[data-id='acco_input_meal']").attr("title");
+        var meal_more = $.trim($('#acco_input_meal_more').val());
+        if(meal=='请选择') {
+            swal('请选择饮食要求');
+            return false
+        }
+        if(meal=='其他(请注明)') {
+            if (meal_more == "") {
+                swal('您选择了其他饮食要求，请具体注明');
+                return false
+            }
+            meal = meal+";"+meal_more
+        }
+
+        var schoolTravel = $("button[data-id='acco_input_school_travel']").attr("title");
+        if(schoolTravel=='游览时间是10月17日下午4点-5点') {
+            swal('请选择是否参加清华园游览');
+            return false
+        }
+
+        var eveParty = $("button[data-id='acco_input_eve_party']").attr("title");
+        if(eveParty=='晚宴时间是10月18日晚上6点-8点半') {
+            swal('请选择是否参加欢迎晚宴');
+            return false
+        }
+
+        var fieldTrip = $("button[data-id='acco_input_field_trip']").attr("title");
+        if(fieldTrip=='10月19日上、下午，地点暂定为碧水源集团总部等') {
+            swal('请选择是否参加field trip');
+            return false
+        }
+
+        var accoChoice = $("button[data-id='acco_input_acco']").attr("title");
+        if(accoChoice=='京内高校请选择否，只为京外参会人员提供住宿') {
+            swal('请选择是否需要提供住宿');
+            return false
+        }
+        var idType = "";
+        var idNum  = "";
+        var mobile = "";
+        var boardDates = "";
+
+        if(accoChoice=='是') {
+            idType = $.trim($('#acco_input_id_type').val());
+            if(idType=='') {
+                swal('请填写证件类型');
+                return false
+            }
+            idNum = $.trim($('#acco_input_id_num').val());
+            if(idNum=='') {
+                swal('请填写证件号码');
+                return false
+            }
+            mobile = $.trim($('#acco_input_mobile').val());
+            if(mobile=='') {
+                swal('请填写手机号码');
+                return false
+            }
+            boardDates = $("button[data-id='acco_input_board_dates']").attr("title");
+            if(boardDates=='请选择，可多选') {
+                swal('请选择住宿日期');
+                return false
+            }
+        }
+
+
+        swal(
+            {
+                title: "确定提交吗？",
+                text: "每人只能提交一次，提交后信息将无法修改！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "确定提交",
+                closeOnConfirm: false
+            }, function(){
+                var data = new FormData();
+                data.append('name', name);
+                data.append('sex', sex);
+                data.append('school', school);
+                data.append('area', area_name);
+                data.append('area_more', area_more);
+                data.append('is_muslim', meal);
+                data.append('is_school_travel', schoolTravel);
+                data.append('is_eve_party', eveParty);
+                data.append('is_field_trip', fieldTrip);
+                data.append('is_acco', accoChoice);
+                data.append('id_type', idType);
+                data.append('id_num', idNum);
+                data.append('mobile', mobile);
+                data.append('board_dates', boardDates);
+
+
+                $.ajax({
+                    type: "POST",
+                    url: url +"Document/addRegisterInfo",
+                    data: data,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        if (data.status == 1) {
+                            swal("提交成功！", "", "success");
+                            window.location.reload();
+                        } else {
+                            swal("出现问题", data.info, "error");
+                            return false;
+                        }
+                    },
+                    error: function () {
+                        swal('网路不给力，请稍候再试');
+                    }
+                })
+            });
+    });
+
+    registerInfo(username);
+    function registerInfo(username) {
+        //请求稿件查询列表
+        $.ajax({
+            type: "Get",
+            url:  url +"Document/getRegisterInfo?username=" + username,
+            //url:  "./json/register.json",
+            dataType: 'json',
+            success: function (res) {
+                if(res){
+                    $('.selectpicker').selectpicker('refresh')
+                    var curData = res;
+                    if (!curData) {
+                        return
+                    }
+                    var nameEle =$('#acco_input_name');
+                    var sexEle=$('#acco_input_sex');
+                    var schoolEle =$('#acco_input_school');
+                    var areaEle=$('#acco_input_area');
+                    var areaMoreEle =$('#acco_input_more_area');
+                    var isMuslimEle=$('#acco_input_meal');
+                    var isMuslimMoreEle=$('#acco_input_meal_more');
+                    var isSchoolTravelEle =$('#acco_input_school_travel');
+                    var isEvePartyEle=$('#acco_input_eve_party');
+                    var isFieldTripEle =$('#acco_input_field_trip');
+                    var isAccoEle=$('#acco_input_acco');
+                    var idTypeEle =$('#acco_input_id_type');
+                    var idNumEle=$('#acco_input_id_num');
+                    var mobileEle =$('#acco_input_mobile');
+                    var boardDatesEle=$('#acco_input_board_dates');
+
+
+
+                    nameEle.attr("value", curData["name"]);
+                    if (curData["sex"] == "男") {
+                        $("button[data-id='acco_input_sex']").attr("title", "男");
+                        $("button[data-id='acco_input_sex'] .filter-option").text("男")
+                    }
+                    else if (curData["sex"] == "女"){
+                        $("button[data-id='acco_input_sex']").attr("title", "女");
+                        $("button[data-id='acco_input_sex'] .filter-option").text("女")
+                    }
+                    else {
+                        $("button[data-id='acco_input_sex']").attr("title", "");
+                        $("button[data-id='acco_input_sex'] .filter-option").text("")
+                    }
+                    schoolEle.attr("value", curData["school"]);
+                    if (curData["area"] == "中国大陆") {
+                        $("button[data-id='acco_input_area']").attr("title", "中国大陆");
+                        $("button[data-id='acco_input_area'] .filter-option").text("中国大陆")
+                    }
+                    else if (curData["area"] == "中国香港"){
+                        $("button[data-id='acco_input_area']").attr("title", "中国香港");
+                        $("button[data-id='acco_input_area'] .filter-option").text("中国香港")
+                    }
+                    else if (curData["area"] == "中国澳门"){
+                        $("button[data-id='acco_input_area']").attr("title", "中国澳门");
+                        $("button[data-id='acco_input_area'] .filter-option").text("中国澳门")
+                    }
+                    else if (curData["area"] == "中国台湾"){
+                        $("button[data-id='acco_input_area']").attr("title", "中国台湾");
+                        $("button[data-id='acco_input_area'] .filter-option").text("中国台湾")
+                    }
+                    else if (curData["area"] == "其他国家"){
+                        $("button[data-id='acco_input_area']").attr("title", "其他国家");
+                        $("button[data-id='acco_input_area'] .filter-option").text("其他国家")
+
+                        areaMoreEle.attr("value", curData["area_more"]);
+                        $("#is_acco_implement_area").show()
+                    }
+
+
+                    var is_muslim = curData["is_muslim"].split(";")[0];
+                    if (is_muslim == "清真") {
+                        $("button[data-id='acco_input_meal']").attr("title", "清真");
+                        $("button[data-id='acco_input_meal'] .filter-option").text("清真")
+                    }
+                    else if (is_muslim == "素食"){
+                        $("button[data-id='acco_input_meal']").attr("title", "素食");
+                        $("button[data-id='acco_input_meal'] .filter-option").text("素食")
+                    }
+                    else if (is_muslim == "其他(请注明)"){
+                        $("button[data-id='acco_input_meal']").attr("title", "其他(请注明)");
+                        $("button[data-id='acco_input_meal'] .filter-option").text("其他(请注明)");
+
+                        if (curData["is_muslim"].split(";").length > 1) {
+                            isMuslimMoreEle.attr("value", curData["is_muslim"].split(";")[1]);
+                            $("#meal_more_area").show()
+                        }
+
+                    }
+                    else if (is_muslim == "无特别要求"){
+                        $("button[data-id='acco_input_meal']").attr("title", "无特别要求");
+                        $("button[data-id='acco_input_meal'] .filter-option").text("无特别要求")
+                    }
+
+
+                    if (curData["is_school_travel"] == "是") {
+                        $("button[data-id='acco_input_school_travel']").attr("title", "是");
+                        $("button[data-id='acco_input_school_travel'] .filter-option").text("是")
+                    }
+                    else if (curData["is_school_travel"] == "否"){
+                        $("button[data-id='acco_input_school_travel']").attr("title", "否");
+                        $("button[data-id='acco_input_school_travel'] .filter-option").text("否")
+                    } else {
+                        $("button[data-id='acco_input_school_travel']").attr("title", "");
+                        $("button[data-id='acco_input_school_travel'] .filter-option").text("")
+                    }
+
+
+                    if (curData["is_eve_party"] == "是") {
+                        $("button[data-id='acco_input_eve_party']").attr("title", "是");
+                        $("button[data-id='acco_input_eve_party'] .filter-option").text("是")
+                    }
+                    else if (curData["is_eve_party"] == "否"){
+                        $("button[data-id='acco_input_eve_party']").attr("title", "否");
+                        $("button[data-id='acco_input_eve_party'] .filter-option").text("否")
+                    } else {
+                        $("button[data-id='acco_input_eve_party']").attr("title", "");
+                        $("button[data-id='acco_input_eve_party'] .filter-option").text("")
+                    }
+
+
+                    if (curData["is_field_trip"] == "是") {
+                        $("button[data-id='acco_input_field_trip']").attr("title", "是");
+                        $("button[data-id='acco_input_field_trip'] .filter-option").text("是")
+                    }
+                    else if (curData["is_field_trip"] == "否"){
+                        $("button[data-id='acco_input_field_trip']").attr("title", "否");
+                        $("button[data-id='acco_input_field_trip'] .filter-option").text("否")
+                    } else {
+                        $("button[data-id='acco_input_field_trip']").attr("title", "");
+                        $("button[data-id='acco_input_field_trip'] .filter-option").text("")
+                    }
+
+
+
+                    if (curData["is_acco"] == "是") {
+                        $("button[data-id='acco_input_acco']").attr("title", "是");
+                        $("button[data-id='acco_input_acco'] .filter-option").text("是")
+
+                        $("#is_acco_area").show();
+                        if (curData["id_type"] == "中华人民共和国居民身份证") {
+                            $("button[data-id='acco_input_id_type']").attr("title", "中华人民共和国居民身份证");
+                            $("button[data-id='acco_input_id_type'] .filter-option").text("中华人民共和国居民身份证")
+                        }
+                        else if (curData["id_type"] == "港澳居民来往内地通行证"){
+                            $("button[data-id='acco_input_id_type']").attr("title", "港澳居民来往内地通行证");
+                            $("button[data-id='acco_input_id_type'] .filter-option").text("港澳居民来往内地通行证")
+                        }
+                        else if (curData["id_type"] == "台湾居民来往大陆通行证（台胞证）"){
+                            $("button[data-id='acco_input_id_type']").attr("title", "台湾居民来往大陆通行证（台胞证）");
+                            $("button[data-id='acco_input_id_type'] .filter-option").text("台湾居民来往大陆通行证（台胞证）")
+                        }
+                        else if (curData["id_type"] == "护照"){
+                            $("button[data-id='acco_input_id_type']").attr("title", "护照");
+                            $("button[data-id='acco_input_id_type'] .filter-option").text("护照")
+                        }
+
+                        idNumEle.attr("value", curData["id_num"]);
+                        mobileEle.attr("value", curData["mobile"]);
+
+                        $("button[data-id='acco_input_board_dates']").attr("title", curData["board_dates"]);
+                        $("button[data-id='acco_input_board_dates'] .filter-option").text(curData["board_dates"])
+                    }
+                    else if (curData["is_acco"] == "否"){
+                        $("button[data-id='acco_input_acco']").attr("title", "否");
+                        $("button[data-id='acco_input_acco'] .filter-option").text("否")
+                    } else {
+                        $("button[data-id='acco_input_acco']").attr("title", "");
+                        $("button[data-id='acco_input_acco'] .filter-option").text("")
+                    }
+
+
+                    nameEle.attr('disabled',true);
+                    sexEle.attr('disabled',true);
+                    schoolEle.attr('disabled',true);
+                    areaEle.attr('disabled',true);
+                    areaMoreEle.attr('disabled',true);
+                    isMuslimEle.attr('disabled',true);
+                    isMuslimMoreEle.attr('disabled',true);
+                    isSchoolTravelEle.attr('disabled',true);
+                    isEvePartyEle.attr('disabled',true);
+                    isFieldTripEle.attr('disabled',true);
+                    isAccoEle.attr('disabled',true);
+                    idTypeEle.attr('disabled',true);
+                    idNumEle.attr('disabled',true);
+                    mobileEle.attr('disabled',true);
+                    boardDatesEle.attr('disabled',true);
+
+                    $("#btn-submit-acco").hide();
 
                 }
             }
