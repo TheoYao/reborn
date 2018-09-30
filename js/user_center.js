@@ -997,6 +997,7 @@ $(document).ready(function() {
                 closeOnConfirm: false
             }, function(){
                 var data = new FormData();
+                data.append('username', username);
                 data.append('name', name);
                 data.append('sex', sex);
                 data.append('school', school);
