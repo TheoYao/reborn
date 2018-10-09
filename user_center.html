@@ -491,146 +491,176 @@
                 </div>
 
                 <div id="user-center-show-body-4" class="user-center-index" style="display: none;">
+                    <div class="welcome-tips-area">
+                        <div class="label label-info welcome-tips-item">报销路费需要提供火车票据或者机票行程单在现场注册时提交至组委会</div>
+                        <div class="label label-info welcome-tips-item">会议结束10天左右转至预留支付宝账号！</div>
+                        <div class="label label-info welcome-tips-item">路费报销标准最高为高铁二等座，票面价格高于标准的部分自行承担！</div>
+                    </div>
                     <form class="user-contribute-deliver" enctype="multipart/form-data">
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>姓名：</span>
                             <input type="text" class="form-control" placeholder="姓名" id="reimburse_input_name">
                         </div>
                         <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>银行：</span>
-                            <input type="text" class="form-control" placeholder="银行" id="reimburse_input_bank">
-                        </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>持卡人姓名：</span>
-                            <input type="text" class="form-control" placeholder="持卡人姓名" id="reimburse_input_r_name">
-                        </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>银行卡号：</span>
-                            <input type="text" class="form-control" placeholder="请输入银行卡号" id="reimburse_input_cid">
-                        </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>开户支行：</span>
-                            <input type="text" class="form-control" placeholder="请输入开户支行" id="reimburse_input_bname">
-                        </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>是否大会高校联系人：</span>
-                            <select class="selectpicker form-control" id="reimburse_input_contact" title="请选择">
-                                <option>是</option>
-                                <option>否</option>
-                            </select>
-                        </div>
-                        <div class="input-group input-group-self">
-                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>是否机票：</span>
-                            <select class="selectpicker form-control" id="reimburse_input_air" title="请选择">
-                                <option>是</option>
-                                <option>否</option>
-                            </select>
-                        </div>
-                        <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>是否需要住宿证明：</span>
-                            <select class="selectpicker form-control" id="reimburse_input_board_evidence" title="请选择">
+                            <select class="selectpicker form-control" id="reimburse_input_board_evidence" title="此证明仅用于报销去程路费！参会注册时领取">
                                 <option>是</option>
                                 <option>否</option>
                             </select>
                         </div>
                         <div class="input-group input-group-self">
                             <span class="input-group-addon summary_submit_field"><span class="necessary-tips">*</span>是否需要车机票报销证明：</span>
-                            <select class="selectpicker form-control" id="reimburse_input_ticket_evidence" title="请选择">
+                            <select class="selectpicker form-control" id="reimburse_input_ticket_evidence" title="此证明仅用于报销去程路费！参会注册时领取">
                                 <option>是</option>
                                 <option>否</option>
                             </select>
                         </div>
 
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>支付宝账号：</span>
+                            <input type="text" class="form-control" placeholder="必须填写本人账号" id="reimburse_input_zhifubao">
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>是否大会高校联系人：</span>
+                            <select class="selectpicker form-control" id="reimburse_input_contact" title="请选择">
+                                <option>是</option>
+                                <option>否</option>
+                            </select>
+                        </div>
+                        <div class="input-group input-group-self">
+                            <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票类型：</span>
+                            <select class="selectpicker form-control" id="reimburse_input_ticket_type" title="请选择">
+                                <option>飞机票</option>
+                                <option>火车票</option>
+                            </select>
+                        </div>
+
                         <span id="is_air_area" style="display: none;">
                             <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>行程单号：</span>
-                                <input type="text" class="form-control" placeholder="请输入单号" id="reimburse_input_air_id">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>航班号：</span>
+                                <input type="text" class="form-control" placeholder="请输入航班号" id="reimburse_input_air_num">
                             </div>
                             <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>机票起点：</span>
-                                <input type="text" class="form-control" placeholder="请输入起点" id="reimburse_input_air_begin">
-                            </div>
-
-                            <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>机票终点：</span>
-                                <input type="text" class="form-control" placeholder="请输入终点" id="reimburse_input_air_end">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>起点城市：</span>
+                                <input type="text" class="form-control" placeholder="请输入起点（市）" id="reimburse_input_air_begin">
                             </div>
                             <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>机票金额：</span>
-                                <input type="text" class="form-control" placeholder="请输入金额" id="reimburse_input_air_price">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>起点机场：</span>
+                                <input type="text" class="form-control" placeholder="请输入起点机场名" id="reimburse_input_air_begin_port">
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>终点城市：</span>
+                                <input type="text" class="form-control" placeholder="请输入终点（市）" id="reimburse_input_air_end">
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>终点机场：</span>
+                                <input type="text" class="form-control" placeholder="请输入终点机场名" id="reimburse_input_air_end_port">
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>座位类型：</span>
+                                <select class="selectpicker form-control" id="reimburse_input_air_type" title="请选择">
+                                    <option>公务(头等)舱</option>
+                                    <option>经济舱</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>票面价格：</span>
+                                <input type="text" class="form-control" placeholder="请输入金额，不含保险" id="reimburse_input_air_price">
                             </div>
                             <span id="more_air_area" style="display: none;">
                                 <div class="input-group input-group-self">
-                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程机票单号：</span>
-                                    <input type="text" class="form-control" placeholder="请输入单号" id="reimburse_input_air_id_more">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程航班号：</span>
+                                    <input type="text" class="form-control" placeholder="请输入航班号" id="reimburse_input_air_num_more">
                                 </div>
                                 <div class="input-group input-group-self">
-                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程机票起点：</span>
-                                    <input type="text" class="form-control" placeholder="请输入起点" id="reimburse_input_air_begin_more">
-                                </div>
-
-                                <div class="input-group input-group-self">
-                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程机票终点：</span>
-                                    <input type="text" class="form-control" placeholder="请输入终点" id="reimburse_input_air_end_more">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程起点城市：</span>
+                                    <input type="text" class="form-control" placeholder="请输入起点（市）" id="reimburse_input_air_begin_more">
                                 </div>
                                 <div class="input-group input-group-self">
-                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程机票金额：</span>
-                                    <input type="text" class="form-control" placeholder="请输入金额" id="reimburse_input_air_price_more">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程起点机场：</span>
+                                    <input type="text" class="form-control" placeholder="请输入起点机场名" id="reimburse_input_air_begin_port_more">
+                                </div>
+                                <div class="input-group input-group-self">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程终点城市：</span>
+                                    <input type="text" class="form-control" placeholder="请输入终点（市）" id="reimburse_input_air_end_more">
+                                </div>
+                                <div class="input-group input-group-self">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程终点机场：</span>
+                                    <input type="text" class="form-control" placeholder="请输入终点机场名" id="reimburse_input_air_end_port_more">
+                                </div>
+                                <div class="input-group input-group-self">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程座位类型：</span>
+                                    <select class="selectpicker form-control" id="reimburse_input_air_type_more" title="请选择">
+                                        <option>公务(头等)舱</option>
+                                        <option>经济舱</option>
+                                    </select>
+                                </div>
+                                <div class="input-group input-group-self">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程票面价格：</span>
+                                    <input type="text" class="form-control" placeholder="请输入金额，不含保险" id="reimburse_input_air_price_more">
                                 </div>
                             </span>
                         </span>
 
                         <span id="is_railway_area" style="display: none;">
                             <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票类型：</span>
-                                <select class="selectpicker form-control" id="reimburse_input_railway_type" title="请选择">
-                                    <option>高铁（动车）二等座</option>
-                                    <option>硬卧</option>
-                                    <option>其他</option>
-                                </select>
-                            </div>
-                            <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>火车车次：</span>
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>火车车次：</span>
                                 <input type="text" class="form-control" placeholder="请输入车次" id="reimburse_input_railway_num">
                             </div>
                             <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票起点：</span>
-                                <input type="text" class="form-control" placeholder="请输入起点" id="reimburse_input_railway_begin">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票起点：</span>
+                                <input type="text" class="form-control" placeholder="请输入起点站名" id="reimburse_input_railway_begin">
                             </div>
 
                             <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票终点：</span>
-                                <input type="text" class="form-control" placeholder="请输入终点" id="reimburse_input_railway_end">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票终点：</span>
+                                <input type="text" class="form-control" placeholder="请输入终点站名" id="reimburse_input_railway_end">
                             </div>
                             <div class="input-group input-group-self">
-                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票金额：</span>
-                                <input type="text" class="form-control" placeholder="请输入金额" id="reimburse_input_railway_price">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>车票类型：</span>
+                                <select class="selectpicker form-control" id="reimburse_input_railway_type" title="请选择">
+                                    <option>高铁商务舱</option>
+                                    <option>高铁（动车）一等座 </option>
+                                    <option>高铁（动车）二等座</option>
+                                    <option>普通车软卧铺</option>
+                                    <option>普通车硬卧</option>
+                                    <option>普通车硬座</option>
+                                    <option>普通车座票/无座</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-self">
+                                <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>票面价格：</span>
+                                <input type="text" class="form-control" placeholder="请输入金额，不含保险" id="reimburse_input_railway_price">
                             </div>
                             <span id="more_railway_area" style="display: none;">
                                 <div class="input-group input-group-self">
-                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程车票类型：</span>
-                                    <select class="selectpicker form-control" id="reimburse_input_railway_type_more" title="请选择">
-                                        <option>高铁（动车）二等座</option>
-                                        <option>硬卧</option>
-                                        <option>其他</option>
-                                    </select>
-                                </div>
-                                <div class="input-group input-group-self">
-                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程火车车次：</span>
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程火车车次：</span>
                                     <input type="text" class="form-control" placeholder="请输入车次" id="reimburse_input_railway_num_more">
                                 </div>
                                 <div class="input-group input-group-self">
-                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程车票起点：</span>
-                                    <input type="text" class="form-control" placeholder="请输入起点" id="reimburse_input_railway_begin_more">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程车票起点：</span>
+                                    <input type="text" class="form-control" placeholder="请输入起点站名" id="reimburse_input_railway_begin_more">
                                 </div>
 
                                 <div class="input-group input-group-self">
-                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程车票终点：</span>
-                                    <input type="text" class="form-control" placeholder="请输入终点" id="reimburse_input_railway_end_more">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程车票终点：</span>
+                                    <input type="text" class="form-control" placeholder="请输入终点站名" id="reimburse_input_railway_end_more">
                                 </div>
                                 <div class="input-group input-group-self">
-                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程车票金额：</span>
-                                    <input type="text" class="form-control" placeholder="请输入金额" id="reimburse_input_railway_price_more">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程车票类型：</span>
+                                    <select class="selectpicker form-control" id="reimburse_input_railway_type_more" title="请选择">
+                                        <option>高铁商务舱</option>
+                                        <option>高铁（动车）一等座 </option>
+                                        <option>高铁（动车）二等座</option>
+                                        <option>普通车软卧铺</option>
+                                        <option>普通车硬卧</option>
+                                        <option>普通车硬座</option>
+                                        <option>普通车座票/无座</option>
+                                    </select>
+                                </div>
+                                <div class="input-group input-group-self">
+                                    <span class="input-group-addon summary_submit_field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="necessary-tips">*</span>返程票面价格：</span>
+                                    <input type="text" class="form-control" placeholder="请输入金额，不含保险" id="reimburse_input_railway_price_more">
                                 </div>
                             </span>
                         </span>

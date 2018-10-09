@@ -629,7 +629,7 @@ $(document).ready(function() {
     });
 
     $('#reimburse_input_air').on('changed.bs.select',function(e){
-        if ($("button[data-id='reimburse_input_air']").attr("title") == "是") {
+        if ($("button[data-id='reimburse_input_air']").attr("title") == "飞机票") {
             $("#is_air_area").show();
             $("#is_railway_area").hide();
         }
