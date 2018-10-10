@@ -1237,7 +1237,7 @@ $(document).ready(function() {
 
     }
 
-    $('#btn-submit-acco').on('click', function () {
+    $('#btn-submit-reimburse').on('click', function () {
         var name = $.trim($('#reimburse_input_name').val());
         if(name=='') {
             swal('请填写姓名');
@@ -1246,13 +1246,13 @@ $(document).ready(function() {
 
         var is_board_evi = $("button[data-id='reimburse_input_board_evidence']").attr("title");
         if(is_board_evi=='此证明仅用于报销去程路费！参会注册时领取') {
-            swal('请选择国家地区');
+            swal('请选择是否需要住宿证明');
             return false
         }
 
         var is_ticket_evi = $("button[data-id='reimburse_input_ticket_evidence']").attr("title");
         if(is_ticket_evi=='此证明仅用于报销去程路费！参会注册时领取') {
-            swal('请选择国家地区');
+            swal('请选择是否需要票务证明');
             return false
         }
 
@@ -1456,38 +1456,19 @@ $(document).ready(function() {
     });
 
     reimbuseInfo(username);
-    function registerInfo(username) {
-        //请求稿件查询列表
+    function reimbuseInfo(username) {
         $.ajax({
             type: "Get",
             url:  url +"Document/getPaymentInfo?username=" + username,
-            //url:  "./json/register.json",
+            //url:  "./json/reimburse.json",
             dataType: 'json',
             success: function (res) {
                 if(res){
-                    $('.selectpicker').selectpicker('refresh')
+                    $('.selectpicker').selectpicker('refresh');
                     var curData = res;
                     if (!curData) {
                         return
                     }
-                    var nameEle =$('#reimburse_input_name');
-                    var sexEle=$('#acco_input_sex');
-                    var schoolEle =$('#acco_input_school');
-                    var areaEle=$('#acco_input_area');
-                    var areaMoreEle =$('#acco_input_more_area');
-                    var isMuslimEle=$('#acco_input_meal');
-                    var isMuslimMoreEle=$('#acco_input_meal_more');
-                    var isSchoolTravelEle =$('#acco_input_school_travel');
-                    var isEvePartyEle=$('#acco_input_eve_party');
-                    var isFieldTripEle =$('#acco_input_field_trip');
-                    var isAccoEle=$('#acco_input_acco');
-                    var idTypeEle =$('#acco_input_id_type');
-                    var idNumEle=$('#acco_input_id_num');
-                    var mobileEle =$('#acco_input_mobile');
-                    var boardDatesEle=$('#acco_input_board_dates');
-
-
-
                     $('#reimburse_input_name').attr("value", curData["name"]);
 
                     $("button[data-id='reimburse_input_board_evidence']").attr("title", curData["is_board_evi"]);
@@ -1504,7 +1485,7 @@ $(document).ready(function() {
                     $("button[data-id='reimburse_input_ticket_type']").attr("title", curData["ticket_type"]);
                     $("button[data-id='reimburse_input_ticket_type'] .filter-option").text(curData["ticket_type"]);
 
-                    if(ticket_type=='飞机票') {
+                    if(curData["ticket_type"]=='飞机票') {
                         var traffic_begin = "";
                         var traffic_begin_airport="";
                         if (curData["traffic_begin"].split(";").length==2) {
@@ -1559,28 +1540,69 @@ $(document).ready(function() {
 
                         $("#is_air_area").show()
                     }
-                    else if(ticket_type=='火车票') {
-                       
+                    else if(curData["ticket_type"]=='火车票') {
+                        var traffic_begin = curData["traffic_begin"];
+                        var traffic_end = curData["traffic_end"];
+
+                        $('#reimburse_input_railway_num').attr("value", curData["traffic_id"]);
+                        $('#reimburse_input_railway_begin').attr("value", traffic_begin);
+                        $('#reimburse_input_railway_end').attr("value", traffic_end);
+
+                        $("button[data-id='reimburse_input_railway_type']").attr("title", curData["seat_type"]);
+                        $("button[data-id='reimburse_input_railway_type'] .filter-option").text(curData["seat_type"]);
+
+                        $('#reimburse_input_railway_price').attr("value", curData["traffic_price"]);
+                        if(curData["is_contact"] == "是") {
+                            var ret_traffic_begin = curData["ret_traffic_begin"];
+                            var ret_traffic_end = curData["ret_traffic_end"];
+
+                            $('#reimburse_input_railway_num_more').attr("value", curData["ret_traffic_id"]);
+                            $('#reimburse_input_railway_begin_more').attr("value", ret_traffic_begin);
+                            $('#reimburse_input_railway_end_more').attr("value", ret_traffic_end);
+
+                            $("button[data-id='reimburse_input_railway_type_more']").attr("title", curData["ret_seat_type"]);
+                            $("button[data-id='reimburse_input_railway_type_more'] .filter-option").text(curData["ret_seat_type"]);
+
+                            $('#reimburse_input_railway_price_more').attr("value", curData["ret_traffic_price"]);
+                            $("#more_railway_area").show()
+                        }
+
+                        $("#is_railway_area").show()
                     }
 
 
-                    nameEle.attr('disabled',true);
-                    sexEle.attr('disabled',true);
-                    schoolEle.attr('disabled',true);
-                    areaEle.attr('disabled',true);
-                    areaMoreEle.attr('disabled',true);
-                    isMuslimEle.attr('disabled',true);
-                    isMuslimMoreEle.attr('disabled',true);
-                    isSchoolTravelEle.attr('disabled',true);
-                    isEvePartyEle.attr('disabled',true);
-                    isFieldTripEle.attr('disabled',true);
-                    isAccoEle.attr('disabled',true);
-                    idTypeEle.attr('disabled',true);
-                    idNumEle.attr('disabled',true);
-                    mobileEle.attr('disabled',true);
-                    boardDatesEle.attr('disabled',true);
+                    $('#reimburse_input_name').attr('disabled',true);
+                    $('#reimburse_input_board_evidence').attr('disabled',true);
+                    $('#reimburse_input_ticket_evidence').attr('disabled',true);
+                    $('#reimburse_input_zhifubao').attr('disabled',true);
+                    $('#reimburse_input_contact').attr('disabled',true);
+                    $('#reimburse_input_ticket_type').attr('disabled',true);
+                    $('#reimburse_input_air_num').attr('disabled',true);
+                    $('#reimburse_input_air_begin').attr('disabled',true);
+                    $('#reimburse_input_air_begin_port').attr('disabled',true);
+                    $('#reimburse_input_air_end').attr('disabled',true);
+                    $('#reimburse_input_air_end_port').attr('disabled',true);
+                    $('#reimburse_input_air_type').attr('disabled',true);
+                    $('#reimburse_input_air_price').attr('disabled',true);
+                    $('#reimburse_input_air_num_more').attr('disabled',true);
+                    $('#reimburse_input_air_begin_more').attr('disabled',true);
+                    $('#reimburse_input_air_begin_port_more').attr('disabled',true);
+                    $('#reimburse_input_air_end_more').attr('disabled',true);
+                    $('#reimburse_input_air_end_port_more').attr('disabled',true);
+                    $('#reimburse_input_air_type_more').attr('disabled',true);
+                    $('#reimburse_input_air_price_more').attr('disabled',true);
+                    $('#reimburse_input_railway_num').attr('disabled',true);
+                    $('#reimburse_input_railway_begin').attr('disabled',true);
+                    $('#reimburse_input_railway_end').attr('disabled',true);
+                    $('#reimburse_input_railway_type').attr('disabled',true);
+                    $('#reimburse_input_railway_price').attr('disabled',true);
+                    $('#reimburse_input_railway_num_more').attr('disabled',true);
+                    $('#reimburse_input_railway_begin_more').attr('disabled',true);
+                    $('#reimburse_input_railway_end_more').attr('disabled',true);
+                    $('#reimburse_input_railway_type_more').attr('disabled',true);
 
-                    $("#btn-submit-acco").hide();
+
+                    $("#btn-submit-reimburse").hide();
 
                 }
             }
